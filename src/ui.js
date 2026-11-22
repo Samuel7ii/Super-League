@@ -95,7 +95,7 @@ function render() {
   const unread = S.offers.length + S.inbox.filter(x => x.kind === 'req').length;
   const wk = isDrafting() ? phaseLabel() : S.phase === 'season' ? `Week ${S.gw + 1}` : phaseLabel();
   $('#app').innerHTML = `
-  <header>
+  <header class="tab-${U.tab}">
     <div class="topbar">
       <div class="mode" onclick="U.tab='home';render()"><b>SUPER LEAGUE</b><span>MASTER CAREER</span></div>
       <div class="club">${crest(u, 'lg')}<div><b>${u.name}</b><small>${S.coaches[u.coach] ? S.coaches[u.coach].name : 'Caretaker'}</small></div></div>
