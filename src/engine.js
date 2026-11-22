@@ -873,19 +873,27 @@ function aiManagement() {
 const ordinalE = n => n + (n % 10 === 1 && n !== 11 ? 'st' : n % 10 === 2 && n !== 12 ? 'nd' : n % 10 === 3 && n !== 13 ? 'rd' : 'th');
 
 // ---------- transfers ----------
+// only truly elite players (91+, a top-2 player at his club) or 88+ club legends are flat-out not for sale
 function untouchable(pl) {
   if (pl.team < 0) return false; const t = S.teams[pl.team]; if (t.user) return false;
   if (pl.req || pl.listed) return false;
   const top = t.squad.map(id => P[id]).sort((a, b) => b.ovr - a.ovr).slice(0, 2).map(p => p.id);
-  if (top.includes(pl.id) && pl.ovr >= 84) return true;
-  if (t.captain === pl.id) return true;
+  if (top.includes(pl.id) && pl.ovr >= 91) return true;
   const yrs = DB[pl.id].spans.filter(s => s[0] === t.name).reduce((s, x) => s + (x[2] - x[1] + 1), 0);
-  return yrs >= 6 && pl.ovr >= 83;
+  return yrs >= 8 && pl.ovr >= 88;
 }
+// how attached the selling club is: 'listed' (happy to sell), 'core' (top 3), 'starter', 'squad'
+function sellerRole(pl) {
+  const t = S.teams[pl.team]; if (!t) return 'listed';
+  if (pl.req || pl.listed) return 'listed';
+  const rank = t.squad.map(id => P[id]).sort((a, b) => b.ovr - a.ovr).findIndex(p => p.id === pl.id);
+  if (rank < 3) return 'core';
+  return t.lineup && t.lineup.includes(pl.id) ? 'starter' : 'squad';
+}
+const ROLE_MULT = { listed: 1.0, core: 2.6, starter: 2.0, squad: 1.35 };
 function askingPrice(pl) {
   const t = S.teams[pl.team]; if (!t) return 0;
-  const key = t.lineup && t.lineup.includes(pl.id);
-  return r1(pl.val * (key ? 1.35 : 1.1) * (pl.req || pl.listed ? 0.82 : 1) * (t.budget < 8 ? 0.9 : 1));
+  return r1(pl.val * ROLE_MULT[sellerRole(pl)] * (t.budget < 8 ? 0.9 : 1));
 }
 const canAfford = (t, x) => t.budget >= x - 1e-6;
 function transferPlayer(pl, to, fee, silent, trade) {
@@ -915,7 +923,7 @@ function userBid(plId, amount) {
   if (amount >= n.ask - 1e-6) { transferPlayer(pl, u.id, amount); pushNews(`💰 ${u.name} sign ${dispName(pl)} from ${t.name} for €${amount}m.`); return { ok: true, msg: `Deal done! ${dispName(pl)} joins for €${amount}m.` }; }
   const ratio = amount / n.ask;
   if (ratio < 0.55) { n.round += 2; }
-  else { n.round++; const floor = askingPrice(pl) * (0.8 + rnd() * 0.06); n.ask = r1(Math.max(floor, n.ask - (n.ask - amount) * (0.25 + rnd() * 0.2), amount + 0.1)); }
+  else { n.round++; const role = sellerRole(pl); const floor = askingPrice(pl) * (role === 'listed' ? 0.8 : role === 'squad' ? 0.88 : 0.94) + rnd() * 0.5; n.ask = r1(Math.max(floor, n.ask - (n.ask - amount) * (0.25 + rnd() * 0.2), amount + 0.1)); }
   if (n.round >= 4) { n.walk = S.gw + 2; n.round = 0; n.ask = askingPrice(pl); n.hist = []; return { ok: false, msg: `${t.name} are fed up with your bids and have walked away from talks.` }; }
   n.hist.push(['them', n.ask]);
   return { ok: false, counter: n.ask, msg: ratio < 0.55 ? `${t.name} call that bid insulting. They still want €${n.ask}m.` : `${t.name} counter: €${n.ask}m.` };
