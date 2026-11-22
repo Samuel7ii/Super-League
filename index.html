@@ -375,6 +375,10 @@ hr.sep{border:none;border-top:1px solid var(--line);margin:16px 0}
 @media(max-width:820px){.pact .btn{padding:8px 10px;font-size:12px}}
 .home>*,.hcol,.hcol>*,.grow,.grid2>*,.grid3>*{min-width:0}
 @media(max-width:820px){.bcol{min-width:190px}.hero-po .row.center{position:sticky;left:0}.bracket{-webkit-overflow-scrolling:touch}}
+.dorder{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:5px}
+.dorder>div{display:flex;align-items:center;gap:6px;padding:5px 7px;background:#1a2028;border:1px solid #2f3a46;font:600 13px 'Barlow Semi Condensed',Arial,sans-serif}
+.dorder small{color:var(--mut);min-width:16px;text-align:right}.dorder>div.me{background:linear-gradient(90deg,var(--hi2),#1a2028);border-color:var(--hi1);color:#fff}.dorder>div.me small{color:#dff0ff}
+@media(max-width:820px){.dorder{grid-template-columns:repeat(3,1fr)}}
 </style></head>
 <body><div id="app"></div><div id="modal"></div><div id="toasts"></div>
 <script>
@@ -1770,6 +1774,9 @@ function renderPreDraft() {
   $('#app').innerHTML = `<div class="setup predraft">
     <div class="pdhead">${crest(u, 'xl')}<div><small>${diffOf().name} · €${u.budget}m budget</small><h2>${u.name}: Draft Day</h2><p class="muted">You pick <b>#${myFirst}</b> in round 1. Your picks: ${myPicks.slice(0, 5).map(n => '#' + n).join(', ')}…</p></div></div>
     <div class="card"><h3>Draft style</h3><div class="optgrid two">${sopt('snake', 'Snake', 'Order reverses every round. Last pick in round 1 gets first pick in round 2.')}${sopt('classic', 'Classic', 'Same order every round. The team picking first always picks first.')}</div></div>
+    <div class="card"><div class="hrow"><h3>Draft order · drawn at random</h3><button class="btn sm" onclick="rerollOrder()">Re-roll order</button></div>
+      <div class="dorder">${d.order.map((t, i) => `<div class="${t === S.userTeam ? 'me' : ''}"><small>${i + 1}</small>${crest(S.teams[t], 'sm')}<span>${S.teams[t].short}</span></div>`).join('')}</div>
+      <p class="fine">Round 1 order. ${style === 'snake' ? 'It reverses every round (snake).' : 'It stays the same every round (classic).'}</p></div>
     <div class="go pdgo"><button class="btn lime big" onclick="beginDraft()">Start Draft ▶</button><button class="btn big" onclick="randomTeam()">Random Team</button><button class="btn ghost" onclick="S=null;render()">Back</button></div>
     <div class="card"><h3>Player pool · ${draftPool().length} players · ${freeCoaches().length} coaches</h3>
       <div class="filters">${['ALL', 'GK', 'DEF', 'CB', 'LB', 'RB', 'MID', 'DM', 'CM', 'AM', 'ATT', 'LW', 'RW', 'ST'].map(p => `<button class="chip ${f.pos === p ? 'on' : ''}" onclick="U.pd.pos='${p}';U.pd.n=60;render()">${p}</button>`).join('')}
@@ -1778,6 +1785,7 @@ function renderPreDraft() {
       ${list.length > f.n ? `<button class="btn more" onclick="U.pd.n+=100;render()">Show more (${list.length - f.n} left)</button>` : ''}
     </div></div>`;
 }
+function rerollOrder() { shuffle(S.draft.order); setDraftStyle(S.opts.style || 'snake'); save(); render(); }
 function beginDraft() { S.phase = 'draft'; U.tab = 'draft'; save(); render(); window.scrollTo(0, 0); }
 function randomTeam() { S.phase = 'draft'; while (isDrafting()) { const t = S.teams[draftTeamOnClock()]; draftPick(t.user ? randomChoice(t) : aiDraftChoice(t)); } U.tab = 'home'; save(); render(); window.scrollTo(0, 0); toast(`Your random squad is in. ${me().squad.length} players drafted.`); }
 function randomChoice(t) { const c = aiDraftChoice(t); if (c.pass || c.co !== undefined) return c; const g = dgroup(P[c.pl].pos); const pool = draftPool().filter(p => dgroup(p.pos) === g).sort((a, b) => b.ovr - a.ovr).slice(0, 12); return { pl: pool[ri(0, pool.length - 1)].id }; }
