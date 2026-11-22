@@ -32,13 +32,10 @@ function renderSetup() {
   document.documentElement.style.setProperty('--c1', '#1c7c3c'); document.documentElement.style.setProperty('--c2', '#fff');
   $('#app').innerHTML = `
   <div class="setup">
-    <div class="hero"><div class="kicker">Fantasy draft · 1996–2026 · 10 seasons</div><h1>SUPER <span>LEAGUE</span></h1>
-    <p>Draft real players and coaches from the last 30 years, each from a random season of his career.</p></div>
+    <div class="hero"><h1>SUPER <span>LEAGUE</span></h1><p>Draft. Manage. Build a dynasty.</p></div>
     ${hasSave() ? `<div class="card resume"><div><b>Saved career found</b><br><small class="muted">Pick up where you left off</small></div><button class="btn lime" onclick="resumeGame()">Continue ▶</button></div>` : ''}
-    <div class="card"><h3>Pick your club</h3><div class="clubgrid">${CLUBS.map((c, i) => `<button class="clubpick ${U.pick === i ? 'on' : ''}" style="--k1:${c[3]};--k2:${c[4]}" onclick="U.pick=${i};renderSetup()">${crest({ c1: c[3], c2: c[4], short: c[1] }, 'lg')}<span>${c[0]}</span><small>${CONF_NAME[c[5]]}</small></button>`).join('')}</div></div>
-    <div class="card rulesline"><p>30 clubs · 2 conferences · 15 games · top 8 to the playoffs · 10 seasons</p>
-      <label class="tog"><input type="checkbox" ${U.final1 ? '' : 'checked'} onchange="U.final1=!this.checked"> Two-legged final</label></div>
-    <div class="go"><button class="btn lime big" ${U.pick === undefined ? 'disabled' : ''} onclick="startGame()">${U.pick === undefined ? 'Pick a club to start' : `Start the draft as ${CLUBS[U.pick][0]} ▶`}</button></div>
+    <div class="card"><h3>Pick your club</h3><div class="clubgrid">${CLUBS.map((c, i) => `<button class="clubpick ${U.pick === i ? 'on' : ''}" style="--k1:${c[3]};--k2:${c[4]}" onclick="U.pick=${i};renderSetup()">${crest({ c1: c[3], c2: c[4], short: c[1] }, 'lg')}<span>${c[0]}</span></button>`).join('')}</div></div>
+    <div class="go"><label class="tog"><input type="checkbox" ${U.final1 ? '' : 'checked'} onchange="U.final1=!this.checked"> Two-legged final</label><br><br><button class="btn lime big" ${U.pick === undefined ? 'disabled' : ''} onclick="startGame()">${U.pick === undefined ? 'Pick a club to start' : `Start as ${CLUBS[U.pick][0]}`}</button></div>
   </div>`;
 }
 function startGame() { S = newState(U.pick, { finalTwoLegs: !U.final1 }); P = S.players; U.tab = 'draft'; save(); render(); window.scrollTo(0, 0); }
@@ -134,17 +131,20 @@ function showScenario() { if (S.scenario && U.seenScen !== S.scenario.id && !U.l
 function goNextSeason() { nextSeason(); U.tab = S.phase === 'over' ? 'legacy' : 'home'; save(); render(); }
 
 // ---------- draft ----------
+const K2 = [[96, 'dm', 'Dark Matter'], [93, 'opal', 'Galaxy Opal'], [91, 'pink', 'Pink Diamond'], [89, 'dia', 'Diamond'], [87, 'ame', 'Amethyst'], [85, 'ruby', 'Ruby'], [82, 'sapph', 'Sapphire'], [79, 'emer', 'Emerald'], [76, 'gold', 'Gold'], [72, 'silv', 'Silver'], [0, 'bron', 'Bronze']];
+const k2 = v => K2.find(x => v >= x[0]);
 function futCard(p, action) {
   const d = DB[p.id]; const names = p.pos === 'GK' ? GK_N : ATTR_N;
   const top = p.attrs.map((v, i) => [names[i], v]).sort((x, y) => y[1] - x[1]).slice(0, 3);
-  return `<div class="fut t-${tier(p.ovr)}" onclick="openPlayer(${p.id})">
+  const k = k2(p.ovr);
+  return `<div class="fut k-${k[1]}" onclick="openPlayer(${p.id})"><div class="k-tier">${k[2]}</div>
     <div class="fut-top"><div><b>${p.ovr}</b><span>${p.pos}</span></div><small>${d.nat}</small></div>
     <div class="fut-name">${esc(d.short)}</div><div class="fut-yr">'${String(p.y).slice(2)} · ${esc(p.rclub)}</div>
     <div class="fut-attrs">${top.map(([k, v]) => `<span><b>${v}</b>${k}</span>`).join('')}</div>
     <div class="fut-meta"><span title="Football IQ">${p.iq}</span><span title="Work rate">${p.wr === 'Low' ? '' : p.wr === 'High' ? '' : ''} ${p.wr}</span><span>${p.age}y</span></div>
     ${action || ''}</div>`;
 }
-function coachCard(c, action) { return `<div class="fut coachc"><div class="fut-top"><div><b>${c.rating}</b><span>COACH</span></div><small>${c.nat}</small></div><div class="fut-name">${esc(c.name.split(' ').slice(-1)[0])}</div><div class="fut-yr">${esc(c.name)}</div><div class="fut-attrs"><span><b>${c.form}</b>shape</span><span><b>${c.style}</b>style</span></div>${action || ''}</div>`; }
+function coachCard(c, action) { const k = k2(c.rating); return `<div class="fut coachc k-${k[1]}"><div class="k-tier">${k[2]} · Coach</div><div class="fut-top"><div><b>${c.rating}</b><span>COACH</span></div><small>${c.nat}</small></div><div class="fut-name">${esc(c.name.split(' ').slice(-1)[0])}</div><div class="fut-yr">${esc(c.name)}</div><div class="fut-attrs"><span><b>${c.form}</b>shape</span><span><b>${c.style}</b>style</span></div>${action || ''}</div>`; }
 function vDraft() {
   const d = S.draft; const on = S.teams[draftTeamOnClock()]; const mine = on.user; const u = me();
   const round = Math.floor(d.pick / 30) + 1, pk = d.pick % 30 + 1;
@@ -645,7 +645,7 @@ function vLegacy() {
    <h3 style="margin-top:18px">Dynasties</h3>${clubs.map(([id, c]) => `<div class="lrow">${crest(S.teams[id], 'sm')} ${S.teams[id].name}<b>${c.titles} · ${c.shields} </b></div>`).join('')}
    <h3 style="margin-top:18px">Best coaches</h3>${coaches.map(([id, c]) => `<div class="lrow">${S.coaches[id].name}<b>${c.titles} </b></div>`).join('')}
    ${bestSeason ? `<h3 style="margin-top:18px">Record</h3><div class="lrow">Most goals in a season: ${esc(DB[bestSeason.id].name)} '${String(bestSeason.y).slice(2)}<b>${bestSeason.g}</b></div>` : ''}</div></div>
-  <div class="card"><h3>All-time XI of this reality</h3><div class="atxi">${allTime.map(([id, g]) => `<div class="fut mini t-${tier(Math.min(99, 80 + Math.round(legacyScore(id) / 40)))}"><div class="fut-top"><div><b>${Math.round(legacyScore(id))}</b><span>${g}</span></div></div><div class="fut-name">${esc(DB[id].short)}</div></div>`).join('')}</div></div>
+  <div class="card"><h3>All-time XI of this reality</h3><div class="atxi">${allTime.map(([id, g]) => `<div class="fut mini k-${k2(Math.min(99, 80 + Math.round(legacyScore(id) / 40)))[1]}"><div class="fut-top"><div><b>${Math.round(legacyScore(id))}</b><span>${g}</span></div></div><div class="fut-name">${esc(DB[id].short)}</div></div>`).join('')}</div></div>
   <div class="card"><h3>Ballon d'Or roll of honour</h3><div class="potm">${S.history.map(x => `<div class="award"><small>Season ${x.season}</small><div><b>${esc(DB[x.ballon].name)}</b></div><span class="muted">Champions: ${S.teams[x.champion].name}</span></div>`).join('')}</div></div>
   <div class="center"><button class="btn lime big" onclick="newGameUI()">Start a new reality ▶</button></div>`;
 }
@@ -674,7 +674,7 @@ function openPlayer(id) {
        <div class="row"><input id="bidamt" type="number" step="0.5" value="${r1(ask * 0.85)}"><button class="btn lime" onclick="doBid(${id})">Make offer</button>${n && n.ask ? `<button class="btn" onclick="doBid(${id},${n.ask})">Accept their €${n.ask}m</button>` : ''}<button class="btn" onclick="openTrade(${id})">Propose trade</button></div></div>`; }
     }
   }
-  openModal(`<div class="phead t-${tier(p.ovr)}"><div class="ovrbig">${p.ovr}<small>${p.pos}</small></div><div class="grow"><h2>${esc(d.name)} <span class="yr big">'${String(p.y).slice(2)}</span></h2><small>${d.nat} · age ${p.age} · ${p.y}/${String(p.y + 1).slice(2)} version (${esc(p.rclub)}) · ${t ? t.name : p.team === -2 ? 'Retired' : 'Free agent'}</small>
+  openModal(`<div class="phead k-${k2(p.ovr)[1]}"><div class="k-tier">${k2(p.ovr)[2]}</div><div class="ovrbig">${p.ovr}<small>${p.pos}</small></div><div class="grow"><h2>${esc(d.name)} <span class="yr big">'${String(p.y).slice(2)}</span></h2><small>${d.nat} · age ${p.age} · ${p.y}/${String(p.y + 1).slice(2)} version (${esc(p.rclub)}) · ${t ? t.name : p.team === -2 ? 'Retired' : 'Free agent'}</small>
     <div class="row pmeta"><span class="pill">IQ ${p.iq}</span><span class="pill">${p.wr === 'Low' ? '' : p.wr === 'High' ? '' : ''} Work rate: ${p.wr}</span><span class="pill">${condA(p)} Morale ${Math.round(p.mor)}</span><span class="pill">${fm(p.val)}</span>${p.req ? '<span class="pill badb">Wants out</span>' : ''}</div></div>${t ? crest(t, 'xl') : ''}</div>
    <div class="grid2">
     <div><h3>Attributes</h3>${hexRadar(p.attrs, names)}${p.attrs.map((v, i) => `<div class="attr"><span>${names[i]}</span><span class="abar"><i style="width:${v}%;background:${v >= 85 ? 'var(--ok)' : v >= 70 ? 'var(--gold)' : 'var(--mut)'}"></i></span><b>${v}</b></div>`).join('')}
