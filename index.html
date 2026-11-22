@@ -691,12 +691,12 @@ function defaultTactics(co) {
   return t;
 }
 function coachFit(team) {
-  const co = S.coaches[team.coach]; if (!co) return { fit: 0, bonus: -3, notes: ['No head coach: a caretaker is in charge'] };
+  const co = S.coaches[team.coach]; if (!co) return { fit: 0, bonus: -1.2, notes: ['No head coach: a caretaker is in charge'] };
   const pr = STYLE_PREFS[co.style] || {}; let n = 0, m = 0; const notes = [];
   for (const k in pr) { n++; if (k === 'back3') { if (team.tactics.form.startsWith('3') || team.tactics.form.startsWith('5')) m++; else notes.push('Prefers a back three'); } else if (team.tactics[k] === pr[k]) m++; else notes.push(`Prefers ${labelOf(k)}: ${pr[k]}`); }
   if (team.tactics.form === co.form) m += 0.5; else notes.push(`Favourite shape: ${co.form}`);
   const fit = n ? m / (n + 0.5) : (team.tactics.form === co.form ? 1 : 0.6);
-  const bonus = (co.rating - 86) * 0.24 + fit * 2 + (co.style === 'Man-management' ? 1 : 0);
+  const bonus = (co.rating - 86) * 0.13 + fit * 1.2 + (co.style === 'Man-management' ? 0.5 : 0);
   return { fit, bonus, notes };
 }
 
@@ -731,9 +731,9 @@ function aiDraftChoice(team) {
   const round = Math.floor(S.draft.pick / 30) + 1;
   const pool = draftPool().sort((a, b) => b.ovr - a.ovr).slice(0, 90);
   const bestCoach = freeCoaches().sort((a, b) => b.rating - a.rating)[0];
-  if (needCoach && bestCoach) {
-    if (left <= missing || round >= team.coachRound || (bestCoach.rating >= 95 && round >= 2 && rnd() < 0.2)) return { co: bestCoach.id };
-  }
+  // a coach is worth roughly a player rated (coach rating - 7): Pep 99 ~ a 92 player, so a 95 Messi still goes first
+  const coachScore = needCoach && bestCoach ? bestCoach.rating - 5 + rnd() * 3 + (round >= team.coachRound ? 2 : 0) : -1e9;
+  if (needCoach && bestCoach && left <= 2) return { co: bestCoach.id };
   let best = null, bs = -1e9;
   for (const pl of pool) {
     const g = dgroup(pl.pos); const [tg, mx] = DRAFT_T[g];
@@ -744,6 +744,7 @@ function aiDraftChoice(team) {
     if (DB[pl.id].clubs.some(x => x[0] === team.name)) s += 1.2;
     if (s > bs) { bs = s; best = pl; }
   }
+  if (coachScore > bs) return { co: bestCoach.id };
   return best ? { pl: best.id } : { pass: true };
 }
 function draftPick(choice) {
@@ -2155,7 +2156,7 @@ function vTactics() {
        <label>Corners<select onchange="me().ck=+this.value;save();render()">${u.squad.filter(id => P[id].pos !== 'GK').map(id => `<option value="${id}" ${u.ck === id ? 'selected' : ''}>${esc(DB[id].name)}${DB[id].tags.includes('S') ? ' ★' : ''}</option>`).join('')}</select></label></div>
        <div class="coachfit"><b>${co ? co.name : 'Caretaker'}</b> ${co ? `<span class="ovr t-${tier(co.rating)}">${co.rating}</span> · ${co.style} · loves a ${co.form}` : ''}<div>Familiarity ${bar(Math.round(cf.fit * 100))} <b class="${cf.bonus >= 0 ? 'okc' : 'warn'}">${cf.bonus >= 0 ? '+' : ''}${cf.bonus.toFixed(1)}</b> to team rating</div>${cf.notes.length ? `<small class="muted">${cf.notes.join(' · ')}</small>` : '<small class="okc">Your coach loves this setup.</small>'}</div>
        <details><summary>How it all works</summary><ul class="fine">
-       <li><b>Ratings, coach and chemistry</b> drive results. A 99 coach in his favourite system is worth several points of team rating.</li><li><b>High press</b> creates chances, but tires players and barely works with forwards who don't press.</li><li><b>High line</b> is risky against fast forwards. A <b>deep</b> line concedes less but creates less.</li><li><b>Wide</b> suits pacey or crossing wide players. <b>Direct</b> suits fast or aerial strikers.</li><li><b>Training</b>: Fitness means faster recovery and fewer injuries.</li><li><b>Team talk</b>: Motivate helps underdogs. Demand more helps favourites.</li></ul></details>
+       <li><b>Ratings, coach and chemistry</b> drive results. Squad quality and the coaching side (coach, his system, chemistry, tactics) matter about equally. A 99 coach in his favourite system is worth a couple of points of team rating.</li><li><b>High press</b> creates chances, but tires players and barely works with forwards who don't press.</li><li><b>High line</b> is risky against fast forwards. A <b>deep</b> line concedes less but creates less.</li><li><b>Wide</b> suits pacey or crossing wide players. <b>Direct</b> suits fast or aerial strikers.</li><li><b>Training</b>: Fitness means faster recovery and fewer injuries.</li><li><b>Team talk</b>: Motivate helps underdogs. Demand more helps favourites.</li></ul></details>
      </div>
    </div></div>`;
 }

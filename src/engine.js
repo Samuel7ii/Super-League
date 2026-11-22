@@ -199,12 +199,12 @@ function defaultTactics(co) {
   return t;
 }
 function coachFit(team) {
-  const co = S.coaches[team.coach]; if (!co) return { fit: 0, bonus: -3, notes: ['No head coach: a caretaker is in charge'] };
+  const co = S.coaches[team.coach]; if (!co) return { fit: 0, bonus: -1.2, notes: ['No head coach: a caretaker is in charge'] };
   const pr = STYLE_PREFS[co.style] || {}; let n = 0, m = 0; const notes = [];
   for (const k in pr) { n++; if (k === 'back3') { if (team.tactics.form.startsWith('3') || team.tactics.form.startsWith('5')) m++; else notes.push('Prefers a back three'); } else if (team.tactics[k] === pr[k]) m++; else notes.push(`Prefers ${labelOf(k)}: ${pr[k]}`); }
   if (team.tactics.form === co.form) m += 0.5; else notes.push(`Favourite shape: ${co.form}`);
   const fit = n ? m / (n + 0.5) : (team.tactics.form === co.form ? 1 : 0.6);
-  const bonus = (co.rating - 86) * 0.24 + fit * 2 + (co.style === 'Man-management' ? 1 : 0);
+  const bonus = (co.rating - 86) * 0.13 + fit * 1.2 + (co.style === 'Man-management' ? 0.5 : 0);
   return { fit, bonus, notes };
 }
 
@@ -239,9 +239,9 @@ function aiDraftChoice(team) {
   const round = Math.floor(S.draft.pick / 30) + 1;
   const pool = draftPool().sort((a, b) => b.ovr - a.ovr).slice(0, 90);
   const bestCoach = freeCoaches().sort((a, b) => b.rating - a.rating)[0];
-  if (needCoach && bestCoach) {
-    if (left <= missing || round >= team.coachRound || (bestCoach.rating >= 95 && round >= 2 && rnd() < 0.2)) return { co: bestCoach.id };
-  }
+  // a coach is worth roughly a player rated (coach rating - 7): Pep 99 ~ a 92 player, so a 95 Messi still goes first
+  const coachScore = needCoach && bestCoach ? bestCoach.rating - 5 + rnd() * 3 + (round >= team.coachRound ? 2 : 0) : -1e9;
+  if (needCoach && bestCoach && left <= 2) return { co: bestCoach.id };
   let best = null, bs = -1e9;
   for (const pl of pool) {
     const g = dgroup(pl.pos); const [tg, mx] = DRAFT_T[g];
@@ -252,6 +252,7 @@ function aiDraftChoice(team) {
     if (DB[pl.id].clubs.some(x => x[0] === team.name)) s += 1.2;
     if (s > bs) { bs = s; best = pl; }
   }
+  if (coachScore > bs) return { co: bestCoach.id };
   return best ? { pl: best.id } : { pass: true };
 }
 function draftPick(choice) {
