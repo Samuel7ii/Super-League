@@ -594,22 +594,22 @@ const CLUBS = [
 const CONF_NAME = { N: 'North Conference', S: 'South Conference' };
 const FAN_NICK = { RMA: 'LosBlancos', BAR: 'Cule', MUN: 'RedDevil', FCB: 'MiaSanMia', MCI: 'Cityzen', LIV: 'YNWA', JUV: 'Bianconero', CHE: 'BlueIsTheColour', PSG: 'Parisien', MIL: 'Rossonero', ARS: 'Gooner', INT: 'Nerazzurro', ATM: 'Colchonero', BVB: 'Schwarzgelb', TOT: 'COYS', NAP: 'Partenopeo', ROM: 'Giallorosso', B04: 'Werkself', AJA: 'Godenzonen', POR: 'Dragao', BEN: 'Aguia', VAL: 'Ches', SEV: 'Sevillista', LAZ: 'Aquilotto', OL: 'LesGones', OM: 'Olympien', ASM: 'Monegasque', SCP: 'LeaoForever', PSV: 'Boeren', GAL: 'Cimbom' };
 const COACHES_RAW = [
-  ['Pep Guardiola', 'ESP', 99, 'Possession', '4-3-3'], ['Sir Alex Ferguson', 'SCO', 98, 'Man-management', '4-4-2'], ['Carlo Ancelotti', 'ITA', 96, 'Balanced', '4-3-3'],
+  ['Pep Guardiola', 'ESP', 99, 'Possession', '4-3-3'], ['Sir Alex Ferguson', 'SCO', 98, 'Man-management', '4-4-2'], ['Carlo Ancelotti', 'ITA', 96, 'Balanced', '4-3-2-1'],
   ['José Mourinho', 'POR', 95, 'Counter', '4-2-3-1'], ['Jürgen Klopp', 'GER', 95, 'Gegenpress', '4-3-3'], ['Luis Enrique', 'ESP', 93, 'Possession', '4-3-3'],
   ['Zinedine Zidane', 'FRA', 92, 'Balanced', '4-3-3'], ['Diego Simeone', 'ARG', 91, 'Defensive', '4-4-2'], ['Jupp Heynckes', 'GER', 91, 'Balanced', '4-2-3-1'],
-  ['Marcello Lippi', 'ITA', 91, 'Balanced', '4-3-1-2'], ['Arsène Wenger', 'FRA', 90, 'Attacking', '4-4-2'], ['Antonio Conte', 'ITA', 90, 'Wing-backs', '3-5-2'],
-  ['Hansi Flick', 'GER', 90, 'High line', '4-2-3-1'], ['Xabi Alonso', 'ESP', 90, 'Wing-backs', '3-4-3'], ['Fabio Capello', 'ITA', 89, 'Defensive', '4-4-2'],
+  ['Marcello Lippi', 'ITA', 91, 'Balanced', '4-3-1-2'], ['Arsène Wenger', 'FRA', 90, 'Attacking', '4-4-2'], ['Antonio Conte', 'ITA', 90, 'Wing-backs', '3-4-2-1'],
+  ['Hansi Flick', 'GER', 90, 'High line', '4-3-3 Attack'], ['Xabi Alonso', 'ESP', 90, 'Wing-backs', '3-4-2-1'], ['Fabio Capello', 'ITA', 89, 'Defensive', '4-4-2'],
   ['Thomas Tuchel', 'GER', 89, 'Possession', '4-2-3-1'], ['Ottmar Hitzfeld', 'GER', 89, 'Balanced', '4-4-2'], ['Mikel Arteta', 'ESP', 88, 'Possession', '4-3-3'],
-  ['Vicente del Bosque', 'ESP', 88, 'Balanced', '4-2-3-1'], ['Frank Rijkaard', 'NED', 87, 'Attacking', '4-3-3'], ['Simone Inzaghi', 'ITA', 87, 'Wing-backs', '3-5-2'],
+  ['Vicente del Bosque', 'ESP', 88, 'Balanced', '4-4-1-1'], ['Frank Rijkaard', 'NED', 87, 'Attacking', '4-3-3'], ['Simone Inzaghi', 'ITA', 87, 'Wing-backs', '3-5-2'],
   ['Arne Slot', 'NED', 87, 'Possession', '4-2-3-1'], ['Rafael Benítez', 'ESP', 86, 'Defensive', '4-2-3-1'], ['Massimiliano Allegri', 'ITA', 86, 'Pragmatic', '3-5-2'],
-  ['Didier Deschamps', 'FRA', 86, 'Pragmatic', '4-2-3-1'], ['Louis van Gaal', 'NED', 86, 'Possession', '4-3-3'], ['Unai Emery', 'ESP', 85, 'Pragmatic', '4-4-2'],
-  ['Guus Hiddink', 'NED', 85, 'Balanced', '4-4-2'], ['Luciano Spalletti', 'ITA', 85, 'Attacking', '4-3-3'], ['Gian Piero Gasperini', 'ITA', 85, 'Gegenpress', '3-4-3'],
+  ['Didier Deschamps', 'FRA', 86, 'Pragmatic', '4-2-3-1'], ['Louis van Gaal', 'NED', 86, 'Possession', '4-3-3'], ['Unai Emery', 'ESP', 85, 'Pragmatic', '4-4-1-1'],
+  ['Guus Hiddink', 'NED', 85, 'Balanced', '4-4-2'], ['Luciano Spalletti', 'ITA', 85, 'Attacking', '4-3-3'], ['Gian Piero Gasperini', 'ITA', 85, 'Gegenpress', '3-4-2-1'],
   ['Mauricio Pochettino', 'ARG', 84, 'Gegenpress', '4-2-3-1'], ['Julian Nagelsmann', 'GER', 84, 'Gegenpress', '4-2-3-1'], ['Roberto Mancini', 'ITA', 84, 'Balanced', '4-4-2'],
-  ['Vincent Kompany', 'BEL', 84, 'Possession', '4-2-3-1'], ['Maurizio Sarri', 'ITA', 83, 'Possession', '4-3-3'], ['Claudio Ranieri', 'ITA', 83, 'Counter', '4-4-2'],
+  ['Vincent Kompany', 'BEL', 84, 'Possession', '4-2-3-1'], ['Maurizio Sarri', 'ITA', 83, 'Possession', '4-3-3'], ['Claudio Ranieri', 'ITA', 83, 'Counter', '4-4-1-1'],
   ['Ernesto Valverde', 'ESP', 83, 'Balanced', '4-3-3'], ['Luis Aragonés', 'ESP', 83, 'Balanced', '4-1-4-1'], ['Roberto De Zerbi', 'ITA', 82, 'Possession', '4-2-3-1'],
-  ['Enzo Maresca', 'ITA', 82, 'Possession', '4-2-3-1'], ['Manuel Pellegrini', 'CHI', 82, 'Attacking', '4-4-2'], ['Jorge Jesus', 'POR', 81, 'Attacking', '4-4-2'],
-  ['Ralf Rangnick', 'GER', 81, 'Gegenpress', '4-4-2'], ['Marcelo Bielsa', 'ARG', 81, 'Gegenpress', '3-4-3'], ['Lucien Favre', 'SUI', 80, 'Counter', '4-2-3-1'],
-  ['Rúben Amorim', 'POR', 80, 'Wing-backs', '3-4-3'], ['Luiz Felipe Scolari', 'BRA', 80, 'Pragmatic', '4-2-3-1'], ['Laurent Blanc', 'FRA', 80, 'Possession', '4-3-3'],
+  ['Enzo Maresca', 'ITA', 82, 'Possession', '4-2-3-1'], ['Manuel Pellegrini', 'CHI', 82, 'Attacking', '4-2-2-2'], ['Jorge Jesus', 'POR', 81, 'Attacking', '4-4-2'],
+  ['Ralf Rangnick', 'GER', 81, 'Gegenpress', '4-2-2-2'], ['Marcelo Bielsa', 'ARG', 81, 'Gegenpress', '3-4-1-2'], ['Lucien Favre', 'SUI', 80, 'Counter', '4-2-3-1'],
+  ['Rúben Amorim', 'POR', 80, 'Wing-backs', '3-4-2-1'], ['Luiz Felipe Scolari', 'BRA', 80, 'Pragmatic', '4-2-3-1'], ['Laurent Blanc', 'FRA', 80, 'Possession', '4-3-3'],
   ['André Villas-Boas', 'POR', 79, 'High line', '4-3-3'], ['Erik ten Hag', 'NED', 79, 'Possession', '4-3-3'], ['Ronald Koeman', 'NED', 78, 'Balanced', '4-3-3'],
   ['Ange Postecoglou', 'AUS', 78, 'Attacking', '4-3-3'], ['Rudi Garcia', 'FRA', 77, 'Attacking', '4-3-3'], ['Paulo Fonseca', 'POR', 77, 'Possession', '4-2-3-1'],
 ];
@@ -628,14 +628,22 @@ function labelOf(k) { return { ment: 'Mentality', press: 'Pressing', tempo: 'Tem
 
 // ---------- formations ----------
 const FORMS = {
-  '4-3-3': [['GK', 50, 6], ['LB', 14, 26], ['CB', 37, 20], ['CB', 63, 20], ['RB', 86, 26], ['CM', 28, 50], ['DM', 50, 40], ['CM', 72, 50], ['LW', 17, 76], ['ST', 50, 84], ['RW', 83, 76]],
-  '4-4-2': [['GK', 50, 6], ['LB', 14, 26], ['CB', 37, 20], ['CB', 63, 20], ['RB', 86, 26], ['LM', 14, 54], ['CM', 38, 48], ['CM', 62, 48], ['RM', 86, 54], ['ST', 38, 82], ['ST', 62, 82]],
-  '4-2-3-1': [['GK', 50, 6], ['LB', 14, 26], ['CB', 37, 20], ['CB', 63, 20], ['RB', 86, 26], ['DM', 37, 42], ['DM', 63, 42], ['LW', 17, 68], ['AM', 50, 64], ['RW', 83, 68], ['ST', 50, 86]],
-  '3-5-2': [['GK', 50, 6], ['CB', 27, 22], ['CB', 50, 18], ['CB', 73, 22], ['LWB', 11, 50], ['CM', 32, 52], ['DM', 50, 40], ['CM', 68, 52], ['RWB', 89, 50], ['ST', 38, 82], ['ST', 62, 82]],
-  '3-4-3': [['GK', 50, 6], ['CB', 27, 22], ['CB', 50, 18], ['CB', 73, 22], ['LWB', 11, 50], ['CM', 38, 46], ['CM', 62, 46], ['RWB', 89, 50], ['LW', 20, 75], ['ST', 50, 84], ['RW', 80, 75]],
-  '5-3-2': [['GK', 50, 6], ['LWB', 10, 34], ['CB', 30, 20], ['CB', 50, 17], ['CB', 70, 20], ['RWB', 90, 34], ['CM', 30, 52], ['DM', 50, 42], ['CM', 70, 52], ['ST', 38, 80], ['ST', 62, 80]],
-  '4-1-4-1': [['GK', 50, 6], ['LB', 14, 26], ['CB', 37, 20], ['CB', 63, 20], ['RB', 86, 26], ['DM', 50, 38], ['LM', 14, 60], ['CM', 38, 54], ['CM', 62, 54], ['RM', 86, 60], ['ST', 50, 84]],
-  '4-3-1-2': [['GK', 50, 6], ['LB', 14, 26], ['CB', 37, 20], ['CB', 63, 20], ['RB', 86, 26], ['CM', 28, 46], ['DM', 50, 38], ['CM', 72, 46], ['AM', 50, 63], ['ST', 38, 83], ['ST', 62, 83]],
+  '4-3-3': [['GK', 50, 3], ['LB', 14, 26], ['CB', 37, 20], ['CB', 63, 20], ['RB', 86, 26], ['CM', 28, 50], ['DM', 50, 40], ['CM', 72, 50], ['LW', 17, 76], ['ST', 50, 84], ['RW', 83, 76]],
+  '4-4-2': [['GK', 50, 3], ['LB', 14, 26], ['CB', 37, 20], ['CB', 63, 20], ['RB', 86, 26], ['LM', 14, 54], ['CM', 38, 48], ['CM', 62, 48], ['RM', 86, 54], ['ST', 38, 82], ['ST', 62, 82]],
+  '4-2-3-1': [['GK', 50, 3], ['LB', 14, 26], ['CB', 37, 20], ['CB', 63, 20], ['RB', 86, 26], ['DM', 37, 42], ['DM', 63, 42], ['LW', 17, 68], ['AM', 50, 64], ['RW', 83, 68], ['ST', 50, 86]],
+  '3-5-2': [['GK', 50, 3], ['CB', 27, 22], ['CB', 50, 21], ['CB', 73, 22], ['LWB', 11, 50], ['CM', 32, 52], ['DM', 50, 40], ['CM', 68, 52], ['RWB', 89, 50], ['ST', 38, 82], ['ST', 62, 82]],
+  '3-4-3': [['GK', 50, 3], ['CB', 27, 22], ['CB', 50, 21], ['CB', 73, 22], ['LWB', 11, 50], ['CM', 38, 46], ['CM', 62, 46], ['RWB', 89, 50], ['LW', 20, 75], ['ST', 50, 84], ['RW', 80, 75]],
+  '5-3-2': [['GK', 50, 3], ['LWB', 10, 34], ['CB', 30, 20], ['CB', 50, 20], ['CB', 70, 20], ['RWB', 90, 34], ['CM', 30, 52], ['DM', 50, 42], ['CM', 70, 52], ['ST', 38, 80], ['ST', 62, 80]],
+  '4-1-4-1': [['GK', 50, 3], ['LB', 14, 26], ['CB', 37, 20], ['CB', 63, 20], ['RB', 86, 26], ['DM', 50, 38], ['LM', 14, 60], ['CM', 38, 54], ['CM', 62, 54], ['RM', 86, 60], ['ST', 50, 84]],
+  '4-4-1-1': [['GK', 50, 3], ['LB', 14, 26], ['CB', 37, 20], ['CB', 63, 20], ['RB', 86, 26], ['LM', 14, 54], ['CM', 38, 48], ['CM', 62, 48], ['RM', 86, 54], ['AM', 50, 68], ['ST', 50, 86]],
+  '4-2-2-2': [['GK', 50, 3], ['LB', 14, 26], ['CB', 37, 20], ['CB', 63, 20], ['RB', 86, 26], ['DM', 37, 40], ['DM', 63, 40], ['AM', 24, 64], ['AM', 76, 64], ['ST', 38, 84], ['ST', 62, 84]],
+  '4-3-2-1': [['GK', 50, 3], ['LB', 14, 26], ['CB', 37, 20], ['CB', 63, 20], ['RB', 86, 26], ['CM', 26, 46], ['DM', 50, 40], ['CM', 74, 46], ['AM', 34, 67], ['AM', 66, 67], ['ST', 50, 86]],
+  '4-2-4': [['GK', 50, 3], ['LB', 14, 26], ['CB', 37, 20], ['CB', 63, 20], ['RB', 86, 26], ['CM', 38, 46], ['CM', 62, 46], ['LW', 15, 74], ['ST', 38, 84], ['ST', 62, 84], ['RW', 85, 74]],
+  '4-3-3 Attack': [['GK', 50, 3], ['LB', 14, 26], ['CB', 37, 20], ['CB', 63, 20], ['RB', 86, 26], ['CM', 30, 48], ['CM', 70, 48], ['AM', 50, 60], ['LW', 17, 78], ['ST', 50, 86], ['RW', 83, 78]],
+  '3-4-2-1': [['GK', 50, 3], ['CB', 27, 22], ['CB', 50, 21], ['CB', 73, 22], ['LWB', 11, 50], ['CM', 38, 46], ['CM', 62, 46], ['RWB', 89, 50], ['AM', 35, 68], ['AM', 65, 68], ['ST', 50, 86]],
+  '3-4-1-2': [['GK', 50, 3], ['CB', 27, 22], ['CB', 50, 21], ['CB', 73, 22], ['LWB', 11, 50], ['CM', 38, 46], ['CM', 62, 46], ['RWB', 89, 50], ['AM', 50, 64], ['ST', 38, 84], ['ST', 62, 84]],
+  '5-4-1': [['GK', 50, 3], ['LWB', 10, 32], ['CB', 30, 20], ['CB', 50, 20], ['CB', 70, 20], ['RWB', 90, 32], ['LM', 16, 56], ['CM', 38, 50], ['CM', 62, 50], ['RM', 84, 56], ['ST', 50, 82]],
+  '4-3-1-2': [['GK', 50, 3], ['LB', 14, 26], ['CB', 37, 20], ['CB', 63, 20], ['RB', 86, 26], ['CM', 28, 46], ['DM', 50, 38], ['CM', 72, 46], ['AM', 50, 63], ['ST', 38, 83], ['ST', 62, 83]],
 };
 const PC = { GK: [0, 0], CB: [0, 1], LB: [-1, 1.2], RB: [1, 1.2], LWB: [-1, 2], RWB: [1, 2], DM: [0, 2], CM: [0, 2.6], LM: [-1, 2.8], RM: [1, 2.8], AM: [0, 3.4], LW: [-1, 3.8], RW: [1, 3.8], ST: [0, 4.4] };
 function posPen(a, b) {
@@ -862,24 +870,52 @@ const PASS_B = { GK: 28, CB: 55, LB: 48, RB: 48, LWB: 46, RWB: 46, DM: 66, CM: 6
 const DRIB_F = { LW: 1.4, RW: 1.4, LM: 1.1, RM: 1.1, AM: 1.0, ST: 0.75, CM: 0.5, LWB: 0.6, RWB: 0.6, LB: 0.45, RB: 0.45, DM: 0.3, CB: 0.1, GK: 0 };
 const TACK_F = { DM: 1.35, CB: 1.0, LB: 1.1, RB: 1.1, LWB: 1.0, RWB: 1.0, CM: 0.9, LM: 0.6, RM: 0.6, AM: 0.35, LW: 0.3, RW: 0.3, ST: 0.2, GK: 0 };
 
+// player instructions: each one is only offered to the positions in p
+const ROLE = { GK: 'GK', CB: 'CB', LB: 'FB', RB: 'FB', LWB: 'WB', RWB: 'WB', DM: 'DM', CM: 'CM', LM: 'WM', RM: 'WM', AM: 'AM', LW: 'W', RW: 'W', ST: 'ST' };
 const INSTR = {
-  cutin: { g: ['ATT'], lbl: 'Cut inside', up: 'More shots and goals for him', down: 'Less width, fewer crosses', att: 0.4, wide: -1, shoot: 1.6, create: 0.85 },
-  wide: { g: ['ATT', 'MID'], lbl: 'Stay wide', up: 'Stretches the defence, more crosses and assists', down: 'Fewer shots for him', wide: 1, shoot: 0.7, create: 1.35 },
-  forward: { g: ['ATT'], lbl: 'Stay forward', up: 'Fresher legs, deadly on the counter', down: 'No defensive help, so the team concedes more', att: 0.6, def: -0.7, fat: 0.75 },
-  comeshort: { g: ['ATT'], lbl: 'Come short', up: 'Links play, more key passes', down: 'Fewer shots, less threat in behind', mid: 0.5, shoot: 0.7, create: 1.4 },
-  pressfront: { g: ['ATT', 'MID'], lbl: 'Press from the front', up: 'Team press works much better', down: 'Tires much faster', press: 0.3, def: 0.25, fat: 1.35 },
-  getforward: { g: ['MID'], lbl: 'Get forward', up: 'Late runs into the box, more goals', down: 'Leaves gaps behind him', att: 0.5, def: -0.5, shoot: 1.5 },
-  holdpos: { g: ['MID'], lbl: 'Hold position', up: 'Protects the back line', down: 'Less support in attack', def: 0.6, att: -0.4, shoot: 0.6 },
-  playmaker: { g: ['MID'], lbl: 'Playmaker', up: 'Team keeps the ball, more key passes', down: 'Fewer tackles, opponents target him', mid: 0.6, create: 1.5, def: -0.3 },
-  boxtobox: { g: ['MID'], lbl: 'Box-to-box', up: 'Helps in both boxes', down: 'Tires very quickly', att: 0.3, def: 0.3, fat: 1.4 },
-  overlap: { g: ['DEF'], wideOnly: true, lbl: 'Overlap', up: 'Extra width and crosses', down: 'Leaves space behind him', wide: 1, create: 1.6, att: 0.2, def: -0.5, fat: 1.15 },
-  stayback: { g: ['DEF'], lbl: 'Stay back', up: 'Rock solid defensively', down: 'Adds nothing going forward', def: 0.5, create: 0.5, att: -0.2 },
-  ballplay: { g: ['DEF'], lbl: 'Ball-playing', up: 'Better build-up and possession', down: 'Risky: the odd costly error', mid: 0.5, err: 0.05 },
-  mark: { g: ['DEF', 'MID'], lbl: 'Man-mark', up: 'Shuts down their best attacker', down: 'Tires faster, gets dragged out', def: 0.5, fat: 1.2, mid: -0.2 },
-  sweeper: { g: ['GK'], lbl: 'Sweeper keeper', up: 'Covers a high line against fast forwards', down: 'Sometimes caught out of his goal', cover: 1, err: 0.03 },
-  online: { g: ['GK'], lbl: 'Stay on line', up: 'Better at stopping shots', down: 'A high line becomes riskier', gk: 1.5, cover: -1 },
+  // goalkeepers
+  sweeper: { p: ['GK'], lbl: 'Sweeper keeper', up: 'Covers a high line against fast forwards', down: 'Sometimes caught out of his goal', cover: 1, err: 0.03 },
+  online: { p: ['GK'], lbl: 'Stay on line', up: 'Better at stopping shots', down: 'A high line becomes riskier', gk: 1.5, cover: -1 },
+  distribute: { p: ['GK'], lbl: 'Quick distribution', up: 'Starts counters, team keeps the ball better', down: 'The odd costly giveaway', mid: 0.35, att: 0.15, err: 0.02 },
+  // centre-backs
+  stayback: { p: ['CB', 'FB', 'WB'], lbl: 'Stay back', up: 'Rock solid defensively', down: 'Adds nothing going forward', def: 0.5, create: 0.5, att: -0.2 },
+  ballplay: { p: ['CB'], lbl: 'Ball-playing defender', up: 'Better build-up and possession', down: 'Risky: the odd costly error', mid: 0.5, err: 0.05 },
+  stepup: { p: ['CB'], lbl: 'Step up aggressively', up: 'Wins the ball higher, helps the press', down: 'Can be turned by quick forwards', def: 0.2, press: 0.15, err: 0.03 },
+  setpiece: { p: ['CB'], lbl: 'Attack set pieces', up: 'Big threat at corners and free kicks', down: 'Slow to get back into shape', shoot: 1.8, att: 0.15, def: -0.15 },
+  mark: { p: ['CB', 'FB', 'DM', 'CM'], lbl: 'Man-mark', up: 'Shuts down their best attacker', down: 'Tires faster, gets dragged out', def: 0.5, fat: 1.2, mid: -0.2 },
+  // full-backs and wing-backs
+  overlap: { p: ['FB'], lbl: 'Overlap', up: 'Extra width and crosses', down: 'Leaves space behind him', wide: 1, create: 1.6, att: 0.2, def: -0.5, fat: 1.15 },
+  invertfb: { p: ['FB'], lbl: 'Inverted full-back', up: 'Extra body in midfield, better possession', down: 'Less width going forward', mid: 0.5, wide: -0.6, create: 0.9, def: 0.1 },
+  wingback: { p: ['WB'], lbl: 'Bomb forward', up: 'Constant width and crosses', down: 'Huge gaps behind, tires fast', wide: 1.3, create: 1.7, att: 0.35, def: -0.7, fat: 1.3 },
+  fifthdef: { p: ['WB'], lbl: 'Tuck in as 5th defender', up: 'Very hard to break down', down: 'Almost no width', def: 0.7, att: -0.35, wide: -0.5, create: 0.6 },
+  // defensive midfield
+  holdpos: { p: ['DM', 'CM'], lbl: 'Hold position', up: 'Protects the back line', down: 'Less support in attack', def: 0.6, att: -0.4, shoot: 0.6 },
+  destroyer: { p: ['DM'], lbl: 'Destroyer', up: 'Breaks up play, wins the ball back', down: 'Loose on the ball, picks up cards', def: 0.55, mid: -0.2, fat: 1.15 },
+  regista: { p: ['DM'], lbl: 'Deep-lying playmaker', up: 'Dictates tempo from deep, more key passes', down: 'Can be pressed, shields the defence less', mid: 0.55, create: 1.4, def: -0.25 },
+  halfback: { p: ['DM'], lbl: 'Drop between the CBs', up: 'A back three in possession, very secure', down: 'Midfield gets thinner', def: 0.6, mid: -0.35 },
+  // central midfield
+  getforward: { p: ['CM'], lbl: 'Get forward', up: 'Late runs into the box, more goals', down: 'Leaves gaps behind him', att: 0.5, def: -0.5, shoot: 1.5 },
+  playmaker: { p: ['CM', 'AM'], lbl: 'Playmaker', up: 'Team keeps the ball, more key passes', down: 'Fewer tackles, opponents target him', mid: 0.6, create: 1.5, def: -0.3 },
+  boxtobox: { p: ['CM'], lbl: 'Box-to-box', up: 'Helps in both boxes', down: 'Tires very quickly', att: 0.3, def: 0.3, fat: 1.4 },
+  mezzala: { p: ['CM'], lbl: 'Mezzala (drift wide)', up: 'Overloads the half-spaces, more chances', down: 'Gaps in central midfield', att: 0.35, wide: 0.5, create: 1.25, def: -0.35 },
+  // wide midfielders and wingers
+  wide: { p: ['WM', 'W'], lbl: 'Stay wide', up: 'Stretches the defence, more crosses and assists', down: 'Fewer shots for him', wide: 1, shoot: 0.7, create: 1.35 },
+  cutin: { p: ['WM', 'W'], lbl: 'Cut inside', up: 'More shots and goals for him', down: 'Less width, fewer crosses', att: 0.4, wide: -1, shoot: 1.6, create: 0.85 },
+  trackback: { p: ['WM', 'W'], lbl: 'Track back', up: 'Doubles up on their winger', down: 'Less threat going forward', def: 0.4, att: -0.25, fat: 1.15, shoot: 0.8 },
+  forward: { p: ['W', 'AM'], lbl: 'Stay forward', up: 'Fresher legs, deadly on the counter', down: 'No defensive help, so the team concedes more', att: 0.6, def: -0.7, fat: 0.75 },
+  // attacking midfield
+  shadow: { p: ['AM'], lbl: 'Shadow striker', up: 'Arrives in the box, more goals', down: 'Less link play', att: 0.45, shoot: 1.7, create: 0.8, def: -0.15 },
+  freerole: { p: ['AM', 'W'], lbl: 'Free role', up: 'Pops up everywhere and creates magic', down: 'The shape suffers without the ball', create: 1.6, att: 0.3, mid: 0.2, def: -0.4 },
+  // strikers
+  poacher: { p: ['ST'], lbl: 'Poacher', up: 'Lives in the box, more goals', down: 'No link-up play', shoot: 1.6, att: 0.3, create: 0.6, mid: -0.3 },
+  comeshort: { p: ['ST'], lbl: 'False nine (drop deep)', up: 'Links play, more key passes', down: 'Fewer shots, less threat in behind', mid: 0.5, shoot: 0.7, create: 1.4 },
+  targetman: { p: ['ST'], lbl: 'Target man', up: 'Wins headers and holds it up for runners', down: 'Attacks are slower', att: 0.2, mid: 0.3, create: 1.2, shoot: 0.95 },
+  inbehind: { p: ['ST', 'W'], lbl: 'Run in behind', up: 'Stretches the defence, deadly with pace', down: 'Isolated if the passes do not come', att: 0.45, shoot: 1.2, mid: -0.25 },
+  // anyone further forward
+  pressfront: { p: ['ST', 'W', 'AM', 'WM', 'CM'], lbl: 'Press from the front', up: 'Team press works much better', down: 'Tires much faster', press: 0.3, def: 0.25, fat: 1.35 },
 };
-function instrFor(t, id, slot) { const k = t.instr && t.instr[id]; const d = k && INSTR[k]; if (!d) return null; if (!d.g.includes(SLOT_GROUP(slot))) return null; return d; }
+const instrOK = (d, slot) => !!d && d.p.includes(ROLE[slot]);
+function instrFor(t, id, slot) { const k = t.instr && t.instr[id]; const d = k && INSTR[k]; return instrOK(d, slot) ? d : null; }
 function sideProfile(L, s) {
   const sd = L.sides[s]; const t = sd.t;
   const on = sd.on.filter(x => x.to === null);
@@ -2156,7 +2192,7 @@ function vTactics() {
        ${lazyF.length >= 2 ? `<p class="warn">${lazyF.join(', ')} don't press. You'll score more, but you'll concede a lot more too.</p>` : lazyF.length === 1 ? `<p class="fine">${lazyF[0]} doesn't track back. One is fine; two or more makes games wide open.</p>` : ''}
        ${ch.vol ? `<p class="warn">${ch.vol} hothead${ch.vol > 1 ? 's' : ''} in the XI: low IQ and volatile, which hurts chemistry and earns more cards.</p>` : ''}
      </div>
-     <div class="card"><h3>Player instructions</h3>${slots.map((s, i) => { const id = u.lineup[i]; if (id === null) return ''; const g = SLOT_GROUP(s[0]); const opts = Object.entries(INSTR).filter(([k, d]) => d.g.includes(g) && (!d.wideOnly || ['LB', 'RB', 'LWB', 'RWB'].includes(s[0]))); const cur = (u.instr || {})[id]; const d = cur && INSTR[cur]; return `<div class="instr">${posChip(s[0])}<span class="iname">${esc(DB[id].short)}</span><select onchange="setInstr(${id},this.value)"><option value="">Default</option>${opts.map(([k, o]) => `<option value="${k}" ${cur === k ? 'selected' : ''}>${o.lbl}</option>`).join('')}</select>${d && d.g.includes(g) ? `<div class="idesc"><span class="okc">▲ ${d.up}</span><span class="warn">▼ ${d.down}</span></div>` : ''}</div>`; }).join('')}</div>
+     <div class="card"><h3>Player instructions</h3>${slots.map((s, i) => { const id = u.lineup[i]; if (id === null) return ''; const g = SLOT_GROUP(s[0]); const opts = Object.entries(INSTR).filter(([k, d]) => instrOK(d, s[0])); const cur = (u.instr || {})[id]; const d = cur && INSTR[cur]; return `<div class="instr">${posChip(s[0])}<span class="iname">${esc(DB[id].short)}</span><select onchange="setInstr(${id},this.value)"><option value="">Default</option>${opts.map(([k, o]) => `<option value="${k}" ${cur === k ? 'selected' : ''}>${o.lbl}</option>`).join('')}</select>${instrOK(d, s[0]) ? `<div class="idesc"><span class="okc">▲ ${d.up}</span><span class="warn">▼ ${d.down}</span></div>` : ''}</div>`; }).join('')}</div>
      <div class="card"><h3>Instructions</h3><div class="tacgrid">${['ment', 'press', 'tempo', 'width', 'line', 'pass', 'train', 'talk'].map(opt).join('')}
        <label>Captain<select onchange="me().captain=+this.value;save();render()">${u.squad.map(id => `<option value="${id}" ${u.captain === id ? 'selected' : ''}>${esc(DB[id].name)}</option>`).join('')}</select></label>
        <label>Penalties<select onchange="me().pk=+this.value;save();render()">${u.squad.filter(id => P[id].pos !== 'GK').map(id => `<option value="${id}" ${u.pk === id ? 'selected' : ''}>${esc(DB[id].name)}</option>`).join('')}</select></label>
