@@ -371,6 +371,10 @@ hr.sep{border:none;border-top:1px solid var(--line);margin:16px 0}
  #toasts{top:auto;bottom:14px}
  .tab-home .acts{display:none}
 }
+.pact{margin:0 0 16px;padding-bottom:14px;border-bottom:1px solid var(--line2)}.pact .row{flex-wrap:wrap;gap:6px}.pact .dealbox{margin:0}
+@media(max-width:820px){.pact .btn{padding:8px 10px;font-size:12px}}
+.home>*,.hcol,.hcol>*,.grow,.grid2>*,.grid3>*{min-width:0}
+@media(max-width:820px){.bcol{min-width:190px}.hero-po .row.center{position:sticky;left:0}.bracket{-webkit-overflow-scrolling:touch}}
 </style></head>
 <body><div id="app"></div><div id="modal"></div><div id="toasts"></div>
 <script>
@@ -1737,7 +1741,7 @@ function save() { if (U.live) return; try { localStorage.setItem(SAVE_KEY, JSON.
 function load() { try { const s = localStorage.getItem(SAVE_KEY); if (s) { S = JSON.parse(s); P = S.players; return true; } } catch (e) { } return false; }
 const hasSave = () => { try { return !!localStorage.getItem(SAVE_KEY); } catch (e) { return false; } };
 const noEmo = s => String(s).replace(/(?:[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{23E9}-\u{23FA}]\u{FE0F}?)\s?/gu, '').trim();
-function toast(msg, ok) { msg = noEmo(msg); const d = document.createElement('div'); d.className = 'toast ' + (ok === false ? 'bad' : ''); d.innerHTML = msg; $('#toasts').appendChild(d); setTimeout(() => d.remove(), 4500); }
+function toast(msg, ok) { msg = noEmo(msg); const d = document.createElement('div'); d.className = 'toast ' + (ok === false ? 'bad' : ''); d.innerHTML = msg; const box = $('#toasts'); box.appendChild(d); while (box.children.length > 3) box.firstChild.remove(); setTimeout(() => d.remove(), 4500); }
 function res(r) { if (!r) return; toast(r.msg, r.ok); save(); render(); if (S && S.breaking && S.breaking.length && $('#modal').style.display !== 'block') { U.scenAfter = true; showBreaking(); } }
 function theme() { const t = S && me(); const r = document.documentElement; if (t) { r.style.setProperty('--c1', t.c1); r.style.setProperty('--c2', t.c2); } }
 
@@ -2416,6 +2420,7 @@ function openPlayer(id) {
   }
   openModal(`<div class="phead k-${k2(p.ovr)[1]}"><div class="k-tier">${k2(p.ovr)[2]}</div><div class="ovrbig">${p.ovr}<small>${p.pos}</small></div><div class="grow"><h2>${esc(d.name)} <span class="yr big">'${String(p.y).slice(2)}</span></h2><small>${d.nat} · age ${p.age} · ${p.y}/${String(p.y + 1).slice(2)} version (${esc(p.rclub)}) · ${t ? t.name : p.team === -2 ? 'Retired' : p.team < -2 ? 'Draft pool' : 'Free agent'}</small>
     <div class="row pmeta"><span class="pill">IQ ${p.iq}</span><span class="pill">${p.wr === 'Low' ? '' : p.wr === 'High' ? '' : ''} Work rate: ${p.wr}</span><span class="pill">${condA(p)} Morale ${Math.round(p.mor)}</span><span class="pill">${fm(p.val)}</span>${p.req ? '<span class="pill badb">Wants out</span>' : ''}</div></div>${t ? crest(t, 'xl') : ''}</div>
+   ${act ? `<div class="pact">${act}</div>` : ''}
    <div class="grid2">
     <div><h3>Attributes</h3>${hexRadar(p.attrs, names)}${p.attrs.map((v, i) => `<div class="attr"><span>${names[i]}</span><span class="abar"><i style="width:${v}%;background:${v >= 85 ? 'var(--ok)' : v >= 70 ? 'var(--gold)' : 'var(--mut)'}"></i></span><b>${v}</b></div>`).join('')}
      <div class="tags">${[...d.tags].map(c => TAG_NAMES[c]).filter(Boolean).map(x => `<span class="pill">${x}</span>`).join('')}</div></div>
@@ -2426,8 +2431,7 @@ function openPlayer(id) {
    <h3>Real career arc</h3><div class="arc">${realYears.map(y => { const r = rateAt(d, y); return `<div class="${y === p.y ? 'cur' : ''} ${y > 2026 ? 'proj' : ''}" title="${y}: ${y <= 2026 ? realClubAt(d, y) : 'projected'}"><b>${r}</b><i style="height:${(r - 50) * 2}px"></i><small>${String(y).slice(2)}</small></div>`; }).join('')}</div>
    <p class="fine">${d.clubs.map(c => `${esc(c[0])} (${c[1]})`).join(' → ')}. Each new season moves him one real year along this curve. When he retires, a new random version of him re-enters the free-agent pool.</p>
    ${p.career.filter(c => c.app).length ? `<h3>Super League career</h3><table class="tbl"><thead><tr><th>Season</th><th>Version</th><th>Club</th><th>Apps</th><th>Goals</th><th>Assists</th><th>Avg</th></tr></thead><tbody>${p.career.filter(c => c.app).map(c => `<tr><td>${c.season}</td><td>'${String(c.y).slice(2)} (${c.ovr})</td><td>${c.team >= 0 ? S.teams[c.team].name : '–'}</td><td>${c.app}</td><td>${c.g}</td><td>${c.a}</td><td>${c.rt}</td></tr>`).join('')}</tbody></table>` : ''}
-   <details class="editr"><summary>Edit his rating</summary><div class="row"><input id="edov" type="number" min="40" max="99" value="${p.ovr}"><button class="btn sm" onclick="editRating(${id},'year')">This version only ('${String(p.y).slice(2)})</button><button class="btn sm" onclick="editRating(${id},'career')">Shift his whole career</button></div><p class="fine">Disagree with a rating? Change it here. "Shift his whole career" moves every year of his curve by the same amount.</p></details>
-   ${act}`, 'wide');
+   <details class="editr"><summary>Edit his rating</summary><div class="row"><input id="edov" type="number" min="40" max="99" value="${p.ovr}"><button class="btn sm" onclick="editRating(${id},'year')">This version only ('${String(p.y).slice(2)})</button><button class="btn sm" onclick="editRating(${id},'career')">Shift his whole career</button></div><p class="fine">Disagree with a rating? Change it here. "Shift his whole career" moves every year of his curve by the same amount.</p></details>`, 'wide');
 }
 function doBid(id, amt) { const a = amt !== undefined ? amt : +document.getElementById('bidamt').value; const r = userBid(id, a); toast(r.msg, r.ok); save(); if (r.ok) { closeModal(); render(); } else openPlayer(id); }
 function getSellOffers(id) {

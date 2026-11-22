@@ -367,3 +367,7 @@ hr.sep{border:none;border-top:1px solid var(--line);margin:16px 0}
  #toasts{top:auto;bottom:14px}
  .tab-home .acts{display:none}
 }
+.pact{margin:0 0 16px;padding-bottom:14px;border-bottom:1px solid var(--line2)}.pact .row{flex-wrap:wrap;gap:6px}.pact .dealbox{margin:0}
+@media(max-width:820px){.pact .btn{padding:8px 10px;font-size:12px}}
+.home>*,.hcol,.hcol>*,.grow,.grid2>*,.grid3>*{min-width:0}
+@media(max-width:820px){.bcol{min-width:190px}.hero-po .row.center{position:sticky;left:0}.bracket{-webkit-overflow-scrolling:touch}}
