@@ -1155,6 +1155,7 @@ function seasonAwards() {
   // legacy
   ranked.slice(0, 3).forEach(r => leg(r.id).top3++); leg(ranked[0].id).bdo++; leg(gb.id).gb++;
   tos.forEach(x => leg(x.id).tots++);
+  [['pm', pm], ['gg', gg], ['yp', yp], ['def', df], ['dr', dr]].forEach(([k, pl]) => { if (pl) { const L = leg(pl.id); L[k] = (L[k] || 0) + 1; } });
   S.players.forEach(p => { if (p.team >= 0 && p.st.app) { const L = leg(p.id); L.g += p.st.g; L.a += p.st.a; L.app += p.st.app; L.rt += p.st.rt; L.seasons++; if (p.team === po.champion) L.titles++; if (p.team === S.shield) L.shields++; } });
   const cl = id => S.legacy.club[id] || (S.legacy.club[id] = { titles: 0, shields: 0, finals: 0 });
   cl(po.champion).titles++; cl(S.shield).shields++; cl(loser).finals++;

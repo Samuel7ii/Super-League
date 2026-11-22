@@ -142,7 +142,7 @@ function advance(n) {
   save(); render();
   if (last && played === 1) { const isH = last.h === S.userTeam; const gf = isH ? last.hg : last.ag, ga = isH ? last.ag : last.hg; toast(`${gf > ga ? 'Win' : gf === ga ? 'Draw' : 'Loss'} ${gf}-${ga} vs ${S.teams[isH ? last.a : last.h].name}`); }
   else if (played > 1) toast(`Simmed ${played} rounds.`);
-  if (S.phase === 'awards') { U.tab = 'awards'; render(); }
+  if (S.phase === 'awards') { U.tab = 'awards'; render(); startCeremony(); }
   if (S.phase !== 'awards') { U.scenAfter = true; afterAction(); }
 }
 function scenCard(modal) { const sc = S.scenario; if (!sc) return ''; return `<div class="${modal ? '' : 'card '}scen"><small class="kicker">Something's happened · GW${sc.gw}</small><h2>${noEmo(sc.title)}</h2><p>${sc.text}</p><div class="row">${sc.choices.map(([k, l], i) => `<button class="btn ${i === 0 ? 'lime' : ''}" onclick="U.seenScen='${sc.id}';closeModal();res(resolveScenario('${k}'))">${l}</button>`).join('')}</div>${modal && sc.choices.length > 1 ? '<p class="fine">If you don\'t decide before the next match, your assistant will pick the first option.</p>' : ''}</div>`; }
@@ -512,7 +512,7 @@ function finishLive() {
   commitRound(R, lv.Ms); U.live = null; save(); closeModal(); render(); U.scenAfter = true;
   if (!wasPO) openReport(gwBefore, S.results[gwBefore].findIndex(m => m.h === S.userTeam || m.a === S.userTeam));
   else if (ti >= 0) { const tie = S.playoffs.rounds[rIdx][ti]; showReport(tie.legs[tie.legs.length - 1], S.playoffs.names[rIdx]); }
-  if (S.phase === 'awards') { U.tab = 'awards'; render(); }
+  if (S.phase === 'awards') { U.tab = 'awards'; render(); startCeremony(); }
 }
 
 // ---------- fixtures & reports ----------
@@ -575,21 +575,91 @@ function vStats() {
 }
 
 // ---------- awards ----------
+// ---------- awards ----------
+let _tg = 0;
+function trophy(kind, size) {
+  const id = 'tg' + (++_tg); const sz = size || 56;
+  const g = `<defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff4c2"/><stop offset=".45" stop-color="#f2c14e"/><stop offset="1" stop-color="#8a5a00"/></linearGradient></defs>`;
+  const f = `fill="url(#${id})" stroke="#5c3d00" stroke-width="1.2"`;
+  const shapes = {
+    ballon: `<circle cx="32" cy="26" r="20" ${f}/><path d="M32 6v40M12 26h40M18 12c8 6 20 6 28 0M18 40c8-6 20-6 28 0" fill="none" stroke="#7a5200" stroke-width="1.4" opacity=".7"/><path d="M24 48h16l3 10H21z" ${f}/>`,
+    cup: `<path d="M18 8h28v12c0 12-6 20-14 20S18 32 18 20z" ${f}/><path d="M18 12H8c0 10 5 14 11 14M46 12h10c0 10-5 14-11 14" fill="none" stroke="url(#${id})" stroke-width="4"/><path d="M28 40h8v8h-8z" ${f}/><path d="M20 48h24v8H20z" ${f}/>`,
+    boot: `<path d="M14 10h14v22c6 0 14 2 22 6 6 3 6 12-2 12H14c-4 0-6-3-6-6V20c0-6 2-10 6-10z" ${f}/><path d="M12 50h40" stroke="#5c3d00" stroke-width="2"/><circle cx="20" cy="54" r="2.5" ${f}/><circle cx="34" cy="54" r="2.5" ${f}/><circle cx="46" cy="54" r="2.5" ${f}/>`,
+    glove: `<path d="M16 30V14a4 4 0 0 1 8 0v12V10a4 4 0 0 1 8 0v16V12a4 4 0 0 1 8 0v16-8a4 4 0 0 1 8 0v18c0 10-7 18-16 18h-4c-7 0-12-6-12-12z" ${f}/><path d="M18 54h28v6H18z" ${f}/>`,
+    star: `<path d="M32 4l7.6 16.4 17.9 2-13.3 12.2 3.7 17.6L32 43.2 16.1 52.2l3.7-17.6L6.5 22.4l17.9-2z" ${f}/><path d="M24 54h16v6H24z" ${f}/>`,
+    shield: `<path d="M32 4l22 8v16c0 16-10 26-22 32C20 54 10 44 10 28V12z" ${f}/><path d="M32 14l12 5v10c0 9-5 15-12 19-7-4-12-10-12-19V19z" fill="none" stroke="#7a5200" stroke-width="1.6" opacity=".7"/>`,
+    pm: `<path d="M8 44c12-20 26-26 40-24" fill="none" stroke="url(#${id})" stroke-width="5" stroke-linecap="round"/><path d="M42 10l14 10-14 10z" ${f}/><circle cx="12" cy="46" r="7" ${f}/><path d="M22 54h20v6H22z" ${f}/>`,
+    boots2: `<path d="M10 36c8-14 18-22 30-24l12 4-6 10c-8 2-14 8-18 16z" ${f}/><circle cx="46" cy="46" r="9" ${f}/><path d="M40 44l12 4M46 37v18" stroke="#7a5200" stroke-width="1.2" opacity=".7"/>`,
+    coach: `<path d="M16 8h32v48H16z" ${f}/><path d="M24 4h16v8H24z" ${f}/><path d="M22 22h20M22 30h20M22 38h12" stroke="#5c3d00" stroke-width="2"/>`,
+  };
+  return `<svg class="trophy" viewBox="0 0 64 64" width="${sz}" height="${sz}">${g}${shapes[kind] || shapes.cup}</svg>`;
+}
+const AWARD_DEFS = [
+  ['gb', 'Golden Boot', 'boot', p => `${p.st.g} goals`],
+  ['pm', 'Playmaker of the Year', 'pm', p => `${p.st.a} assists`],
+  ['gg', 'Golden Glove', 'glove', p => `${p.st.cs} clean sheets`],
+  ['def', 'Defender of the Year', 'shield', p => `${p.st.tk + p.st.int} tackles + interceptions`],
+  ['yp', 'Young Player of the Year', 'star', p => `${p.st.g} goals, ${p.st.a} assists · age ${p.age}`],
+  ['dr', 'Dribbler of the Year', 'boots2', p => `${p.st.drs} successful dribbles`],
+];
+function honours(id) {
+  const L = S.legacy.p[id]; if (!L) return '';
+  const h = [[L.bdo, 'Ballon d\'Or', 'ballon'], [L.titles, 'Champion', 'cup'], [L.gb, 'Golden Boot', 'boot'], [L.pm, 'Playmaker', 'pm'], [L.gg, 'Golden Glove', 'glove'], [L.def, 'Defender of the Year', 'shield'], [L.yp, 'Young Player', 'star'], [L.tots, 'Team of the Season', 'star']].filter(x => x[0]);
+  return h.length ? `<div class="honours">${h.map(([n, l, k]) => `<span class="hon">${trophy(k, 18)}${n > 1 ? n + '× ' : ''}${l}</span>`).join('')}</div>` : '';
+}
 function vAwards() {
   const tw = S.totw; const gi = U.totwGW === null || U.totwGW >= tw.length ? tw.length - 1 : U.totwGW; const A = S.awards;
-  const aw = (title, id, extra) => id === null || id === undefined ? '' : `<div class="award"><small>${title}</small><div>${pn(P[id])} ${crest(S.teams[P[id].team], 'sm')}</div><span class="muted">${extra(P[id])}</span></div>`;
-  return `${A ? `<div class="card ballon"><div class="bd-head"><div><small class="kicker">Season ${S.season}</small><h2>Ballon d'Or</h2></div>${futCard(P[A.ballon[0].id])}</div>
-    <div class="bwin">${pn(P[A.ballon[0].id])} <span class="muted">· ${S.teams[P[A.ballon[0].id].team].name} · ${P[A.ballon[0].id].st.g} goals, ${P[A.ballon[0].id].st.a} assists</span></div>
-    <ol class="blist">${A.ballon.map(r => `<li class="${P[r.id].team === S.userTeam ? 'mine' : ''}"><span>${pn(P[r.id], 'short')} ${crest(S.teams[P[r.id].team], 'sm')} <small class="muted">${P[r.id].st.g}G ${P[r.id].st.a}A</small></span><b>${r.pts}</b></li>`).join('')}</ol></div>
-   <div class="grid3"><div class="card"><h3>Season awards</h3>
-     <div class="award"><small>Super League champions</small><div>${crest(S.teams[S.playoffs.champion], 'sm')} <b>${S.teams[S.playoffs.champion].name}</b></div></div>
-     <div class="award"><small>Shield (best regular season)</small><div>${crest(S.teams[S.shield], 'sm')} <b>${S.teams[S.shield].name}</b></div></div>
-     ${aw('<i class="asst">A</i> Golden Boot', A.gb, p => `${p.st.g} goals`)}${aw('Playmaker', A.pm, p => `${p.st.a} assists`)}${aw('Best goalkeeper', A.gg, p => `${p.st.cs} clean sheets`)}${aw('Young Player (≤21)', A.yp, p => `${p.st.g} goals, ${p.st.a} assists`)}${aw('Dribbler of the Year', A.dr, p => `${p.st.drs} dribbles`)}${aw('Defender of the Year', A.def, p => `${p.st.tk + p.st.int} tackles + interceptions`)}
-     ${A.coy ? `<div class="award"><small>Coach of the Year</small><div><b>${S.coaches[A.coy.coach].name}</b> ${crest(S.teams[A.coy.team], 'sm')}</div></div>` : ''}</div>
-    <div class="card span2"><h3>Team of the Season</h3>${pitchXI(A.tos)}</div></div>` : ''}
+  let top = '';
+  if (A) {
+    const b = A.ballon; const pod = [b[1], b[0], b[2]].filter(Boolean);
+    top = `<div class="card gala"><div class="gala-h"><small>Season ${S.season} · Super League Awards</small><h2>Ballon d'Or</h2><button class="btn sm gold" onclick="startCeremony(true)">▶ Replay the ceremony</button></div>
+      <div class="podium">${pod.map(r => { const pl = P[r.id]; const rank = b.indexOf(r) + 1; return `<div class="pod p${rank}" onclick="openPlayer(${r.id})">${rank === 1 ? trophy('ballon', 64) : `<div class="medal m${rank}">${rank}</div>`}${futCard(pl)}<div class="pod-b"><b>${rank === 1 ? 'Winner' : rank === 2 ? '2nd place' : '3rd place'}</b><span>${r.pts} pts</span></div></div>`; }).join('')}</div>
+      <details class="bvotes"><summary>Full voting (top ${b.length})</summary><ol class="blist">${b.map(r => `<li class="${P[r.id].team === S.userTeam ? 'mine' : ''}"><span>${pn(P[r.id], 'short')} ${crest(S.teams[P[r.id].team], 'sm')} <small class="muted">${P[r.id].st.g}G ${P[r.id].st.a}A</small></span><b>${r.pts}</b></li>`).join('')}</ol></details></div>
+    <div class="plaques">
+      <div class="plaque champ">${trophy('cup', 54)}<small>Super League Champions</small><div class="pl-w">${crest(S.teams[S.playoffs.champion], 'lg')}<b>${S.teams[S.playoffs.champion].name}</b></div><span>Coach: ${S.coaches[S.teams[S.playoffs.champion].coach] ? S.coaches[S.teams[S.playoffs.champion].coach].name : 'caretaker'}</span></div>
+      <div class="plaque">${trophy('shield', 48)}<small>The Shield · best regular season</small><div class="pl-w">${crest(S.teams[S.shield], 'lg')}<b>${S.teams[S.shield].name}</b></div><span>${S.table[S.shield].pts} points</span></div>
+      ${AWARD_DEFS.map(([k, t, ic, ex]) => A[k] === null || A[k] === undefined ? '' : `<div class="plaque ${P[A[k]].team === S.userTeam ? 'mine' : ''}" onclick="openPlayer(${A[k]})">${trophy(ic, 48)}<small>${t}</small><div class="pl-w">${crest(S.teams[P[A[k]].team], 'sm')}<b>${esc(DB[A[k]].name)}</b> ${yrTag(P[A[k]].y)}</div><span>${ex(P[A[k]])}</span></div>`).join('')}
+      ${A.coy ? `<div class="plaque">${trophy('coach', 48)}<small>Coach of the Year</small><div class="pl-w">${crest(S.teams[A.coy.team], 'sm')}<b>${S.coaches[A.coy.coach].name}</b></div><span>${S.teams[A.coy.team].name}</span></div>` : ''}
+    </div>
+    <div class="card tots"><h3>Team of the Season</h3>${pitchXI(A.tos)}</div>`;
+  }
+  return `${top}
   ${tw.length ? `<div class="card"><div class="hrow"><h3>Team of the Week · GW ${tw[gi].gw}</h3><div class="row"><button class="btn sm" ${gi <= 0 ? 'disabled' : ''} onclick="U.totwGW=${gi - 1};render()">◀</button><button class="btn sm" ${gi >= tw.length - 1 ? 'disabled' : ''} onclick="U.totwGW=${gi + 1};render()">▶</button></div></div>${pitchXI(tw[gi].xi)}</div>` : '<div class="card muted">The Team of the Week appears after Gameweek 1.</div>'}
   <div class="card"><h3>Player of the Month</h3><div class="potm">${S.potm.filter(x => x.season === S.season).map(x => `<div class="award"><small>${x.month}</small><div>${pn(P[x.id])} ${crest(S.teams[x.team], 'sm')}</div><span class="muted">${x.g} goals, ${x.a} assists</span></div>`).join('') || '<p class="muted">Awarded every 4 gameweeks.</p>'}</div></div>
   ${S.history.length ? historyCard() : ''}`;
+}
+// ---------- awards night ceremony ----------
+function ceremonySteps() {
+  const A = S.awards; if (!A) return [];
+  const st = [{ k: 'intro' }, { k: 'champ' }];
+  AWARD_DEFS.forEach(([k, t, ic, ex]) => { if (A[k] !== null && A[k] !== undefined) st.push({ k: 'award', t, ic, id: A[k], ex }); });
+  if (A.coy) st.push({ k: 'coach' });
+  st.push({ k: 'tots' });
+  if (A.ballon[2]) st.push({ k: 'bdo', r: 3 }); if (A.ballon[1]) st.push({ k: 'bdo', r: 2 }); st.push({ k: 'bdo', r: 1 });
+  return st;
+}
+const statLine = p => p.pos === 'GK' ? `${p.st.cs} clean sheets, ${p.st.sv} saves` : `${p.st.g} goals, ${p.st.a} assists`;
+function startCeremony(force) {
+  if (!S || !S.awards || U.live) return; if (!force && S.cerSeen === S.season) return; $('#toasts').innerHTML = '';
+  S.cerSeen = S.season; save(); U.cer = { i: 0, steps: ceremonySteps() }; showCer();
+}
+function cerNext() { U.cer.i++; if (U.cer.i >= U.cer.steps.length) { U.cer = null; closeModal(); render(); return; } showCer(); }
+function showCer() {
+  const c = U.cer; const x = c.steps[c.i]; const A = S.awards; const last = c.i === c.steps.length - 1;
+  const mine = id => P[id] && P[id].team === S.userTeam;
+  let body = '';
+  if (x.k === 'intro') body = `<div class="cer-intro">${trophy('ballon', 110)}<small>Season ${S.season}</small><h1>The Super League<br>Awards</h1><p>The best of the season, honoured.</p></div>`;
+  else if (x.k === 'champ') { const t = S.teams[S.playoffs.champion]; body = `<small class="cer-k">Super League Champions</small>${trophy('cup', 96)}<div class="cer-club">${crest(t, 'xl')}<h1>${t.name}</h1></div><p class="cer-s">${S.coaches[t.coach] ? 'Coach: ' + S.coaches[t.coach].name + ' · ' : ''}Shield winners: ${S.teams[S.shield].name}</p>${t.user ? '<p class="cer-you">That\'s YOUR club. Champions!</p>' : ''}`; }
+  else if (x.k === 'award') { const p = P[x.id]; body = `<small class="cer-k">${x.t}</small>${trophy(x.ic, 80)}<div class="cer-card">${futCard(p)}</div><h2 class="cer-n">${esc(DB[p.id].name)}</h2><p class="cer-s">${S.teams[p.team].name} · ${x.ex(p)}</p>${mine(x.id) ? '<p class="cer-you">One of yours!</p>' : ''}`; }
+  else if (x.k === 'coach') { const co = S.coaches[A.coy.coach]; body = `<small class="cer-k">Coach of the Year</small>${trophy('coach', 80)}<div class="cer-card">${coachCard(co)}</div><h2 class="cer-n">${esc(co.name)}</h2><p class="cer-s">${S.teams[A.coy.team].name} · beat expectations</p>`; }
+  else if (x.k === 'tots') body = `<small class="cer-k">Team of the Season</small><div class="cer-tots">${pitchXI(A.tos)}</div>`;
+  else if (x.k === 'bdo') { const r = A.ballon[x.r - 1]; const p = P[r.id]; const L = S.legacy.p[r.id];
+    body = x.r === 1
+      ? `<div class="cer-gold"><small class="cer-k">The Ballon d'Or ${S.season === 1 ? '' : '· Season ' + S.season} goes to…</small>${trophy('ballon', 120)}<div class="cer-card big">${futCard(p)}</div><h1 class="cer-n">${esc(DB[p.id].name)}</h1><p class="cer-s">${S.teams[p.team].name} · ${statLine(p)} · ${r.pts} points</p>${L && L.bdo > 1 ? `<p class="cer-you">His ${ord(L.bdo)} Ballon d'Or!</p>` : ''}${mine(r.id) ? '<p class="cer-you">Your player is the best in the world.</p>' : ''}<div class="confetti">${Array.from({ length: 40 }, (_, i) => `<i style="left:${(i * 37) % 100}%;animation-delay:${(i % 10) * 0.25}s;background:${['#f2c14e', '#fff4c2', '#45b4ff', '#e0484f', '#fff'][i % 5]}"></i>`).join('')}</div></div>`
+      : `<small class="cer-k">Ballon d'Or · ${x.r === 3 ? 'Third' : 'Second'} place</small><div class="medal big m${x.r}">${x.r}</div><div class="cer-card">${futCard(p)}</div><h2 class="cer-n">${esc(DB[p.id].name)}</h2><p class="cer-s">${S.teams[p.team].name} · ${r.pts} points</p>`; }
+  const btn = last ? 'Close' : x.k === 'bdo' && x.r === 2 ? 'Reveal the winner ▶' : 'Next ▶';
+  openModal(`<div class="cer s-${x.k}"><div class="cer-spot"></div><div class="cer-in" key="${c.i}">${body}</div>
+    <div class="cer-nav"><span class="cer-dots">${c.steps.map((_, i) => `<i class="${i === c.i ? 'on' : i < c.i ? 'done' : ''}"></i>`).join('')}</span><div class="row">${last ? '' : `<button class="btn ghost sm" onclick="U.cer=null;closeModal();render()">Skip</button>`}<button class="btn gold" onclick="cerNext()">${btn}</button></div></div></div>`, 'cerbox');
 }
 function historyCard() { return `<div class="card"><h3>Hall of Fame</h3><div class="tscroll"><table class="tbl"><thead><tr><th>Season</th><th>Champion</th><th>Shield</th><th>Ballon d'Or</th><th>Golden Boot</th><th>You</th></tr></thead><tbody>${S.history.map(h => `<tr><td>${h.season}</td><td>${crest(S.teams[h.champion], 'sm')} ${S.teams[h.champion].name}</td><td>${S.teams[h.shield].name}</td><td>${esc(DB[h.ballon].name)}</td><td>${esc(DB[h.gb].name)} (${h.gbG})</td><td>${h.userChamp ? 'Champions' : ord(h.userPos) + ' ' + h.userConf}</td></tr>`).join('')}</tbody></table></div></div>`; }
 function pitchXI(xi) {
@@ -716,7 +786,7 @@ function openPlayer(id) {
     }
   }
   openModal(`<div class="phead k-${k2(p.ovr)[1]}"><div class="k-tier">${k2(p.ovr)[2]}</div><div class="ovrbig">${p.ovr}<small>${p.pos}</small></div><div class="grow"><h2>${esc(d.name)} <span class="yr big">'${String(p.y).slice(2)}</span></h2><small>${d.nat} · age ${p.age} · ${p.y}/${String(p.y + 1).slice(2)} version (${esc(p.rclub)}) · ${t ? t.name : p.team === -2 ? 'Retired' : p.team < -2 ? 'Draft pool' : 'Free agent'}</small>
-    <div class="row pmeta"><span class="pill">IQ ${p.iq}</span><span class="pill">${p.wr === 'Low' ? '' : p.wr === 'High' ? '' : ''} Work rate: ${p.wr}</span><span class="pill">${condA(p)} Morale ${Math.round(p.mor)}</span><span class="pill">${fm(p.val)}</span>${p.req ? '<span class="pill badb">Wants out</span>' : ''}</div></div>${t ? crest(t, 'xl') : ''}</div>
+    <div class="row pmeta"><span class="pill">IQ ${p.iq}</span><span class="pill">${p.wr === 'Low' ? '' : p.wr === 'High' ? '' : ''} Work rate: ${p.wr}</span><span class="pill">${condA(p)} Morale ${Math.round(p.mor)}</span><span class="pill">${fm(p.val)}</span>${p.req ? '<span class="pill badb">Wants out</span>' : ''}</div>${honours(id)}</div>${t ? crest(t, 'xl') : ''}</div>
    ${act ? `<div class="pact">${act}</div>` : ''}
    <div class="grid2">
     <div><h3>Attributes</h3>${hexRadar(p.attrs, names)}${p.attrs.map((v, i) => `<div class="attr"><span>${names[i]}</span><span class="abar"><i style="width:${v}%;background:${v >= 85 ? 'var(--ok)' : v >= 70 ? 'var(--gold)' : 'var(--mut)'}"></i></span><b>${v}</b></div>`).join('')}
