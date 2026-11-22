@@ -1,0 +1,833 @@
+Gianluigi Buffon|ITA|GK|78|93|03|23|Parma 95,Juventus 01,PSG 18,Juventus 19,Parma 21|RL|
+Iker Casillas|ESP|GK|81|92|08|19|Real Madrid 99,Porto 15|R|
+Manuel Neuer|GER|GK|86|93|13|26|Schalke 06,Bayern 11|KRL|
+Petr Čech|CZE|GK|82|91|05|19|Rennes 02,Chelsea 04,Arsenal 15|R|
+Edwin van der Sar|NED|GK|70|89|08|11|Ajax 90,Juventus 99,Fulham 01,Man Utd 05|KL|
+Oliver Kahn|GER|GK|69|92|01|08|Bayern 94|R|
+Jan Oblak|SVN|GK|93|91|17|26|Benfica 11,Atlético 14|R|
+Alisson|BRA|GK|92|90|19|26|Internacional 13,Roma 16,Liverpool 18|K|
+Ederson|BRA|GK|93|88|21|26|Benfica 15,Man City 17,Fenerbahçe 25|K|
+Thibaut Courtois|BEL|GK|92|90|22|26|Genk 09,Atlético 11,Chelsea 14,Real Madrid 18|R|
+Marc-André ter Stegen|GER|GK|92|90|19|26|Gladbach 10,Barcelona 14|K|
+Dida|BRA|GK|73|88|03|10|Cruzeiro 94,Corinthians 99,Milan 02||
+Júlio César|BRA|GK|79|88|09|18|Flamengo 97,Inter 05,QPR 12,Toronto 14,Benfica 14|R|
+Víctor Valdés|ESP|GK|82|87|11|17|Barcelona 02,Man Utd 15,Middlesbrough 16|K|
+Hugo Lloris|FRA|GK|86|88|17|25|Nice 05,Lyon 08,Tottenham 12,LAFC 23|R|
+David de Gea|ESP|GK|90|90|17|26|Atlético 09,Man Utd 11,Fiorentina 24|R|
+Fabien Barthez|FRA|GK|71|87|98|06|Monaco 95,Man Utd 00,Marseille 04|K|
+Peter Schmeichel|DEN|GK|63|90|96|03|Man Utd 91,Sporting CP 99,Aston Villa 01,Man City 02|L|
+Francesco Toldo|ITA|GK|71|86|00|10|Fiorentina 93,Inter 01||
+Santiago Cañizares|ESP|GK|69|86|01|08|Real Madrid 94,Valencia 98|R|
+Jens Lehmann|GER|GK|69|86|04|11|Schalke 91,Dortmund 98,Arsenal 03,Stuttgart 08|L|
+Pepe Reina|ESP|GK|82|87|09|22|Villarreal 02,Liverpool 05,Napoli 13,Bayern 14,Napoli 15,Milan 18,Lazio 20|K|
+Samir Handanović|SVN|GK|84|87|15|23|Udinese 07,Inter 12|R|
+Keylor Navas|CRC|GK|86|88|17|24|Levante 11,Real Madrid 14,PSG 19|R|
+Gianluigi Donnarumma|ITA|GK|99|88|23|26|Milan 15,PSG 21,Man City 25|R|
+Mike Maignan|FRA|GK|95|87|22|26|Lille 15,Milan 21|K|
+Wojciech Szczęsny|POL|GK|90|86|19|25|Arsenal 09,Roma 15,Juventus 17,Barcelona 24|R|
+Emiliano Martínez|ARG|GK|92|87|22|26|Arsenal 12,Aston Villa 20|R|
+Yann Sommer|SUI|GK|88|86|21|26|Basel 07,Gladbach 14,Bayern 23,Inter 23|R|
+André Onana|CMR|GK|96|84|22|26|Ajax 16,Inter 22,Man Utd 23|K|
+Diogo Costa|POR|GK|99|85|24|26|Porto 19|R|
+Gregor Kobel|SUI|GK|97|87|24|26|Stuttgart 20,Dortmund 21|R|
+Unai Simón|ESP|GK|97|85|23|26|Athletic 18|K|
+Brad Friedel|USA|GK|71|84|03|15|Liverpool 97,Blackburn 00,Aston Villa 08,Tottenham 11|L|
+Sébastien Frey|FRA|GK|80|85|06|15|Inter 98,Parma 01,Fiorentina 05,Genoa 11|R|
+Angelo Peruzzi|ITA|GK|70|87|97|07|Juventus 91,Inter 99,Lazio 00||
+Christian Abbiati|ITA|GK|77|83|07|15|Milan 98||
+Vítor Baía|POR|GK|69|86|97|07|Porto 88,Barcelona 96,Porto 99||
+Joe Hart|ENG|GK|87|85|12|21|Man City 06,Torino 16,West Ham 17,Celtic 21|R|
+Kasper Schmeichel|DEN|GK|86|84|16|24|Leicester 11,Nice 22,Celtic 24|R|
+Roman Weidenfeller|GER|GK|80|84|12|18|Dortmund 02||
+Bernd Leno|GER|GK|92|84|18|26|Leverkusen 11,Arsenal 18,Fulham 21|R|
+Kepa Arrizabalaga|ESP|GK|94|82|18|26|Athletic 16,Chelsea 18,Arsenal 25||
+Rui Patrício|POR|GK|88|85|16|24|Sporting CP 06,Wolves 18,Roma 21|R|
+Salvatore Sirigu|ITA|GK|87|83|14|22|Palermo 09,PSG 11,Torino 17||
+Steve Mandanda|FRA|GK|85|85|11|24|Marseille 07,Crystal Palace 16,Marseille 17,Rennes 22||
+Lukáš Hrádecký|FIN|GK|89|84|23|26|Frankfurt 15,Leverkusen 18|K|
+Alphonse Areola|FRA|GK|93|82|19|26|PSG 13,West Ham 21||
+David Raya|ESP|GK|95|85|24|26|Brentford 19,Arsenal 23|K|
+Édouard Mendy|SEN|GK|92|85|21|26|Rennes 19,Chelsea 20,Al-Ahli 23||
+Robert Enke|GER|GK|77|84|06|09|Benfica 99,Hannover 04||
+Cláudio Taffarel|BRA|GK|66|84|96|01|Galatasaray 98||
+Morgan De Sanctis|ITA|GK|77|84|10|17|Udinese 99,Napoli 09,Roma 13||
+Fernando Muslera|URU|GK|86|84|13|25|Lazio 07,Galatasaray 11||
+Timo Hildebrand|GER|GK|79|83|06|12|Stuttgart 99,Valencia 07||
+Hans-Jörg Butt|GER|GK|74|83|01|12|Hamburg 97,Leverkusen 01,Benfica 07,Bayern 08|S|
+Jordan Pickford|ENG|GK|94|84|21|26|Sunderland 14,Everton 17|K|
+Gerónimo Rulli|ARG|GK|92|82|21|26|Real Sociedad 16,Villarreal 20,Marseille 24||
+Tim Howard|USA|GK|79|83|09|16|Man Utd 03,Everton 06||
+Shay Given|IRL|GK|76|85|06|16|Newcastle 97,Man City 09,Aston Villa 11|R|
+David James|ENG|GK|70|83|02|10|Liverpool 92,Aston Villa 99,West Ham 01,Man City 04,Portsmouth 06||
+Jerzy Dudek|POL|GK|73|84|01|10|Feyenoord 96,Liverpool 01,Real Madrid 07||
+Giorgi Mamardashvili|GEO|GK|00|84|24|26|Valencia 21,Liverpool 25|R|
+Guglielmo Vicario|ITA|GK|96|84|24|26|Empoli 21,Tottenham 23|R|
+Alex Meret|ITA|GK|97|83|23|26|Napoli 18||
+Yassine Bounou|MAR|GK|91|86|22|26|Girona 16,Sevilla 19,Al-Hilal 23|R|
+Péter Gulácsi|HUN|GK|90|84|20|26|Leipzig 15||
+Koen Casteels|BEL|GK|92|83|21|26|Wolfsburg 15,Al-Qadsiah 24||
+Kevin Trapp|GER|GK|90|83|18|26|Frankfurt 12,PSG 15,Frankfurt 18||
+Igor Akinfeev|RUS|GK|86|85|08|26|CSKA Moscow 03|L|
+Danijel Subašić|CRO|GK|84|84|16|20|Monaco 12||
+Paolo Maldini|ITA|CB|68|93|96|09|Milan 85|LTVQ|
+Alessandro Nesta|ITA|CB|76|92|02|12|Lazio 93,Milan 02,Montreal 12|TPQ|
+Fabio Cannavaro|ITA|CB|73|92|06|11|Napoli 92,Parma 95,Inter 02,Juventus 04,Real Madrid 06,Juventus 09|T|
+Sergio Ramos|ESP|CB|86|92|17|26|Sevilla 04,Real Madrid 05,PSG 21,Sevilla 23,Monterrey 25|ATSL|
+Virgil van Dijk|NED|CB|91|91|19|26|Groningen 11,Celtic 13,Southampton 15,Liverpool 18|ATPLQ|
+John Terry|ENG|CB|80|90|05|17|Chelsea 98,Aston Villa 17|ATL|
+Rio Ferdinand|ENG|CB|78|90|08|15|West Ham 96,Leeds 00,Man Utd 02,QPR 14|PTVQ|
+Nemanja Vidić|SRB|CB|81|90|09|15|Spartak Moscow 04,Man Utd 06,Inter 14|AT|
+Carles Puyol|ESP|CB|78|90|06|14|Barcelona 99|TEQ|
+Gerard Piqué|ESP|CB|87|90|11|22|Man Utd 04,Zaragoza 06,Man Utd 07,Barcelona 08|AV|
+Thiago Silva|BRA|CB|84|91|13|26|Porto 04,Fluminense 06,Milan 09,PSG 12,Chelsea 20,Fluminense 24|TL|
+Giorgio Chiellini|ITA|CB|84|89|15|23|Livorno 02,Fiorentina 04,Juventus 05,LAFC 22|ATL|
+Leonardo Bonucci|ITA|CB|87|88|16|24|Bari 09,Juventus 10,Milan 17,Juventus 18,Union Berlin 23|V|
+Lilian Thuram|FRA|CB|72|90|00|08|Monaco 91,Parma 96,Juventus 01,Barcelona 06|TP|
+Marcel Desailly|FRA|CB|68|90|97|04|Milan 93,Chelsea 98|TH|
+Laurent Blanc|FRA|CB|65|87|96|03|Barcelona 96,Marseille 97,Inter 99,Man Utd 01|VL|
+Jaap Stam|NED|CB|72|91|99|07|PSV 96,Man Utd 98,Lazio 01,Milan 04,Ajax 06|TH|
+Fernando Hierro|ESP|CB|68|89|98|05|Real Madrid 89,Al-Rayyan 03,Bolton 04|SVL|
+Alessandro Costacurta|ITA|CB|66|86|96|07|Milan 86|TL|
+Ciro Ferrara|ITA|CB|67|87|96|05|Juventus 94|T|
+Lúcio|BRA|CB|78|89|10|14|Leverkusen 01,Bayern 04,Inter 09,Juventus 12|HP|
+Walter Samuel|ARG|CB|78|88|10|15|Roma 00,Real Madrid 04,Inter 05|AT|
+Ricardo Carvalho|POR|CB|78|89|05|17|Porto 98,Chelsea 04,Real Madrid 10,Monaco 13|T|
+Pepe|POR|CB|83|88|12|24|Marítimo 01,Porto 04,Real Madrid 07,Beşiktaş 17,Porto 19|THLX|
+Mats Hummels|GER|CB|88|89|14|25|Bayern 07,Dortmund 08,Bayern 16,Dortmund 19,Roma 24|VA|
+Jérôme Boateng|GER|CB|88|89|15|23|Hamburg 07,Man City 10,Bayern 11,Lyon 21|PV|
+Raphaël Varane|FRA|CB|93|88|18|24|Lens 10,Real Madrid 11,Man Utd 21,Como 24|P|
+Rúben Dias|POR|CB|97|87|21|26|Benfica 17,Man City 20|AT|
+Vincent Kompany|BEL|CB|86|89|12|19|Anderlecht 03,Hamburg 06,Man City 08,Anderlecht 19|AT|
+Diego Godín|URU|CB|86|88|16|22|Villarreal 07,Atlético 10,Inter 19,Cagliari 20|AT|
+Kalidou Koulibaly|SEN|CB|91|88|19|26|Genk 12,Napoli 14,Chelsea 22,Al-Hilal 23|HPT|
+Aymeric Laporte|ESP|CB|94|86|19|26|Athletic 12,Man City 18,Al-Nassr 23,Athletic 25|V|
+Marquinhos|BRA|CB|94|88|20|26|Roma 12,PSG 13|T|
+Matthijs de Ligt|NED|CB|99|86|19|26|Ajax 16,Juventus 19,Bayern 22,Man Utd 24|A|
+William Saliba|FRA|CB|01|86|24|26|Saint-Étienne 18,Arsenal 19,Marseille 21,Arsenal 22|PT|
+Antonio Rüdiger|GER|CB|93|86|22|26|Stuttgart 11,Roma 15,Chelsea 17,Real Madrid 22|PH|
+Éder Militão|BRA|CB|98|86|22|26|São Paulo 16,Porto 18,Real Madrid 19|P|
+Joško Gvardiol|CRO|CB|02|85|24|26|Dinamo Zagreb 19,Leipzig 21,Man City 23|P|
+Alessandro Bastoni|ITA|CB|99|85|23|26|Atalanta 16,Inter 17|V|
+Gabriel Magalhães|BRA|CB|97|85|24|26|Lille 17,Arsenal 20|A|
+Milan Škriniar|SVK|CB|95|86|21|26|Sampdoria 16,Inter 17,PSG 23,Fenerbahçe 25|T|
+Kim Min-jae|KOR|CB|96|85|22|26|Fenerbahçe 21,Napoli 22,Bayern 23|PT|
+Dayot Upamecano|FRA|CB|98|85|24|26|Salzburg 16,Leipzig 17,Bayern 21|P|
+John Stones|ENG|CB|94|86|22|26|Everton 13,Man City 16|V|
+Ronald Araújo|URU|CB|99|85|22|26|Barcelona 18|PA|
+Pau Cubarsí|ESP|CB|07|83|26|26|Barcelona 24|V|
+Dean Huijsen|ESP|CB|05|82|26|26|Juventus 22,Bournemouth 24,Real Madrid 25|V|
+William Gallas|FRA|CB|77|86|05|14|Marseille 95,Chelsea 01,Arsenal 06,Tottenham 10|T|
+Sol Campbell|ENG|CB|74|88|02|11|Tottenham 92,Arsenal 01,Portsmouth 06|AH|
+Tony Adams|ENG|CB|66|86|96|02|Arsenal 83|AT|
+Ledley King|ENG|CB|80|85|06|12|Tottenham 98|P|
+Jamie Carragher|ENG|CB|78|85|05|13|Liverpool 96|T|
+Sami Hyypiä|FIN|CB|73|86|02|11|Liverpool 99,Leverkusen 09|A|
+Daniel Agger|DEN|CB|84|83|09|16|Brøndby 04,Liverpool 06,Brøndby 14|V|
+Per Mertesacker|GER|CB|84|84|11|18|Hannover 03,Werder Bremen 06,Arsenal 11|A|
+Laurent Koscielny|FRA|CB|85|85|15|22|Lorient 09,Arsenal 10,Bordeaux 19|T|
+Thomas Vermaelen|BEL|CB|85|83|11|19|Ajax 03,Arsenal 09,Barcelona 14||
+Jan Vertonghen|BEL|CB|87|85|17|24|Ajax 06,Tottenham 12,Benfica 20,Anderlecht 22|V|
+Toby Alderweireld|BEL|CB|89|85|17|24|Ajax 07,Atlético 13,Tottenham 15,Antwerp 22|V|
+Martin Škrtel|SVK|CB|84|83|11|19|Zenit 04,Liverpool 08,Fenerbahçe 16|A|
+Gary Cahill|ENG|CB|85|84|15|21|Aston Villa 04,Bolton 08,Chelsea 12,Crystal Palace 19|A|
+Nicolás Otamendi|ARG|CB|88|85|20|26|Porto 10,Valencia 14,Man City 15,Benfica 20|T|
+Raúl Albiol|ESP|CB|85|83|18|26|Valencia 04,Real Madrid 09,Napoli 13,Villarreal 19|L|
+Stefan de Vrij|NED|CB|92|85|19|26|Feyenoord 09,Lazio 14,Inter 18|V|
+Andrea Barzagli|ITA|CB|81|85|15|19|Palermo 04,Wolfsburg 08,Juventus 11|T|
+Marco Materazzi|ITA|CB|73|84|06|11|Perugia 98,Everton 98,Perugia 99,Inter 01|AX|
+Iván Córdoba|COL|CB|76|85|03|12|Inter 00|P|
+Samuel Kuffour|GHA|CB|76|84|01|08|Bayern 93,Roma 05|P|
+Christoph Metzelder|GER|CB|80|83|05|12|Dortmund 00,Real Madrid 07,Schalke 10||
+Martín Demichelis|ARG|CB|80|84|08|16|River Plate 98,Bayern 03,Málaga 10,Man City 13||
+Roberto Ayala|ARG|CB|73|87|01|07|Napoli 95,Milan 98,Valencia 00,Villarreal 07|A|
+Iván Helguera|ESP|CB|75|85|01|08|Real Madrid 99,Valencia 07||
+Fernando Couto|POR|CB|69|84|98|05|Barcelona 96,Lazio 98|H|
+Frank de Boer|NED|CB|70|87|98|05|Ajax 88,Barcelona 99,Galatasaray 03|V|
+Paolo Montero|URU|CB|71|85|98|05|Atalanta 92,Juventus 96|T|
+Rafael Márquez|MEX|CB|79|86|06|18|Monaco 99,Barcelona 03,NY Red Bulls 10|V|
+Bruno Alves|POR|CB|81|83|10|19|Porto 05,Zenit 10,Fenerbahçe 13,Cagliari 16|A|
+Lisandro Martínez|ARG|CB|98|85|23|26|Ajax 19,Man Utd 22|V|
+Cristian Romero|ARG|CB|98|86|23|26|Genoa 18,Juventus 19,Atalanta 20,Tottenham 21|T|
+Jules Koundé|FRA|CB|98|86|23|26|Bordeaux 17,Sevilla 19,Barcelona 22|P|
+Ibrahima Konaté|FRA|CB|99|85|24|26|Leipzig 17,Liverpool 21|PH|
+Joël Matip|CMR|CB|91|84|19|24|Schalke 09,Liverpool 16|V|
+Nacho Fernández|ESP|CB|90|82|22|26|Real Madrid 10,Al-Qadsiah 24||
+Samuel Umtiti|FRA|CB|93|84|17|23|Lyon 11,Barcelona 16||
+Presnel Kimpembe|FRA|CB|95|83|20|25|PSG 14||
+Niklas Süle|GER|CB|95|84|19|26|Hoffenheim 13,Bayern 17,Dortmund 22|H|
+Nico Schlotterbeck|GER|CB|99|85|24|26|Freiburg 19,Dortmund 22|V|
+Jonathan Tah|GER|CB|96|85|24|26|Hamburg 13,Leverkusen 15,Bayern 25||
+Edmond Tapsoba|BFA|CB|99|83|23|26|Vitória 18,Leverkusen 20||
+Kostas Manolas|GRE|CB|91|84|17|23|Olympiacos 12,Roma 14,Napoli 19|P|
+Mehdi Benatia|MAR|CB|87|84|15|20|Udinese 10,Roma 13,Bayern 14,Juventus 16|A|
+Ezequiel Garay|ARG|CB|86|83|13|20|Real Madrid 09,Benfica 11,Zenit 14,Valencia 16||
+Sokratis Papastathopoulos|GRE|CB|88|83|15|22|Dortmund 13,Arsenal 18|T|
+Neven Subotić|SRB|CB|88|83|11|21|Dortmund 08||
+Chris Smalling|ENG|CB|89|83|19|25|Man Utd 10,Roma 19|A|
+Harry Maguire|ENG|CB|93|82|19|26|Leicester 17,Man Utd 19|A|
+Cristian Chivu|ROU|CB|80|84|07|14|Ajax 99,Roma 03,Inter 07|V|
+Simon Kjær|DEN|CB|89|83|21|24|Palermo 08,Wolfsburg 10,Roma 11,Lille 13,Sevilla 17,Milan 20||
+Fikayo Tomori|ENG|CB|97|84|22|26|Chelsea 16,Milan 21|P|
+Gleison Bremer|BRA|CB|97|86|23|26|Torino 18,Juventus 22|T|
+Alessandro Buongiorno|ITA|CB|99|84|24|26|Torino 18,Napoli 24||
+Amir Rrahmani|KOS|CB|94|83|23|26|Napoli 20||
+Riccardo Calafiori|ITA|CB|02|83|24|26|Basel 22,Bologna 23,Arsenal 24|V|
+Dante|BRA|CB|83|84|13|24|Gladbach 09,Bayern 12,Wolfsburg 15,Nice 16||
+Holger Badstuber|GER|CB|89|83|12|19|Bayern 09||
+Benedikt Höwedes|GER|CB|88|83|14|20|Schalke 07,Juventus 17||
+Manuel Akanji|SUI|CB|95|85|23|26|Basel 14,Dortmund 18,Man City 22,Inter 25|V|
+Leny Yoro|FRA|CB|05|82|25|26|Lille 22,Man Utd 24||
+Micky van de Ven|NED|CB|01|85|25|26|Wolfsburg 21,Tottenham 23|P|
+Marc Guéhi|ENG|CB|00|84|25|26|Chelsea 19,Crystal Palace 21||
+Levi Colwill|ENG|CB|03|83|25|26|Chelsea 21|V|
+Robin Le Normand|ESP|CB|96|84|23|26|Real Sociedad 16,Atlético 24||
+José María Giménez|URU|CB|95|85|19|26|Atlético 13|AT|
+Stefan Savić|MNE|CB|91|84|18|26|Man City 11,Fiorentina 12,Atlético 15,Trabzonspor 24||
+Miranda|BRA|CB|84|85|13|21|São Paulo 05,Atlético 11,Inter 15|T|
+Philippe Mexès|FRA|CB|82|84|07|16|Auxerre 00,Roma 04,Milan 11||
+Cris|BRA|CB|77|84|06|13|Lyon 04|A|
+Edmílson|BRA|CB|76|84|02|10|São Paulo 94,Lyon 00,Barcelona 04,Villarreal 07||
+Juan|BRA|CB|79|84|08|13|Flamengo 96,Leverkusen 02,Roma 07||
+Aldair|BRA|CB|65|86|96|03|Roma 90|L|
+Christian Wörns|GER|CB|72|84|99|08|Leverkusen 91,PSG 98,Dortmund 99||
+Jürgen Kohler|GER|CB|65|85|96|02|Dortmund 95|T|
+Jens Nowotny|GER|CB|74|85|01|06|Leverkusen 96||
+Matthias Sammer|GER|CB|67|91|96|98|Dortmund 93|V|96=91
+Dario Šimić|CRO|CB|75|83|03|10|Inter 99,Milan 02||
+Pau Torres|ESP|CB|97|84|21|26|Villarreal 16,Aston Villa 23|V|
+David Luiz|BRA|CB|87|85|14|22|Benfica 07,Chelsea 11,PSG 14,Chelsea 16,Arsenal 19,Flamengo 21|VS|
+Javier Mascherano|ARG|DM|84|87|12|20|River Plate 03,Corinthians 05,West Ham 06,Liverpool 07,Barcelona 10|TEQ|
+Cafu|BRA|RB|70|91|99|08|São Paulo 89,Roma 97,Milan 03|PEL|
+Dani Alves|BRA|RB|83|90|11|22|Sevilla 02,Barcelona 08,Juventus 16,PSG 17,São Paulo 19,Barcelona 21|DWVL|
+Philipp Lahm|GER|RB|83|91|13|16|Stuttgart 03,Bayern 05|VTQ|
+Gianluca Zambrotta|ITA|RB|77|88|06|12|Bari 97,Juventus 99,Barcelona 06,Milan 08|P|
+Javier Zanetti|ARG|RB|73|88|06|14|Inter 95|EL|
+Gary Neville|ENG|RB|75|85|99|10|Man Utd 92|W|
+Míchel Salgado|ESP|RB|75|84|02|12|Celta 96,Real Madrid 99,Blackburn 09|T|
+Lauren|CMR|RB|77|84|03|08|Mallorca 98,Arsenal 00,Portsmouth 07||
+Paulo Ferreira|POR|RB|79|83|04|13|Porto 02,Chelsea 04||
+Branislav Ivanović|SRB|RB|84|85|14|20|Lokomotiv Moscow 06,Chelsea 08,Zenit 17|AH|
+Maicon|BRA|RB|81|88|10|16|Monaco 04,Inter 06,Man City 12,Roma 13|PWH|
+Christian Panucci|ITA|RB|73|84|01|09|Milan 93,Real Madrid 96,Inter 99,Roma 01||
+Bacary Sagna|FRA|RB|83|84|12|18|Auxerre 04,Arsenal 07,Man City 14||
+Pablo Zabaleta|ARG|RB|85|84|13|20|Espanyol 05,Man City 08,West Ham 17|T|
+Kyle Walker|ENG|RB|90|86|19|26|Tottenham 09,Man City 17,Milan 25,Burnley 25|P|
+Dani Carvajal|ESP|RB|92|86|17|26|Leverkusen 12,Real Madrid 13|TW|
+Trent Alexander-Arnold|ENG|RB|98|86|20|26|Liverpool 16,Real Madrid 25|VSW|
+Achraf Hakimi|MAR|RB|98|87|24|26|Real Madrid 17,Dortmund 18,Inter 20,PSG 21|PD|
+João Cancelo|POR|RB|94|86|21|26|Benfica 12,Valencia 14,Inter 17,Juventus 18,Man City 19,Barcelona 23,Al-Hilal 24|DV|
+Reece James|ENG|RB|99|85|22|26|Chelsea 18|SW|
+Kieran Trippier|ENG|RB|90|84|19|26|Burnley 11,Tottenham 15,Atlético 19,Newcastle 22|SW|
+Juanfran|ESP|RB|85|84|14|20|Osasuna 08,Atlético 11,São Paulo 19|E|
+Benjamin Pavard|FRA|RB|96|84|20|26|Stuttgart 16,Bayern 19,Inter 23,Marseille 25||
+Jeremie Frimpong|NED|RB|00|83|24|26|Celtic 19,Leverkusen 21,Liverpool 25|PD|
+Łukasz Piszczek|POL|RB|85|84|12|21|Hertha 07,Dortmund 10||
+Giovanni Di Lorenzo|ITA|RB|93|85|23|26|Empoli 17,Napoli 19|E|
+Denzel Dumfries|NED|RB|96|84|24|26|PSV 18,Inter 21|PA|
+Glen Johnson|ENG|RB|84|83|09|18|West Ham 02,Chelsea 03,Portsmouth 07,Liverpool 09||
+Rafinha|BRA|RB|85|83|13|20|Schalke 05,Bayern 11,Flamengo 19||
+Pedro Porro|ESP|RB|99|84|25|26|Sporting CP 20,Tottenham 23|W|
+Ben White|ENG|RB|97|84|23|26|Brighton 16,Arsenal 21||
+Diogo Dalot|POR|RB|99|82|23|26|Porto 17,Man Utd 18||
+Antonio Valencia|ECU|RB|85|84|11|19|Wigan 06,Man Utd 09|PW|
+Roberto Carlos|BRA|LB|73|92|02|12|Inter 95,Real Madrid 96,Fenerbahçe 07|PSE|
+Ashley Cole|ENG|LB|80|88|07|19|Arsenal 99,Chelsea 06,Roma 14,LA Galaxy 16|PT|
+Marcelo|BRA|LB|88|88|16|23|Fluminense 05,Real Madrid 07,Olympiacos 22,Fluminense 23|DV|
+Patrice Evra|FRA|LB|81|86|09|17|Monaco 02,Man Utd 06,Juventus 14,Marseille 17|E|
+Bixente Lizarazu|FRA|LB|69|87|99|06|Bordeaux 89,Athletic 96,Bayern 97|E|
+Jordi Alba|ESP|LB|89|87|15|26|Valencia 09,Barcelona 12,Inter Miami 23|PW|
+Andrew Robertson|SCO|LB|94|87|19|26|Hull 14,Liverpool 17|EW|
+Alphonso Davies|CAN|LB|00|86|21|26|Bayern 19|P|
+Theo Hernández|FRA|LB|97|85|22|26|Atlético 15,Real Madrid 17,Milan 19,Al-Hilal 25|PD|
+David Alaba|AUT|LB|92|88|16|26|Bayern 10,Real Madrid 21|VS|
+Gaël Clichy|FRA|LB|85|83|10|21|Arsenal 03,Man City 11,Başakşehir 17|P|
+Eric Abidal|FRA|LB|79|85|10|14|Lyon 04,Barcelona 07,Monaco 13|T|
+Gabriel Heinze|ARG|LB|78|84|05|12|PSG 01,Man Utd 04,Real Madrid 07,Marseille 09|T|
+Fábio Coentrão|POR|LB|88|84|11|19|Benfica 07,Real Madrid 11||
+Leighton Baines|ENG|LB|84|84|13|20|Wigan 02,Everton 07|SW|
+Filipe Luís|BRA|LB|85|86|14|23|Deportivo 08,Atlético 10,Chelsea 14,Atlético 15,Flamengo 19|V|
+Alex Sandro|BRA|LB|91|85|17|26|Porto 11,Juventus 15,Flamengo 24||
+Marcos Alonso|ESP|LB|90|83|17|25|Fiorentina 13,Chelsea 16,Barcelona 22|S|
+Ferland Mendy|FRA|LB|95|84|21|26|Lyon 17,Real Madrid 19|T|
+Lucas Hernández|FRA|LB|96|85|18|26|Atlético 14,Bayern 19,PSG 23|T|
+Raphaël Guerreiro|POR|LB|93|84|19|26|Lorient 13,Dortmund 16,Bayern 23|V|
+Luke Shaw|ENG|LB|95|84|21|26|Southampton 12,Man Utd 14|W|
+Federico Dimarco|ITA|LB|97|84|24|26|Inter 17|SW|
+Nuno Mendes|POR|LB|02|85|25|26|Sporting CP 20,PSG 21|PD|
+Alejandro Grimaldo|ESP|LB|95|85|24|26|Benfica 15,Leverkusen 23|SW|
+Marc Cucurella|ESP|LB|98|84|24|26|Brighton 21,Chelsea 22|E|
+Joan Capdevila|ESP|LB|78|83|08|12|Deportivo 02,Villarreal 07||
+Silvinho|BRA|LB|74|83|00|09|Arsenal 99,Celta 01,Barcelona 04,Man City 09||
+Fabio Grosso|ITA|LB|77|84|06|12|Palermo 04,Inter 06,Lyon 07,Juventus 09||
+Kakha Kaladze|GEO|LB|78|84|04|12|Dynamo Kyiv 97,Milan 01,Genoa 10||
+Christian Ziege|GER|LB|72|84|98|04|Bayern 90,Milan 97,Middlesbrough 99,Liverpool 00,Tottenham 01|S|
+Denis Irwin|IRL|LB|65|84|96|03|Man Utd 90|SL|
+Claude Makélélé|FRA|DM|73|89|03|11|Celta 98,Real Madrid 00,Chelsea 03,PSG 08|TLQ|
+Patrick Vieira|FRA|DM|76|90|01|11|Milan 95,Arsenal 96,Juventus 05,Inter 06,Man City 10|TEH|
+Sergio Busquets|ESP|DM|88|89|12|26|Barcelona 08,Inter Miami 23|VLQ|
+Rodri|ESP|DM|96|90|23|26|Villarreal 15,Atlético 18,Man City 19|VTQ|24=85
+N'Golo Kanté|FRA|DM|91|89|17|26|Caen 13,Leicester 15,Chelsea 16,Al-Ittihad 23|TE|
+Casemiro|BRA|DM|92|88|17|26|São Paulo 10,Real Madrid 13,Porto 14,Real Madrid 15,Man Utd 22|TA|
+Fernandinho|BRA|DM|85|86|18|22|Shakhtar 05,Man City 13|T|
+Gennaro Gattuso|ITA|DM|78|86|03|12|Rangers 97,Salernitana 98,Milan 99|TEX|
+Edgar Davids|NED|DM|73|88|98|08|Ajax 91,Milan 96,Juventus 97,Barcelona 04,Inter 04,Tottenham 05|TEDX|
+Didier Deschamps|FRA|DM|68|86|96|01|Juventus 94,Chelsea 99,Valencia 00|V|
+Roy Keane|IRL|DM|71|89|99|06|Man Utd 93,Celtic 05|TEHX|
+Michael Essien|GHA|DM|82|87|07|14|Bastia 00,Lyon 03,Chelsea 05,Real Madrid 12,Milan 14|TEH|
+Xabi Alonso|ESP|DM|81|88|11|17|Real Sociedad 99,Liverpool 04,Real Madrid 09,Bayern 14|VSQ|
+Mark van Bommel|NED|DM|77|85|06|12|PSV 99,Barcelona 05,Bayern 06,Milan 11,PSV 12|T|
+Esteban Cambiasso|ARG|DM|80|86|08|17|Real Madrid 02,Inter 04,Leicester 14,Olympiacos 15|V|
+Thiago Motta|ITA|DM|82|85|12|18|Barcelona 01,Genoa 08,Inter 09,PSG 12|V|
+Marcos Senna|ESP|DM|76|85|08|13|Villarreal 02|S|
+Gilberto Silva|BRA|DM|76|85|03|13|Arsenal 02,Panathinaikos 08|T|
+Emmanuel Petit|FRA|DM|70|85|98|04|Monaco 88,Arsenal 97,Barcelona 00,Chelsea 01||
+Fernando Redondo|ARG|DM|69|88|98|04|Real Madrid 94,Milan 00|VQ|
+Dietmar Hamann|GER|DM|73|84|01|11|Bayern 93,Newcastle 98,Liverpool 99,Man City 06||
+Owen Hargreaves|ENG|DM|81|84|07|11|Bayern 01,Man Utd 07|E|
+Lassana Diarra|FRA|DM|85|84|10|19|Chelsea 05,Arsenal 07,Portsmouth 08,Real Madrid 09,Marseille 15,PSG 18|T|
+Nigel de Jong|NED|DM|84|84|10|18|Ajax 02,Hamburg 06,Man City 09,Milan 12|T|
+Fabinho|BRA|DM|93|87|19|26|Monaco 13,Liverpool 18,Al-Ittihad 23|T|
+Declan Rice|ENG|DM|99|86|24|26|West Ham 17,Arsenal 23|TES|
+Aurélien Tchouaméni|FRA|DM|00|84|25|26|Monaco 18,Real Madrid 22|T|
+Jorginho|ITA|DM|91|87|20|26|Napoli 14,Chelsea 18,Arsenal 23,Flamengo 25|V|
+Marcelo Brozović|CRO|DM|92|86|20|26|Inter 15,Al-Nassr 23|E|
+Joshua Kimmich|GER|DM|95|88|21|26|Leipzig 13,Bayern 15|VSWQ|
+Moisés Caicedo|ECU|DM|01|85|25|26|Brighton 21,Chelsea 23|TE|
+Martín Zubimendi|ESP|DM|99|85|25|26|Real Sociedad 19,Arsenal 25|V|
+João Palhinha|POR|DM|95|85|23|26|Sporting CP 17,Fulham 22,Bayern 24,Tottenham 25|T|
+Granit Xhaka|SUI|DM|92|86|24|26|Gladbach 12,Arsenal 16,Leverkusen 23,Sunderland 25|V|
+Thomas Partey|GHA|DM|93|85|21|26|Atlético 15,Arsenal 20,Villarreal 25|T|
+Stanislav Lobotka|SVK|DM|94|85|23|26|Celta 17,Napoli 20|V|
+Daniele De Rossi|ITA|DM|83|87|08|19|Roma 01,Boca Juniors 19|TS|
+Nemanja Matić|SRB|DM|88|85|15|24|Benfica 11,Chelsea 14,Man Utd 17,Roma 22,Lyon 23|T|
+Javi Martínez|ESP|DM|88|85|13|21|Athletic 06,Bayern 12|A|
+Blaise Matuidi|FRA|DM|87|85|15|21|Saint-Étienne 07,PSG 11,Juventus 17|E|
+Lucas Leiva|BRA|DM|87|83|12|21|Liverpool 07,Lazio 17|T|
+Gabi|ESP|DM|83|83|15|18|Zaragoza 07,Atlético 11||
+Axel Witsel|BEL|DM|89|85|17|26|Standard 06,Benfica 11,Zenit 12,Dortmund 18,Atlético 22|V|
+Paulo Sousa|POR|DM|70|85|96|01|Juventus 94,Dortmund 96,Inter 98||
+Pep Guardiola|ESP|DM|71|86|96|05|Barcelona 90,Brescia 01,Roma 02|VQ|
+Mahamadou Diarra|MLI|DM|81|84|07|13|Lyon 02,Real Madrid 06|T|
+David Albelda|ESP|DM|77|84|04|11|Valencia 95|T|
+Xavi|ESP|CM|80|93|11|19|Barcelona 98,Al-Sadd 15|VLQ|
+Andrés Iniesta|ESP|CM|84|93|12|24|Barcelona 02,Vissel Kobe 18|VDQ|
+Luka Modrić|CRO|CM|85|91|18|26|Dinamo Zagreb 03,Tottenham 08,Real Madrid 12,Milan 25|VDLQ|
+Toni Kroos|GER|CM|90|90|16|24|Bayern 07,Leverkusen 09,Bayern 10,Real Madrid 14|VSLQ|
+Andrea Pirlo|ITA|CM|79|90|07|17|Inter 98,Milan 01,Juventus 11,NYCFC 15|VSLQ|
+Steven Gerrard|ENG|CM|80|90|06|16|Liverpool 98,LA Galaxy 15|SEF|
+Frank Lampard|ENG|CM|78|90|06|16|West Ham 96,Chelsea 01,Man City 14,NYCFC 15|FS|
+Paul Scholes|ENG|CM|74|88|03|13|Man Utd 94|VLQ|
+Kevin De Bruyne|BEL|CM|91|91|20|26|Genk 08,Chelsea 12,Werder Bremen 13,Wolfsburg 14,Man City 15,Napoli 25|VSWQ|
+Clarence Seedorf|NED|CM|76|88|03|14|Ajax 92,Sampdoria 95,Real Madrid 96,Inter 99,Milan 02,Botafogo 12|VLQ|
+Michael Ballack|GER|CM|76|89|02|12|Kaiserslautern 97,Leverkusen 99,Bayern 02,Chelsea 06,Leverkusen 10|AFS|
+Yaya Touré|CIV|CM|83|89|13|19|Olympiacos 05,Monaco 06,Barcelona 07,Man City 10|HDF|
+Arturo Vidal|CHI|CM|87|87|15|23|Leverkusen 07,Juventus 11,Bayern 15,Barcelona 18,Inter 20,Flamengo 22|TE|
+Paul Pogba|FRA|CM|93|88|16|26|Man Utd 11,Juventus 12,Man Utd 16,Juventus 22,Monaco 25|HDVX|22=78,23=74,24=72,25=74
+Ivan Rakitić|CRO|CM|88|87|15|24|Schalke 07,Sevilla 11,Barcelona 14,Sevilla 20|VS|
+Sami Khedira|GER|CM|87|85|13|20|Stuttgart 06,Real Madrid 10,Juventus 15|E|
+Bastian Schweinsteiger|GER|CM|84|88|13|19|Bayern 02,Man Utd 15,Chicago Fire 17|VE|
+Cesc Fàbregas|ESP|CM|87|88|10|22|Arsenal 03,Barcelona 11,Chelsea 14,Monaco 19|VQ|
+Michael Carrick|ENG|CM|81|85|12|18|West Ham 99,Tottenham 04,Man Utd 06|VL|
+Deco|POR|CM|77|88|04|10|Porto 98,Barcelona 04,Chelsea 08,Fluminense 10|VD|
+Juninho Pernambucano|BRA|CM|75|88|05|13|Lyon 01,Al-Gharafa 09|S|
+Gaizka Mendieta|ESP|CM|74|87|00|08|Valencia 92,Lazio 01,Barcelona 02,Middlesbrough 03|S|00=88,01=80,02=79
+Rubén Baraja|ESP|CM|75|84|02|10|Valencia 00||
+Demetrio Albertini|ITA|CM|71|86|96|05|Milan 88,Atlético 02,Lazio 03,Barcelona 05|V|
+Phillip Cocu|NED|CM|70|85|00|08|PSV 95,Barcelona 98,PSV 04|V|
+Stefan Effenberg|GER|CM|68|88|98|04|Gladbach 94,Bayern 98|VH|
+Massimo Ambrosini|ITA|CM|77|83|06|14|Milan 95|A|
+Aaron Ramsey|WAL|CM|90|84|14|23|Arsenal 08,Juventus 19|F|
+Jordan Henderson|ENG|CM|90|85|19|26|Sunderland 08,Liverpool 11,Ajax 24,Brentford 25|E|
+Georginio Wijnaldum|NED|CM|90|85|19|24|Feyenoord 07,PSV 11,Newcastle 15,Liverpool 16,PSG 21|E|
+James Milner|ENG|CM|86|83|15|26|Leeds 02,Newcastle 04,Aston Villa 08,Man City 10,Liverpool 15,Brighton 23|EL|
+Frenkie de Jong|NED|CM|97|87|19|26|Ajax 16,Barcelona 19|DVQ|
+Pedri|ESP|CM|02|87|25|26|Las Palmas 19,Barcelona 20|VDQ|
+Gavi|ESP|CM|04|84|23|26|Barcelona 21|E|
+Federico Valverde|URU|CM|98|86|24|26|Real Madrid 17|EP|
+Eduardo Camavinga|FRA|CM|02|85|24|26|Rennes 19,Real Madrid 21|E|
+Nicolò Barella|ITA|CM|97|86|23|26|Cagliari 15,Inter 19|E|
+Hakan Çalhanoğlu|TUR|CM|94|85|23|26|Hamburg 13,Leverkusen 14,Milan 17,Inter 21|SV|
+İlkay Gündoğan|GER|CM|90|88|21|26|Dortmund 11,Man City 16,Barcelona 23,Man City 24,Galatasaray 25|VF|
+Mason Mount|ENG|CM|99|84|21|26|Chelsea 17,Man Utd 23||
+Leon Goretzka|GER|CM|95|86|20|26|Schalke 13,Bayern 18|H|
+Marco Verratti|ITA|CM|92|88|15|25|Pescara 08,PSG 12,Al-Arabi 23|VD|
+Adrien Rabiot|FRA|CM|95|85|23|26|PSG 12,Juventus 19,Marseille 24,Milan 25|E|
+Sergej Milinković-Savić|SRB|CM|95|86|18|26|Lazio 15,Al-Hilal 23|AF|
+Miralem Pjanić|BIH|CM|90|86|17|22|Lyon 08,Roma 11,Juventus 16,Barcelona 20|SV|
+Radja Nainggolan|BEL|CM|88|85|16|22|Cagliari 10,Roma 14,Inter 18|TE|
+Claudio Marchisio|ITA|CM|86|85|15|19|Juventus 06||
+Alexis Mac Allister|ARG|CM|98|85|24|26|Brighton 19,Liverpool 23|V|
+Enzo Fernández|ARG|CM|01|85|23|26|River Plate 20,Benfica 22,Chelsea 23|V|
+Vitinha|POR|CM|00|87|25|26|Porto 20,PSG 22|VQ|
+João Neves|POR|CM|04|84|25|26|Benfica 22,PSG 24|E|
+Warren Zaïre-Emery|FRA|CM|06|82|25|26|PSG 22|E|
+Fabián Ruiz|ESP|CM|96|86|24|26|Betis 14,Napoli 18,PSG 22|V|
+Mikel Merino|ESP|CM|96|85|24|26|Dortmund 16,Newcastle 17,Real Sociedad 18,Arsenal 24|A|
+Koke|ESP|CM|92|86|16|26|Atlético 09|EL|
+Saúl Ñíguez|ESP|CM|94|85|17|26|Atlético 12,Sevilla 24|A|
+Thiago Alcântara|ESP|CM|91|88|20|23|Barcelona 09,Bayern 13,Liverpool 20|VDQ|
+Marcos Llorente|ESP|CM|95|85|21|26|Real Madrid 14,Atlético 19|PE|
+Rodrigo De Paul|ARG|CM|94|85|22|26|Udinese 16,Atlético 21,Inter Miami 25|E|
+Mateo Kovačić|CRO|CM|94|85|22|26|Inter 13,Real Madrid 15,Chelsea 18,Man City 23|D|
+Dejan Stanković|SRB|CM|78|85|07|13|Lazio 98,Inter 04|F|
+Ramires|BRA|CM|87|84|12|19|Benfica 09,Chelsea 10|E|
+Tiago Mendes|POR|CM|81|84|13|17|Benfica 01,Chelsea 04,Lyon 05,Juventus 07,Atlético 10||
+Maniche|POR|CM|77|84|04|10|Porto 02,Dynamo Moscow 05,Chelsea 06,Atlético 06,Inter 08|F|
+Zinedine Zidane|FRA|AM|72|96|98|05|Bordeaux 92,Juventus 96,Real Madrid 01|VDSQ|
+Kaká|BRA|AM|82|94|07|17|São Paulo 01,Milan 03,Real Madrid 09,Milan 13,Orlando City 15|PDF|09=86,10=84
+Rivaldo|BRA|AM|72|93|99|07|Deportivo 96,Barcelona 97,Milan 02,Olympiacos 04|FSN|
+Rui Costa|POR|AM|72|88|00|08|Fiorentina 94,Milan 01,Benfica 06|V|
+Juan Román Riquelme|ARG|AM|78|88|06|14|Boca Juniors 96,Barcelona 02,Villarreal 03,Boca Juniors 07|VSNQ|
+Mesut Özil|GER|AM|88|89|12|23|Schalke 06,Werder Bremen 08,Real Madrid 10,Arsenal 13,Fenerbahçe 21|VNQ|
+Wesley Sneijder|NED|AM|84|89|09|19|Ajax 02,Real Madrid 07,Inter 09,Galatasaray 13|SV|
+David Silva|ESP|AM|86|88|12|22|Valencia 04,Man City 10,Real Sociedad 20|VDQ|
+Rafael van der Vaart|NED|AM|83|85|08|15|Ajax 00,Hamburg 05,Real Madrid 08,Tottenham 10,Hamburg 12|S|
+Christian Eriksen|DEN|AM|92|86|17|26|Ajax 10,Tottenham 13,Inter 20,Brentford 22,Man Utd 22,Wolfsburg 25|VS|
+Isco|ESP|AM|92|86|17|26|Málaga 11,Real Madrid 13,Betis 23|DN|
+James Rodríguez|COL|AM|91|87|14|24|Porto 10,Monaco 13,Real Madrid 14,Bayern 17,Everton 20|VSN|
+Bruno Fernandes|POR|AM|94|87|21|26|Udinese 13,Sampdoria 16,Sporting CP 17,Man Utd 20|VSE|
+Martin Ødegaard|NOR|AM|98|86|23|26|Real Madrid 15,Arsenal 21|VQ|
+Bernardo Silva|POR|AM|94|86|21|26|Monaco 14,Man City 17|DEQ|
+Florian Wirtz|GER|AM|03|86|24|26|Leverkusen 20,Liverpool 25|VD|
+Jamal Musiala|GER|AM|03|87|24|26|Bayern 20|D|
+Phil Foden|ENG|AM|00|86|23|26|Man City 17|DF|
+Cole Palmer|ENG|AM|02|88|24|26|Man City 20,Chelsea 23|FVS|25=87,26=85,27=85,28=85
+Dani Olmo|ESP|AM|98|85|24|26|Dinamo Zagreb 14,Leipzig 20,Barcelona 24|F|
+Thomas Müller|GER|AM|89|89|13|25|Bayern 08,Vancouver 25|FELQ|
+Mario Götze|GER|AM|92|86|13|26|Dortmund 09,Bayern 13,Dortmund 16,PSV 20,Frankfurt 22|D|
+Philippe Coutinho|BRA|AM|92|87|17|24|Inter 10,Liverpool 13,Barcelona 18,Bayern 19,Aston Villa 22|DS|
+Pablo Aimar|ARG|AM|79|86|01|13|River Plate 96,Valencia 01,Zaragoza 06,Benfica 08|DV|
+Juan Mata|ESP|AM|88|85|12|22|Valencia 07,Chelsea 11,Man Utd 14|V|
+Diego Ribas|BRA|AM|85|85|08|16|Porto 04,Werder Bremen 06,Juventus 09,Wolfsburg 10,Atlético 12,Fenerbahçe 14|VS|
+Samir Nasri|FRA|AM|87|85|12|17|Marseille 04,Arsenal 08,Man City 11|D|
+Yoann Gourcuff|FRA|AM|86|85|08|16|Rennes 03,Milan 06,Bordeaux 08,Lyon 10|V|
+Alejandro Gómez|ARG|AM|88|85|20|23|Atalanta 14,Sevilla 21|D|
+Dimitri Payet|FRA|AM|87|85|16|24|Saint-Étienne 07,Lille 11,Marseille 13,West Ham 15,Marseille 17|SV|
+Shinji Kagawa|JPN|AM|89|84|12|20|Dortmund 10,Man Utd 12,Dortmund 14||
+Dele Alli|ENG|AM|96|85|17|22|MK Dons 12,Tottenham 15,Everton 22|F|
+Kai Havertz|GER|AM|99|86|24|26|Leverkusen 16,Chelsea 20,Arsenal 23|AF|
+Arda Güler|TUR|AM|05|83|26|26|Fenerbahçe 21,Real Madrid 23|VS|
+Lucas Paquetá|BRA|AM|97|85|23|26|Flamengo 16,Milan 19,Lyon 20,West Ham 22|D|
+Teun Koopmeiners|NED|AM|98|85|23|26|AZ 17,Atalanta 21,Juventus 24|S|
+Marek Hamšík|SVK|AM|87|86|15|22|Napoli 07,Dalian 19|V|
+Tomáš Rosický|CZE|AM|80|85|06|16|Dortmund 01,Arsenal 06|V|
+Santi Cazorla|ESP|AM|84|86|12|20|Villarreal 03,Málaga 11,Arsenal 12,Villarreal 18|VD|
+Guti|ESP|AM|76|84|06|11|Real Madrid 95,Beşiktaş 10|V|
+Jari Litmanen|FIN|AM|71|87|96|07|Ajax 92,Barcelona 99,Liverpool 01,Ajax 02|V|
+Mehmet Scholl|GER|AM|70|85|98|07|Bayern 92|S|
+Hidetoshi Nakata|JPN|AM|77|83|00|06|Perugia 98,Roma 00,Parma 01||
+Henrikh Mkhitaryan|ARM|AM|89|86|13|26|Shakhtar 10,Dortmund 13,Man Utd 16,Arsenal 18,Roma 19,Inter 22|VE|
+Xavi Simons|NED|AM|03|83|24|26|PSG 21,PSV 22,Leipzig 23,Tottenham 25|D|
+Dominik Szoboszlai|HUN|AM|00|84|25|26|Salzburg 17,Leipzig 21,Liverpool 23|SE|
+Pavel Nedvěd|CZE|LW|72|92|03|09|Sparta Prague 92,Lazio 96,Juventus 01|FES|
+Cristiano Ronaldo|POR|LW|85|97|13|26|Sporting CP 02,Man Utd 03,Real Madrid 09,Juventus 18,Man Utd 21,Al-Nassr 23|PFDASLN|07=91,08=94
+Lionel Messi|ARG|RW|87|99|11|26|Barcelona 04,PSG 21,Inter Miami 23|DVFSLNQ|14=96,15=98,16=97,22=92
+Ronaldinho|BRA|LW|80|96|05|15|PSG 01,Barcelona 03,Milan 08,Flamengo 11|DVSN|07=88,08=84,09=84
+Neymar|BRA|LW|92|93|15|26|Santos 09,Barcelona 13,PSG 17,Al-Hilal 23,Santos 25|DPSN|23=79,24=76,25=76,26=75
+Arjen Robben|NED|RW|84|91|10|20|PSV 02,Chelsea 04,Real Madrid 07,Bayern 09|PDF|
+Franck Ribéry|FRA|LW|83|90|12|22|Metz 04,Galatasaray 05,Marseille 05,Bayern 07,Fiorentina 19|DPV|
+Gareth Bale|WAL|RW|89|90|14|22|Southampton 06,Tottenham 07,Real Madrid 13,LAFC 22|PFS|20=82,21=80,22=76
+Eden Hazard|BEL|LW|91|91|15|22|Lille 07,Chelsea 12,Real Madrid 19|DVN|19=85,20=81,21=79,22=76
+Mohamed Salah|EGY|RW|92|91|17|26|Basel 12,Chelsea 14,Fiorentina 15,Roma 15,Liverpool 17|PF|24=91
+Sadio Mané|SEN|LW|92|89|19|26|Salzburg 12,Southampton 14,Liverpool 16,Bayern 22,Al-Nassr 23|PF|
+Luís Figo|POR|RW|72|92|00|09|Sporting CP 89,Barcelona 95,Real Madrid 00,Inter 05|DVW|
+Ryan Giggs|WAL|LW|73|87|98|14|Man Utd 90|DPWLQ|
+David Beckham|ENG|RW|75|88|99|13|Man Utd 92,Real Madrid 03,LA Galaxy 07,Milan 09,PSG 13|SWV|
+Robert Pirès|FRA|LW|73|88|01|11|Marseille 98,Arsenal 00,Villarreal 06|V|
+Marc Overmars|NED|LW|73|86|98|04|Ajax 92,Arsenal 97,Barcelona 00|P|
+Joaquín|ESP|RW|81|85|05|22|Betis 00,Valencia 06,Málaga 11,Fiorentina 13,Betis 15|DWL|
+Vicente|ESP|LW|81|85|04|11|Valencia 00||
+Simão Sabrosa|POR|LW|79|85|05|14|Sporting CP 97,Barcelona 99,Benfica 01,Atlético 07|S|
+Ricardo Quaresma|POR|RW|83|84|08|22|Sporting CP 01,Barcelona 03,Porto 04,Inter 08,Beşiktaş 10,Porto 14,Beşiktaş 15|D|
+Ángel Di María|ARG|RW|88|89|14|26|Benfica 07,Real Madrid 10,Man Utd 14,PSG 15,Juventus 22,Benfica 23,Rosario Central 25|DVWL|
+Alexis Sánchez|CHI|LW|88|88|15|25|Udinese 08,Barcelona 11,Arsenal 14,Man Utd 18,Inter 19,Marseille 22,Udinese 24|DE|18=80,19=79
+Raheem Sterling|ENG|LW|94|87|19|26|Liverpool 12,Man City 15,Chelsea 22,Arsenal 24|PD|
+Riyad Mahrez|ALG|RW|91|87|16|26|Le Havre 10,Leicester 14,Man City 18,Al-Ahli 23|DN|
+Leroy Sané|GER|LW|96|86|19|26|Schalke 14,Man City 16,Bayern 20,Galatasaray 25|P|
+Kingsley Coman|FRA|LW|96|85|20|26|PSG 13,Juventus 14,Bayern 15,Al-Nassr 25|P|
+Vinícius Júnior|BRA|LW|00|90|24|26|Flamengo 17,Real Madrid 18|PDN|
+Rodrygo|BRA|RW|01|86|24|26|Santos 18,Real Madrid 19|D|
+Lamine Yamal|ESP|RW|07|90|26|26|Barcelona 23|DV|23=80,24=85,25=89
+Bukayo Saka|ENG|RW|01|86|24|26|Arsenal 18|DV|
+Khvicha Kvaratskhelia|GEO|LW|01|86|25|26|Rubin Kazan 19,Napoli 22,PSG 25|D|
+Ousmane Dembélé|FRA|RW|97|90|24|26|Rennes 15,Dortmund 16,Barcelona 17,PSG 23|PDN|18=84,19=80,20=82
+Michael Olise|FRA|RW|01|89|26|26|Reading 19,Crystal Palace 21,Bayern 24|DV|25=87
+Jadon Sancho|ENG|RW|00|85|20|26|Dortmund 17,Man Utd 21,Chelsea 24,Aston Villa 25|D|21=80,22=80,23=78,24=78,25=77,26=76
+Serge Gnabry|GER|RW|95|86|19|26|Arsenal 12,Werder Bremen 16,Bayern 17|PF|
+Marco Reus|GER|LW|89|88|14|25|Gladbach 09,Dortmund 12,LA Galaxy 25|FS|
+Douglas Costa|BRA|LW|90|84|15|22|Shakhtar 10,Bayern 15,Juventus 17|PD|
+Willian|BRA|RW|88|85|14|24|Shakhtar 07,Chelsea 13,Arsenal 20,Fulham 23|D|
+Juan Cuadrado|COL|RW|88|84|15|24|Udinese 09,Fiorentina 12,Chelsea 15,Juventus 15,Inter 23|PD|
+Jesús Navas|ESP|RW|85|84|10|24|Sevilla 03,Man City 13,Sevilla 17|PWL|
+Dries Mertens|BEL|LW|87|86|16|24|PSV 11,Napoli 13,Galatasaray 22|F|
+Lorenzo Insigne|ITA|LW|91|86|18|25|Napoli 10,Toronto 22|FS|
+Federico Chiesa|ITA|RW|97|85|20|26|Fiorentina 16,Juventus 20,Liverpool 24|P|22=81,23=81,24=78,25=77
+Christian Pulisic|USA|RW|98|85|24|26|Dortmund 16,Chelsea 19,Milan 23|D|
+Rafael Leão|POR|LW|99|85|23|26|Sporting CP 17,Lille 18,Milan 19|PDN|
+Nico Williams|ESP|LW|02|84|24|26|Athletic 21|PD|
+Raphinha|BRA|RW|96|87|24|26|Vitória 16,Sporting CP 18,Rennes 19,Leeds 20,Barcelona 22|FS|22=83,23=83
+Gabriel Martinelli|BRA|LW|01|84|23|26|Arsenal 19|P|
+Jérémy Doku|BEL|LW|02|84|25|26|Anderlecht 18,Rennes 20,Man City 23|PD|
+Son Heung-min|KOR|LW|92|88|21|26|Hamburg 10,Leverkusen 13,Tottenham 15,LAFC 25|PF|
+Pedro Rodríguez|ESP|LW|87|84|11|26|Barcelona 07,Chelsea 15,Roma 20,Lazio 21|L|
+Ivan Perišić|CRO|LW|89|85|18|26|Dortmund 11,Wolfsburg 13,Inter 15,Bayern 19,Tottenham 22,PSV 24|EL|
+Yannick Carrasco|BEL|LW|93|84|17|26|Monaco 12,Atlético 15,Al-Shabab 24|D|
+Ludovic Giuly|FRA|RW|76|85|04|11|Monaco 98,Barcelona 04,Roma 07,PSG 08|P|
+Mauro Camoranesi|ITA|RW|76|85|06|11|Verona 00,Juventus 02,Stuttgart 10|E|
+José Antonio Reyes|ESP|LW|83|84|06|16|Sevilla 99,Arsenal 04,Real Madrid 06,Atlético 07,Benfica 08,Sevilla 12|D|
+Steve McManaman|ENG|RW|72|85|98|03|Liverpool 90,Real Madrid 99,Man City 03|D|
+Nani|POR|RW|86|85|11|21|Sporting CP 05,Man Utd 07,Valencia 15|D|
+Park Ji-sung|KOR|RW|81|83|08|14|PSV 03,Man Utd 05|E|
+Theo Walcott|ENG|RW|89|83|12|22|Southampton 05,Arsenal 06,Everton 18|P|
+Freddie Ljungberg|SWE|LW|77|85|02|09|Arsenal 98,West Ham 07|F|
+Arda Turan|TUR|LW|87|85|13|20|Galatasaray 05,Atlético 11,Barcelona 15|D|
+Mohammed Kudus|GHA|RW|00|84|24|26|Ajax 20,West Ham 23,Tottenham 25|D|
+Leandro Trossard|BEL|LW|94|83|23|26|Brighton 19,Arsenal 23||
+Luis Díaz|COL|LW|97|85|24|26|Porto 19,Liverpool 22,Bayern 25|PD|
+Dejan Kulusevski|SWE|RW|00|84|23|26|Juventus 20,Tottenham 22|E|
+Josip Iličić|SVN|RW|88|85|18|22|Palermo 10,Fiorentina 13,Atalanta 17|F|
+Hakim Ziyech|MAR|RW|93|85|19|25|Ajax 16,Chelsea 20,Galatasaray 23|VS|
+José Callejón|ESP|RW|87|84|15|21|Real Madrid 11,Napoli 13||
+Lukas Podolski|GER|LW|85|84|06|20|Köln 03,Bayern 06,Köln 09,Arsenal 12,Inter 15,Galatasaray 15|S|
+Ademola Lookman|NGA|LW|97|86|23|26|Leipzig 19,Atalanta 22|F|
+Marcus Rashford|ENG|LW|97|86|22|26|Man Utd 15,Barcelona 25|PF|
+Ronaldo Nazário|BRA|ST|76|97|97|11|PSV 94,Barcelona 96,Inter 97,Real Madrid 02,Milan 07,Corinthians 09|PFDN|96=95,98=95,99=88,00=82,01=84,02=93,03=92,04=89,05=85,06=82,07=78
+Thierry Henry|FRA|ST|77|94|03|14|Monaco 94,Juventus 99,Arsenal 99,Barcelona 07,NY Red Bulls 10|PFD|
+Andriy Shevchenko|UKR|ST|76|93|03|12|Dynamo Kyiv 94,Milan 99,Chelsea 06,Milan 08,Dynamo Kyiv 09|PF|
+Zlatan Ibrahimović|SWE|ST|81|92|13|23|Malmö 99,Ajax 01,Juventus 04,Inter 06,Barcelona 09,Milan 10,PSG 12,Man Utd 16,LA Galaxy 18,Milan 20|FHALNX|
+Robert Lewandowski|POL|ST|88|93|20|26|Lech Poznań 08,Dortmund 10,Bayern 14,Barcelona 22|FAL|
+Karim Benzema|FRA|ST|87|92|21|26|Lyon 04,Real Madrid 09,Al-Ittihad 23|FVLNQ|
+Luis Suárez|URU|ST|87|93|15|26|Groningen 06,Ajax 07,Liverpool 11,Barcelona 14,Atlético 20,Grêmio 23,Inter Miami 24|FDX|
+Sergio Agüero|ARG|ST|88|90|14|21|Independiente 03,Atlético 06,Man City 11,Barcelona 21|F|
+Harry Kane|ENG|ST|93|90|24|26|Tottenham 11,Bayern 23|FVL|
+Erling Haaland|NOR|ST|00|91|22|26|Molde 17,Salzburg 19,Dortmund 20,Man City 22|FPA|
+Kylian Mbappé|FRA|ST|98|92|24|26|Monaco 15,PSG 17,Real Madrid 24|PFDN|
+Samuel Eto'o|CMR|ST|81|91|08|19|Mallorca 00,Barcelona 04,Inter 09,Anzhi 11,Chelsea 13,Everton 14|PF|
+Didier Drogba|CIV|ST|78|91|09|16|Le Mans 98,Guingamp 02,Marseille 03,Chelsea 04,Shanghai Shenhua 12,Galatasaray 13,Chelsea 14,Montreal 15|FAH|06=91
+Raúl González|ESP|ST|77|91|01|15|Real Madrid 94,Schalke 10,Al-Sadd 12,NY Cosmos 14|FV|
+Gabriel Batistuta|ARG|ST|69|91|98|05|Fiorentina 91,Roma 00,Inter 03|FA|
+Ruud van Nistelrooy|NED|ST|76|91|02|12|Heerenveen 97,PSV 98,Man Utd 01,Real Madrid 06,Hamburg 10,Málaga 11|F|
+Fernando Torres|ESP|ST|84|90|07|19|Atlético 01,Liverpool 07,Chelsea 11,Milan 14,Atlético 15|PF|10=86,11=82,12=82,13=81,14=79
+Wayne Rooney|ENG|ST|85|90|09|18|Everton 02,Man Utd 04,Everton 17,DC United 18|FEV|
+David Villa|ESP|ST|81|89|09|19|Zaragoza 03,Valencia 05,Barcelona 10,Atlético 13,NYCFC 14|F|
+Hernán Crespo|ARG|ST|75|88|01|12|Parma 96,Lazio 00,Inter 02,Chelsea 03,Milan 04,Inter 06,Genoa 09|FA|
+Filippo Inzaghi|ITA|ST|73|87|02|12|Atalanta 96,Juventus 97,Milan 01|F|
+Christian Vieri|ITA|ST|73|90|01|09|Juventus 96,Atlético 97,Lazio 98,Inter 99,Milan 05|FAH|
+Alessandro Del Piero|ITA|ST|74|91|98|14|Juventus 93,Sydney FC 12|FSD|99=84,00=84
+Dennis Bergkamp|NED|ST|69|91|98|06|Inter 93,Arsenal 95|VDNQ|
+Francesco Totti|ITA|ST|76|92|06|17|Roma 92|VFSLNQ|
+George Weah|LBR|ST|66|89|96|01|PSG 92,Milan 95,Chelsea 00,Man City 00|PF|
+Alan Shearer|ENG|ST|70|90|96|06|Blackburn 92,Newcastle 96|FA|
+Michael Owen|ENG|ST|79|90|01|13|Liverpool 96,Real Madrid 04,Newcastle 05,Man Utd 09,Stoke 12|PF|
+Patrick Kluivert|NED|ST|76|87|98|08|Ajax 94,Milan 97,Barcelona 98,Newcastle 04,Valencia 05,PSV 06|FA|
+Davor Šuker|CRO|ST|68|88|97|03|Sevilla 91,Real Madrid 96,Arsenal 99,West Ham 00,1860 Munich 01|F|
+Fernando Morientes|ESP|ST|76|86|01|10|Real Madrid 97,Monaco 03,Liverpool 05,Valencia 06,Marseille 09|A|
+Oliver Bierhoff|GER|ST|68|86|97|03|Udinese 95,Milan 98,Monaco 01,Chievo 02|A|
+Miroslav Klose|GER|ST|78|86|06|16|Kaiserslautern 99,Werder Bremen 04,Bayern 07,Lazio 11|AL|
+Luca Toni|ITA|ST|77|87|06|16|Palermo 03,Fiorentina 05,Bayern 07,Roma 10,Juventus 11,Verona 13|A|
+Adriano|BRA|ST|82|89|04|12|Inter 01,Fiorentina 01,Parma 02,Inter 04,São Paulo 08,Flamengo 09,Roma 10|FHNX|06=82,07=79,08=79
+Jimmy Floyd Hasselbaink|NED|ST|72|86|99|08|Boavista 96,Leeds 97,Atlético 99,Chelsea 00,Middlesbrough 04|F|
+Dimitar Berbatov|BUL|ST|81|87|10|15|Leverkusen 01,Tottenham 06,Man Utd 08,Fulham 12,Monaco 14|VN|
+Nicolas Anelka|FRA|ST|79|86|08|14|Arsenal 97,Real Madrid 99,PSG 00,Liverpool 01,Man City 02,Fenerbahçe 05,Bolton 06,Chelsea 08|PNX|
+David Trezeguet|FRA|ST|77|88|02|12|Monaco 95,Juventus 00,Hércules 10|F|
+Robin van Persie|NED|ST|83|89|12|17|Feyenoord 01,Arsenal 04,Man Utd 12,Fenerbahçe 15|FS|
+Edinson Cavani|URU|ST|87|89|17|24|Palermo 07,Napoli 10,PSG 13,Man Utd 20,Valencia 22,Boca Juniors 23|FAE|
+Gonzalo Higuaín|ARG|ST|87|88|15|21|River Plate 05,Real Madrid 07,Napoli 13,Juventus 16,Milan 18,Chelsea 19,Juventus 19,Inter Miami 20|F|
+Radamel Falcao|COL|ST|86|89|12|21|River Plate 05,Porto 09,Atlético 11,Monaco 13,Man Utd 14,Chelsea 15,Monaco 16,Galatasaray 19|FA|14=81,15=77
+Mario Gómez|GER|ST|85|86|11|20|Stuttgart 03,Bayern 09,Fiorentina 13,Beşiktaş 15,Wolfsburg 16,Stuttgart 18|A|
+Diego Costa|ESP|ST|88|87|14|24|Atlético 10,Chelsea 14,Atlético 18,Wolves 22|FHX|
+Diego Milito|ARG|ST|79|87|09|14|Genoa 04,Zaragoza 05,Genoa 08,Inter 09|F|
+Mario Mandžukić|CRO|ST|86|86|13|21|Wolfsburg 10,Bayern 12,Atlético 14,Juventus 15,Milan 21|AE|
+Pierre-Emerick Aubameyang|GAB|ST|89|89|16|26|Saint-Étienne 11,Dortmund 13,Arsenal 18,Barcelona 22,Chelsea 22,Marseille 23|PF|
+Romelu Lukaku|BEL|ST|93|87|20|26|Anderlecht 09,Chelsea 11,Everton 13,Man Utd 17,Inter 19,Chelsea 21,Roma 23,Napoli 24|HF|
+Ciro Immobile|ITA|ST|90|87|19|26|Torino 13,Dortmund 14,Torino 16,Lazio 16,Beşiktaş 24|F|
+Lautaro Martínez|ARG|ST|97|87|23|26|Racing Club 15,Inter 18|F|
+Victor Osimhen|NGA|ST|98|86|22|26|Lille 19,Napoli 20,Galatasaray 24|PFA|
+Dušan Vlahović|SRB|ST|00|85|21|26|Fiorentina 18,Juventus 22|F|
+Alexander Isak|SWE|ST|99|86|24|26|Dortmund 16,Real Sociedad 19,Newcastle 22,Liverpool 25|DF|
+Julián Álvarez|ARG|ST|00|85|24|26|River Plate 18,Man City 22,Atlético 24|FE|
+Viktor Gyökeres|SWE|ST|98|85|24|26|Coventry 21,Sporting CP 23,Arsenal 25|FH|
+Darwin Núñez|URU|ST|99|83|22|26|Benfica 20,Liverpool 22,Al-Hilal 25|P|
+Jamie Vardy|ENG|ST|87|85|15|24|Leicester 12|P|
+Roberto Firmino|BRA|ST|91|87|18|26|Hoffenheim 11,Liverpool 15,Al-Ahli 23|VE|
+Olivier Giroud|FRA|ST|86|85|12|25|Montpellier 10,Arsenal 12,Chelsea 18,Milan 21,LAFC 24|AL|
+Álvaro Morata|ESP|ST|92|84|16|26|Real Madrid 10,Juventus 14,Real Madrid 16,Chelsea 17,Atlético 19,Juventus 20,Atlético 22,Milan 24|A|
+Paulo Dybala|ARG|ST|93|88|17|26|Palermo 12,Juventus 15,Roma 22|FDSN|
+Carlos Tévez|ARG|ST|84|88|10|21|Boca Juniors 01,Corinthians 05,West Ham 06,Man Utd 07,Man City 09,Juventus 13,Boca Juniors 15|FE|
+Emmanuel Adebayor|TOG|ST|84|85|07|17|Monaco 03,Arsenal 06,Man City 09,Real Madrid 11,Tottenham 11|A|
+Antonio Di Natale|ITA|ST|77|85|10|16|Empoli 96,Udinese 04|FL|
+Alberto Gilardino|ITA|ST|82|85|05|17|Parma 02,Milan 05,Fiorentina 08,Genoa 12|F|
+Vincenzo Montella|ITA|ST|74|85|99|09|Sampdoria 96,Roma 99|F|
+Claudio López|ARG|ST|74|85|98|08|Valencia 96,Lazio 00|P|
+Pauleta|POR|ST|73|85|03|08|Deportivo 98,Bordeaux 00,PSG 03|F|
+Roy Makaay|NED|ST|75|87|02|10|Tenerife 97,Deportivo 99,Bayern 03,Feyenoord 07|F|
+Giovane Élber|BRA|ST|72|87|00|05|Stuttgart 94,Bayern 97,Lyon 03|F|
+Mário Jardel|BRA|ST|73|86|01|06|Porto 96,Galatasaray 00,Sporting CP 01|FA|
+Henrik Larsson|SWE|ST|71|87|01|09|Feyenoord 93,Celtic 97,Barcelona 04,Helsingborg 06,Man Utd 07|FL|
+Marcelo Salas|CHI|ST|74|86|98|08|Lazio 98,Juventus 01,River Plate 03|F|
+Hakan Şükür|TUR|ST|71|85|99|08|Galatasaray 95,Inter 00,Parma 01,Blackburn 02,Galatasaray 03|A|
+Fernando Llorente|ESP|ST|85|84|12|21|Athletic 05,Juventus 13,Sevilla 15,Swansea 16,Tottenham 17,Napoli 19|A|
+Edin Džeko|BIH|ST|86|86|16|26|Wolfsburg 07,Man City 11,Roma 15,Inter 21,Fenerbahçe 23,Fiorentina 25|AL|
+Timo Werner|GER|ST|96|85|19|26|Stuttgart 13,Leipzig 16,Chelsea 20,Leipzig 22,Tottenham 24|P|
+Serhou Guirassy|GUI|ST|96|86|24|26|Stuttgart 22,Dortmund 24|FA|
+Benjamin Šeško|SVN|ST|03|84|25|26|Salzburg 21,Leipzig 23,Man Utd 25|PA|
+Hugo Ekitiké|FRA|ST|02|85|25|26|Reims 20,PSG 22,Frankfurt 24,Liverpool 25|D|
+Gabriel Jesus|BRA|ST|97|84|19|26|Palmeiras 15,Man City 17,Arsenal 22|E|
+Diego Forlán|URU|ST|79|87|08|15|Independiente 97,Man Utd 02,Villarreal 04,Atlético 07,Inter 11|FS|
+Klaas-Jan Huntelaar|NED|ST|83|85|11|21|Heerenveen 04,Ajax 06,Real Madrid 08,Milan 09,Schalke 10,Ajax 17|F|
+Luís Fabiano|BRA|ST|80|85|06|14|Porto 04,Sevilla 05,São Paulo 11|F|
+Frédéric Kanouté|MLI|ST|77|86|06|12|Lyon 96,West Ham 00,Tottenham 03,Sevilla 05|A|
+Eiður Guðjohnsen|ISL|ST|78|84|04|15|Bolton 98,Chelsea 00,Barcelona 06|V|
+Mario Balotelli|ITA|ST|90|84|12|20|Inter 07,Man City 10,Milan 13,Liverpool 14,Nice 16|FNX|
+Antonio Cassano|ITA|ST|82|85|04|14|Bari 99,Roma 01,Real Madrid 06,Sampdoria 07,Milan 11,Inter 12,Parma 12|VDNX|
+Fabio Quagliarella|ITA|ST|83|83|18|22|Udinese 07,Napoli 09,Juventus 10,Sampdoria 16|FL|
+Antoine Griezmann|FRA|ST|91|90|16|26|Real Sociedad 09,Atlético 14,Barcelona 19,Atlético 21|FVE|
+Dušan Tadić|SRB|AM|88|85|18|26|Twente 12,Southampton 14,Ajax 18,Fenerbahçe 23|VS|
+Wilfried Bony|CIV|ST|88|82|13|20|Vitesse 11,Swansea 13,Man City 15||
+Iago Aspas|ESP|ST|87|84|17|26|Celta 08,Liverpool 13,Sevilla 14,Celta 15|FS|
+Gerard Moreno|ESP|ST|92|84|20|26|Villarreal 10,Espanyol 15,Villarreal 18|F|
+Wissam Ben Yedder|FRA|ST|90|85|19|25|Toulouse 10,Sevilla 16,Monaco 19|F|
+Kevin Gameiro|FRA|ST|87|83|15|23|Lorient 08,PSG 11,Sevilla 13,Atlético 16,Valencia 18||
+Moussa Dembélé|BEL|CM|87|85|15|21|AZ 06,Fulham 10,Tottenham 12|DH|
+Mousa Diaby|FRA|RW|99|84|23|26|PSG 17,Leverkusen 19,Aston Villa 23,Al-Ittihad 24|P|
+Ilkay Gündogan|GER|CM|90|88|21|26|Dortmund 11,Man City 16,Barcelona 23,Man City 24,Galatasaray 25|VF|
+Youri Tielemans|BEL|CM|97|84|21|26|Anderlecht 13,Monaco 17,Leicester 19,Aston Villa 23|VS|
+Kevin Kampl|SVN|CM|90|82|17|25|Salzburg 12,Dortmund 15,Leverkusen 15,Leipzig 17||
+Arthur Melo|BRA|CM|96|83|19|25|Grêmio 15,Barcelona 18,Juventus 20,Liverpool 22||
+Sandro Tonali|ITA|CM|00|85|25|26|Brescia 17,Milan 20,Newcastle 23|E|
+Manuel Locatelli|ITA|CM|98|84|21|26|Milan 16,Sassuolo 18,Juventus 21|V|
+Davide Frattesi|ITA|CM|99|83|23|26|Sassuolo 19,Inter 23|EF|
+Weston McKennie|USA|CM|98|82|23|26|Schalke 16,Juventus 20|E|
+Ryan Gravenberch|NED|DM|02|86|25|26|Ajax 18,Bayern 22,Liverpool 23|D|
+Bruno Guimarães|BRA|CM|97|87|23|26|Athletico Paranaense 17,Lyon 20,Newcastle 22|VE|
+Douglas Luiz|BRA|CM|98|83|23|26|Man City 17,Aston Villa 19,Juventus 24||
+James Maddison|ENG|AM|96|84|22|26|Norwich 16,Leicester 18,Tottenham 23|VS|
+Morgan Gibbs-White|ENG|AM|00|83|25|26|Wolves 17,Nottingham Forest 22||
+Martin Terrier|FRA|LW|97|82|22|26|Lyon 18,Rennes 20,Leverkusen 24||
+Gonçalo Ramos|POR|ST|01|83|22|26|Benfica 19,PSG 23|F|
+Rasmus Højlund|DEN|ST|03|82|25|26|Atalanta 22,Man Utd 23,Napoli 25|P|
+Ollie Watkins|ENG|ST|95|85|23|26|Brentford 17,Aston Villa 20|PE|
+Bryan Mbeumo|CMR|RW|99|85|24|26|Troyes 17,Brentford 19,Man Utd 25|F|
+Jarrod Bowen|ENG|RW|96|84|23|26|Hull 16,West Ham 20|F|
+Eberechi Eze|ENG|AM|98|85|24|26|QPR 18,Crystal Palace 20,Arsenal 25|DS|
+Morgan Rogers|ENG|AM|02|83|25|26|Middlesbrough 23,Aston Villa 24|D|
+Anthony Gordon|ENG|LW|01|84|24|26|Everton 17,Newcastle 23|P|
+Kaoru Mitoma|JPN|LW|97|83|22|26|Brighton 21|D|
+Takefusa Kubo|JPN|RW|01|83|23|26|Real Madrid 19,Real Sociedad 22|D|
+Mikel Oyarzabal|ESP|ST|97|84|24|26|Real Sociedad 15|F|
+Álex Baena|ESP|AM|01|84|24|26|Villarreal 20,Atlético 25|S|
+Fermín López|ESP|AM|03|83|25|26|Barcelona 23|F|
+Marc Casadó|ESP|DM|03|80|24|26|Barcelona 22||
+Ferran Torres|ESP|ST|00|83|24|26|Valencia 17,Man City 20,Barcelona 22|F|
+Brahim Díaz|MAR|AM|99|83|23|26|Man City 16,Real Madrid 19,Milan 19,Real Madrid 23|D|
+Endrick|BRA|ST|06|80|25|26|Palmeiras 22,Real Madrid 24|F|
+Désiré Doué|FRA|RW|05|83|25|26|Rennes 22,PSG 24|D|
+Bradley Barcola|FRA|LW|02|82|25|26|Lyon 21,PSG 23|P|
+Randal Kolo Muani|FRA|ST|98|84|22|26|Nantes 18,Frankfurt 22,PSG 23,Juventus 24,Tottenham 25|P|
+Marcus Thuram|FRA|ST|97|85|24|26|Guingamp 17,Gladbach 19,Inter 23|PH|
+Leon Bailey|JAM|RW|97|82|22|26|Genk 15,Leverkusen 17,Aston Villa 21,Roma 25|P|
+Patrik Schick|CZE|ST|96|84|24|26|Sampdoria 16,Roma 17,Leipzig 19,Leverkusen 20|FA|
+Jonathan David|CAN|ST|00|84|24|26|Gent 18,Lille 20,Juventus 25|F|
+Victor Boniface|NGA|ST|00|83|23|26|Union SG 22,Leverkusen 23|H|
+Exequiel Palacios|ARG|CM|98|83|23|26|River Plate 16,Leverkusen 20|E|
+Piero Hincapié|ECU|CB|02|84|25|26|Leverkusen 21,Arsenal 25|P|
+Willian Pacho|ECU|CB|01|84|25|26|Antwerp 21,Frankfurt 23,PSG 24|P|
+Lucas Beraldo|BRA|CB|03|80|25|26|São Paulo 22,PSG 24||
+Josip Stanišić|CRO|RB|00|82|25|26|Bayern 21|E|
+Konrad Laimer|AUT|CM|97|84|23|26|Salzburg 15,Leipzig 17,Bayern 23|TE|
+Aleksandar Pavlović|GER|DM|04|84|25|26|Bayern 23|V|
+Angeliño|ESP|LB|97|83|21|26|Man City 15,PSV 18,Leipzig 20,Roma 24|W|
+Destiny Udogie|ITA|LB|02|82|24|26|Udinese 20,Tottenham 23|P|
+Myles Lewis-Skelly|ENG|LB|06|80|25|26|Arsenal 24||
+Jurriën Timber|NED|RB|01|84|25|26|Ajax 19,Arsenal 23|T|
+Malo Gusto|FRA|RB|03|82|25|26|Lyon 21,Chelsea 23||
+Rúben Neves|POR|DM|97|84|21|26|Porto 14,Wolves 17,Al-Hilal 23|VS|
+William Carvalho|POR|DM|92|84|16|26|Sporting CP 11,Betis 18||
+João Moutinho|POR|CM|86|85|13|24|Sporting CP 04,Porto 10,Monaco 13,Wolves 18,Braga 23|VL|
+Otávio|POR|AM|95|84|22|26|Porto 14,Al-Nassr 23|E|
+Pepê|BRA|RW|97|82|23|26|Porto 21||
+Jesús Corona|MEX|RW|93|84|19|24|Twente 13,Porto 15,Sevilla 22|D|
+Héctor Herrera|MEX|CM|90|83|18|23|Porto 13,Atlético 19|E|
+Yacine Brahimi|ALG|LW|90|84|15|21|Granada 13,Porto 14|D|
+Alex Telles|BRA|LB|92|83|19|26|Galatasaray 14,Inter 15,Porto 16,Man Utd 20,Botafogo 24|SW|
+Danilo Pereira|POR|DM|91|84|17|26|Porto 15,PSG 20,Al-Ittihad 24||
+Hulk|BRA|RW|86|86|12|26|Porto 08,Zenit 12,Shanghai SIPG 16,Atlético Mineiro 21|FHP|
+Nicolás Gaitán|ARG|LW|88|83|13|19|Boca Juniors 08,Benfica 10,Atlético 16||
+Óscar Cardozo|PAR|ST|83|84|10|17|Benfica 07,Trabzonspor 14|FA|
+Jonas|BRA|ST|84|85|15|19|Valencia 11,Benfica 14|F|
+Pablo Sarabia|ESP|RW|92|83|20|26|Getafe 11,Sevilla 16,PSG 19,Wolves 23||
+Lucas Moura|BRA|RW|92|84|18|26|PSG 13,Tottenham 18,São Paulo 23|PD|
+Javier Pastore|ARG|AM|89|85|12|21|Palermo 09,PSG 11,Roma 18|VDN|
+Ezequiel Lavezzi|ARG|LW|85|84|11|19|Napoli 07,PSG 12|PD|
+Burak Yılmaz|TUR|ST|85|83|13|21|Trabzonspor 06,Galatasaray 12,Lille 20|F|
+Felipe Melo|BRA|DM|83|83|11|21|Fiorentina 08,Juventus 09,Galatasaray 11,Inter 15,Palmeiras 17|TX|
+Mauro Icardi|ARG|ST|93|87|18|26|Sampdoria 12,Inter 13,PSG 19,Galatasaray 22|F|
+Lucas Torreira|URU|DM|96|83|18|26|Sampdoria 16,Arsenal 18,Galatasaray 22|T|
+Gabriel Sara|BRA|AM|99|82|25|26|Norwich 23,Galatasaray 24||
+Barış Alper Yılmaz|TUR|RW|00|82|25|26|Galatasaray 21|P|
+Kerem Aktürkoğlu|TUR|LW|98|82|24|26|Galatasaray 20,Benfica 24,Fenerbahçe 25||
+Kenan Yıldız|TUR|LW|05|84|26|26|Juventus 23|D|
+Gianluca Scamacca|ITA|ST|99|82|24|26|Sassuolo 19,West Ham 22,Atalanta 23|A|
+Charles De Ketelaere|BEL|AM|01|83|24|26|Club Brugge 19,Milan 22,Atalanta 23||
+Ederson Silva|BRA|CM|99|83|24|26|Salernitana 21,Atalanta 22|E|
+Matteo Politano|ITA|RW|93|82|22|26|Sassuolo 15,Inter 18,Napoli 20|E|
+Scott McTominay|SCO|CM|96|85|25|26|Man Utd 17,Napoli 24|FA|
+Piotr Zieliński|POL|CM|94|85|22|26|Udinese 12,Napoli 16,Inter 24|V|
+Allan|BRA|DM|91|84|17|22|Udinese 12,Napoli 15,Everton 20||
+Faouzi Ghoulam|ALG|LB|91|83|17|22|Saint-Étienne 10,Napoli 14||
+Elseid Hysaj|ALB|RB|94|80|18|25|Empoli 12,Napoli 15,Lazio 21||
+Lorenzo Pellegrini|ITA|AM|96|84|22|26|Sassuolo 15,Roma 17|S|
+Stephan El Shaarawy|ITA|LW|92|82|13|26|Milan 11,Monaco 15,Roma 16|P|
+Leandro Paredes|ARG|DM|94|83|20|26|Roma 14,Zenit 17,PSG 19,Juventus 22,Roma 23,Boca Juniors 25|V|
+Rick Karsdorp|NED|RB|95|80|21|25|Feyenoord 13,Roma 17||
+Luis Alberto|ESP|AM|92|85|19|26|Liverpool 13,Lazio 16,Al-Duhail 24|V|
+Felipe Anderson|BRA|RW|93|83|22|26|Lazio 13,West Ham 18,Lazio 21,Palmeiras 24|D|
+Mattia Zaccagni|ITA|LW|95|83|23|26|Verona 14,Lazio 21||
+Hernanes|BRA|CM|85|84|12|19|São Paulo 05,Lazio 10,Inter 14,Juventus 15||
+Sergio Conceição|POR|RW|74|84|99|09|Porto 96,Lazio 98,Parma 00,Inter 01,Lazio 03,Porto 04,Standard 04||
+Juan Sebastián Verón|ARG|CM|75|89|00|14|Sampdoria 96,Parma 98,Lazio 99,Man Utd 01,Chelsea 03,Inter 04,Estudiantes 06|VS|
+Siniša Mihajlović|SRB|CB|69|85|99|06|Sampdoria 94,Lazio 98,Inter 04|S|
+Diego Simeone|ARG|CM|70|86|97|05|Atlético 94,Inter 97,Lazio 99,Atlético 03|TE|
+Roberto Mancini|ITA|ST|64|84|96|00|Sampdoria 82,Lazio 97|V|
+Kily González|ARG|LW|74|83|01|07|Zaragoza 96,Valencia 99,Inter 03||
+Miguel Ángel Angulo|ESP|RW|77|82|02|09|Valencia 96||
+Mista|ESP|ST|78|82|04|10|Valencia 03,Atlético 06||
+Roberto Soldado|ESP|ST|85|84|12|21|Getafe 08,Valencia 10,Tottenham 13,Villarreal 15||
+Dani Parejo|ESP|CM|89|85|17|26|Getafe 09,Valencia 11,Villarreal 20|VS|
+José Luis Gayà|ESP|LB|95|84|19|26|Valencia 12|E|
+Carlos Soler|ESP|CM|97|83|21|26|Valencia 15,PSG 22,Real Sociedad 24||
+Rodrigo Moreno|ESP|ST|91|84|18|26|Benfica 10,Valencia 14,Leeds 20,Al-Rayyan 23||
+Gonçalo Guedes|POR|LW|96|82|18|26|Benfica 14,PSG 17,Valencia 17,Wolves 22,Real Sociedad 25|P|
+Ever Banega|ARG|CM|88|84|15|26|Boca Juniors 06,Valencia 08,Inter 16,Sevilla 17,Al-Shabab 20|VS|
+Adriano Correia|BRA|LB|84|82|09|19|Sevilla 05,Barcelona 10,Shakhtar 16||
+Lucas Ocampos|ARG|RW|94|83|20|26|Monaco 13,Marseille 15,Sevilla 19||
+Youssef En-Nesyri|MAR|ST|97|83|22|26|Málaga 15,Leganés 18,Sevilla 20,Fenerbahçe 24|A|
+Diego Carlos|BRA|CB|93|84|20|26|Porto 13,Nantes 16,Sevilla 19,Aston Villa 22||
+Steven N'Zonzi|FRA|DM|88|83|16|23|Blackburn 09,Stoke 12,Sevilla 15,Roma 18||
+Sergio Escudero|ESP|LB|89|80|17|24|Schalke 10,Getafe 12,Sevilla 15||
+Kevin Volland|GER|ST|92|82|19|25|Hoffenheim 12,Leverkusen 16,Monaco 20,Union Berlin 23||
+Charles Aránguiz|CHI|CM|89|84|17|23|Internacional 14,Leverkusen 15||
+Stefan Kießling|GER|ST|84|84|13|18|Nürnberg 03,Leverkusen 06|A|
+Bernd Schneider|GER|RW|73|84|01|09|Frankfurt 98,Leverkusen 99|V|
+Zé Roberto|BRA|LW|74|85|02|13|Real Madrid 97,Leverkusen 98,Bayern 02,Hamburg 09|EL|
+Ulf Kirsten|GER|ST|65|84|96|03|Leverkusen 90|F|
+Emerson|BRA|DM|76|86|00|08|Leverkusen 97,Roma 00,Juventus 04,Real Madrid 06,Milan 07|T|
+Leonardo Araújo|BRA|AM|69|85|96|02|PSG 96,Milan 97|V|
+Sebastian Deisler|GER|RW|80|82|01|06|Hertha 99,Bayern 02||
+Hasan Salihamidžić|BIH|RW|77|82|01|10|Hamburg 95,Bayern 98,Juventus 07|E|
+Roque Santa Cruz|PAR|ST|81|81|06|15|Bayern 99,Blackburn 07,Man City 09|A|
+Claudio Pizarro|PER|ST|78|85|05|19|Werder Bremen 99,Bayern 01,Chelsea 07,Werder Bremen 08,Bayern 12,Werder Bremen 15|AL|
+Torsten Frings|GER|DM|76|84|04|11|Werder Bremen 97,Dortmund 02,Bayern 04,Werder Bremen 05|T|
+Johan Micoud|FRA|AM|73|84|03|07|Parma 00,Werder Bremen 02,Bordeaux 06|V|
+Aílton|BRA|ST|73|84|03|07|Werder Bremen 98,Schalke 04||
+Naldo|BRA|CB|82|83|08|19|Werder Bremen 05,Wolfsburg 12,Schalke 16|AS|
+Grafite|BRA|ST|79|84|08|14|Wolfsburg 07|F|
+Kevin Kurányi|GER|ST|82|83|05|12|Stuttgart 01,Schalke 05,Dynamo Moscow 10|A|
+Ebbe Sand|DEN|ST|72|83|00|05|Schalke 99|A|
+Julian Draxler|GER|AM|93|84|16|26|Schalke 11,Wolfsburg 15,PSG 17,Al-Ahli 23|D|
+Dede|BRA|LB|78|82|01|10|Dortmund 98||
+Jan Koller|CZE|ST|73|83|02|09|Anderlecht 96,Dortmund 01,Monaco 06|A|
+Lars Ricken|GER|AM|76|82|97|07|Dortmund 93||
+Andreas Möller|GER|AM|67|87|96|04|Dortmund 94,Schalke 00|VS|
+Karl-Heinz Riedle|GER|ST|65|83|96|01|Dortmund 93,Liverpool 97||
+Stéphane Chapuisat|SUI|ST|69|85|96|05|Dortmund 91,Grasshopper 99|F|
+Nuri Şahin|TUR|CM|88|84|10|21|Dortmund 05,Real Madrid 11,Liverpool 12,Dortmund 13,Werder Bremen 18||
+Kevin Großkreutz|GER|RW|88|80|12|18|Dortmund 09||
+Julian Brandt|GER|AM|96|85|21|26|Leverkusen 14,Dortmund 19|V|
+Emre Can|GER|DM|94|83|19|26|Bayern 12,Leverkusen 13,Liverpool 14,Juventus 18,Dortmund 20|H|
+Karim Adeyemi|GER|LW|02|82|24|26|Salzburg 19,Dortmund 22|P|
+Donyell Malen|NED|RW|99|82|22|26|PSV 17,Dortmund 21,Aston Villa 24|P|
+Marcel Sabitzer|AUT|CM|94|84|20|26|Salzburg 14,Leipzig 14,Bayern 21,Dortmund 23|S|
+Emil Forsberg|SWE|AM|91|83|17|25|Leipzig 15,NY Red Bulls 24|V|
+Yussuf Poulsen|DEN|ST|94|80|18|26|Leipzig 13|A|
+Christopher Nkunku|FRA|AM|97|87|22|26|PSG 15,Leipzig 19,Chelsea 23,Milan 25|F|
+Lois Openda|BEL|ST|00|84|23|26|Club Brugge 18,Lens 22,Leipzig 23,Juventus 25|P|
+Davy Klaassen|NED|CM|93|82|16|25|Ajax 11,Everton 17,Werder Bremen 18,Ajax 20,Inter 23|F|
+Donny van de Beek|NED|CM|97|82|19|24|Ajax 15,Man Utd 20|F|
+Steven Bergwijn|NED|RW|97|82|22|26|PSV 14,Tottenham 20,Ajax 22,Al-Ittihad 24||
+Edson Álvarez|MEX|DM|97|82|22|26|Ajax 19,West Ham 23||
+Daley Blind|NED|LB|90|83|15|26|Ajax 08,Man Utd 14,Ajax 18,Bayern 23,Girona 23|V|
+Jan Vennegoor of Hesselink|NED|ST|78|81|05|09|Twente 96,PSV 01,Celtic 06|A|
+Mateja Kežman|SRB|ST|79|84|03|09|PSV 00,Chelsea 04,Atlético 05,Fenerbahçe 06|F|
+Ibrahim Afellay|NED|AM|86|82|10|18|PSV 04,Barcelona 11,Stoke 15|D|
+Memphis Depay|NED|LW|94|86|20|26|PSV 11,Man Utd 15,Lyon 17,Barcelona 21,Atlético 23,Corinthians 24|FS|
+Hirving Lozano|MEX|LW|95|83|18|26|PSV 17,Napoli 19,PSV 23,San Diego 25|P|
+Cody Gakpo|NED|LW|99|85|22|26|PSV 18,Liverpool 22|F|
+Luuk de Jong|NED|ST|90|82|18|26|Twente 08,Gladbach 12,PSV 14,Sevilla 19,Barcelona 21,PSV 22|A|
+Johan Bakayoko|BEL|RW|03|81|24|26|PSV 21,Leipzig 25|D|
+Joey Veerman|NED|CM|98|82|23|26|Heerenveen 18,PSV 22|V|
+Guus Til|NED|AM|97|80|23|26|AZ 15,Spartak Moscow 19,PSV 22||
+André Ooijer|NED|CB|74|80|04|09|PSV 97,Blackburn 06,PSV 09||
+Wilfred Bouma|NED|LB|78|80|03|09|PSV 96,Aston Villa 05||
+Ryan Babel|NED|LW|86|81|07|20|Ajax 04,Liverpool 07,Hoffenheim 10,Ajax 12,Beşiktaş 16,Galatasaray 19|P|
+Hugo Viana|POR|CM|83|80|05|13|Sporting CP 00,Newcastle 02,Braga 08||
+João Félix|POR|ST|99|85|19|26|Benfica 18,Atlético 19,Chelsea 23,Barcelona 23,Milan 25,Al-Nassr 25|D|
+Gonçalo Inácio|POR|CB|01|83|24|26|Sporting CP 20|V|
+Pedro Gonçalves|POR|AM|98|83|20|26|Famalicão 19,Sporting CP 20|F|
+Morten Hjulmand|DEN|DM|99|84|24|26|Lecce 21,Sporting CP 23|T|
+Francisco Trincão|POR|RW|99|83|24|26|Braga 18,Barcelona 20,Wolves 21,Sporting CP 22|D|
+Geovany Quenda|POR|RW|07|80|25|26|Sporting CP 24,Chelsea 26|P|
+João Mário|POR|CM|93|83|16|26|Sporting CP 11,Inter 16,West Ham 18,Sporting CP 20,Benfica 21|V|
+Adrien Silva|POR|CM|89|82|15|23|Sporting CP 07,Leicester 17,Sampdoria 20||
+Bas Dost|NED|ST|89|82|16|22|Wolfsburg 12,Sporting CP 16,Frankfurt 19|FA|
+Liedson|POR|ST|77|83|05|12|Sporting CP 03|F|
+Rui Jorge|POR|LB|73|79|01|05|Porto 92,Sporting CP 98||
+Rúben Amorim|POR|CM|85|79|10|17|Belenenses 03,Benfica 08,Braga 12||
+Rafa Silva|POR|AM|93|84|21|26|Braga 13,Benfica 16,Beşiktaş 24|PD|
+Orkun Kökçü|TUR|CM|00|84|24|26|Feyenoord 18,Benfica 23|V|
+Ljubomir Fejsa|SRB|DM|88|82|16|20|Olympiacos 08,Benfica 13|T|
+Eduardo Salvio|ARG|RW|90|82|16|20|Atlético 10,Benfica 12|E|
+Luisão|BRA|CB|81|83|09|18|Cruzeiro 99,Benfica 03|A|
+Nuno Gomes|POR|ST|76|83|00|11|Benfica 97,Fiorentina 00,Benfica 02|F|
+Sérgio Oliveira|POR|CM|92|82|20|26|Porto 09,Galatasaray 22||
+Mehdi Taremi|IRN|ST|92|84|22|26|Rio Ave 19,Porto 20,Inter 24,Olympiacos 25|F|
+Lisandro López|ARG|ST|83|85|08|16|Racing Club 03,Porto 05,Lyon 09|F|
+Benni McCarthy|RSA|ST|77|82|03|10|Ajax 97,Celta 99,Porto 03,Blackburn 06||
+Costinha|POR|DM|74|83|03|09|Monaco 97,Porto 01,Dynamo Moscow 04,Atlético 06|T|
+Jorge Costa|POR|CB|71|83|01|06|Porto 90,Charlton 01||
+Nuno Valente|POR|LB|74|81|03|09|Porto 02,Everton 05||
+Raul Meireles|POR|CM|83|82|10|16|Porto 04,Liverpool 10,Chelsea 11,Fenerbahçe 12|E|
+Jackson Martínez|COL|ST|86|84|13|17|Porto 12,Atlético 15|FA|
+Danilo|BRA|RB|91|83|20|26|Porto 12,Real Madrid 15,Man City 17,Juventus 19,Flamengo 25|V|
+Sonny Anderson|BRA|ST|70|85|98|04|Monaco 94,Barcelona 97,Lyon 99,Villarreal 03|F|
+Sidney Govou|FRA|RW|79|82|05|12|Lyon 98,Panathinaikos 10||
+Florent Malouda|FRA|LW|80|85|09|15|Guingamp 01,Lyon 03,Chelsea 07|P|
+Hatem Ben Arfa|FRA|RW|87|84|15|21|Lyon 04,Marseille 08,Newcastle 10,Nice 15,PSG 16|DNX|
+Alexandre Lacazette|FRA|ST|91|86|16|26|Lyon 10,Arsenal 17,Lyon 22|F|
+Nabil Fekir|FRA|AM|93|84|17|26|Lyon 13,Betis 19,Al-Jazira 25|D|
+Corentin Tolisso|FRA|CM|94|83|16|26|Lyon 13,Bayern 17,Lyon 22||
+Houssem Aouar|FRA|CM|98|82|20|26|Lyon 16,Roma 23,Al-Ittihad 24|D|
+Rayan Cherki|FRA|AM|03|83|25|26|Lyon 19,Man City 25|DV|
+Christophe Dugarry|FRA|ST|72|80|99|04|Bordeaux 88,Milan 96,Barcelona 97,Marseille 97,Bordeaux 99||
+Mamadou Niang|SEN|ST|79|84|09|14|Marseille 05,Fenerbahçe 10|P|
+Mathieu Valbuena|FRA|AM|84|84|13|23|Marseille 06,Dynamo Moscow 14,Lyon 15,Fenerbahçe 17,Olympiacos 19|S|
+André-Pierre Gignac|FRA|ST|85|84|13|24|Toulouse 07,Marseille 10,Tigres 15|F|
+Florian Thauvin|FRA|RW|93|83|17|26|Marseille 13,Newcastle 15,Marseille 16,Tigres 21,Udinese 22,Lens 25|F|
+Benjamin Mendy|FRA|LB|94|81|16|24|Marseille 13,Monaco 16,Man City 17||
+Mason Greenwood|ENG|ST|01|84|25|26|Man Utd 18,Getafe 23,Marseille 24|FSX|
+Pierre-Emile Højbjerg|DEN|DM|95|83|21|26|Bayern 13,Southampton 16,Tottenham 20,Marseille 24|T|
+Djibril Cissé|FRA|ST|81|83|04|12|Auxerre 98,Liverpool 04,Marseille 06,Panathinaikos 09,Lazio 11|P|
+Dado Pršo|CRO|ST|74|80|03|07|Monaco 99,Rangers 04||
+Jérôme Rothen|FRA|LW|78|81|03|09|Monaco 02,PSG 04||
+Thomas Lemar|FRA|LW|95|84|17|26|Monaco 15,Atlético 18,Girona 25|V|
+Tiémoué Bakayoko|FRA|DM|94|82|16|23|Monaco 14,Chelsea 17||
+Youssouf Fofana|FRA|DM|99|83|23|26|Monaco 20,Milan 24|E|
+Aleksandr Golovin|RUS|AM|96|83|22|26|CSKA Moscow 14,Monaco 18|V|
+Takumi Minamino|JPN|AM|95|81|23|26|Salzburg 15,Liverpool 20,Monaco 22||
+Maghnes Akliouche|FRA|RW|02|82|25|26|Monaco 21|D|
+Shabani Nonda|COD|ST|77|82|01|05|Rennes 98,Monaco 00,Roma 05||
+Marco Simone|ITA|ST|69|83|97|02|Milan 89,PSG 97,Monaco 99||
+Raí|BRA|AM|65|84|96|98|PSG 93||
+Senny Mayulu|FRA|AM|06|79|25|26|PSG 24||
+Lee Kang-in|KOR|AM|01|82|24|26|Valencia 18,Mallorca 21,PSG 23|V|
+Marco Asensio|ESP|AM|96|84|17|26|Mallorca 14,Real Madrid 15,PSG 23,Fenerbahçe 25|F|
+Ángel Correa|ARG|ST|95|82|21|26|Atlético 15,Tigres 25||
+Maxi Rodríguez|ARG|RW|81|83|07|17|Espanyol 02,Atlético 05,Liverpool 10,Newell's 12||
+Raúl García|ESP|CM|86|83|15|23|Osasuna 04,Atlético 07,Athletic 15|A|
+Mario Suárez|ESP|DM|87|80|13|19|Atlético 09,Fiorentina 15||
+Rodrigo Riquelme|ESP|LW|00|80|24|26|Atlético 19||
+Giuliano Simeone|ARG|RW|02|80|25|26|Atlético 22|E|
+Conor Gallagher|ENG|CM|00|83|24|26|Chelsea 19,Atlético 24|E|
+Alexander Sørloth|NOR|ST|95|84|24|26|Real Sociedad 21,Villarreal 23,Atlético 24|A|
+Jude Bellingham|ENG|AM|03|89|23|26|Birmingham 19,Dortmund 20,Real Madrid 23|FDE|20=80,21=83,22=85,24=87,25=86
+Robinho|BRA|LW|84|86|07|19|Santos 02,Real Madrid 05,Man City 08,Milan 10,Santos 14,Sivasspor 16,Başakşehir 18|DPN|
