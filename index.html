@@ -1110,8 +1110,8 @@ function applyMatch(M) {
     if (s.yc) { pl.yel++; if (pl.yel % 5 === 0) { pl.sus = Math.max(pl.sus, 1); if (pl.team === S.userTeam) pushInbox(`🟨 ${dispName(pl)} picked up a 5th yellow and is suspended for the next match.`); } }
     if (s.rc) { pl.sus = Math.max(pl.sus, 1); if (pl.team === S.userTeam) pushInbox(`🟥 ${dispName(pl)} was sent off and is suspended for the next match.`); }
     if (pl.rush > 0) pl.rush--;
-    const injP = 0.011 * (s.min / 90) * (pl.rush > 0 ? 3.5 : 1) * (S.teams[pl.team].tactics.train === 'Fitness' ? 0.7 : 1) * (pl.fit < 60 ? 1.8 : 1);
-    if (rnd() < injP) { pl.inj = ri(1, 5); if (pl.team === S.userTeam) pushInbox(`🚑 ${dispName(pl)} is injured and will miss about ${pl.inj} week${pl.inj > 1 ? 's' : ''}.`); }
+    const injP = 0.0062 * (s.min / 90) * (pl.rush > 0 ? 3.5 : 1) * (S.teams[pl.team].tactics.train === 'Fitness' ? 0.7 : 1) * (pl.fit < 60 ? 1.8 : 1);
+    if (rnd() < injP) { pl.inj = pickW([[1, 40], [2, 30], [3, 18], [4, 8], [5, 4]], x => x[1])[0]; if (pl.team === S.userTeam) pushInbox(`🚑 ${dispName(pl)} is injured and will miss about ${pl.inj} week${pl.inj > 1 ? 's' : ''}.`); }
   }
   const d = M.hg - M.ag;
   [[th, d], [ta, -d]].forEach(([t, dd]) => {
@@ -1289,7 +1289,7 @@ function handleRequest(plId, action) {
 function squadPick(t, filt, wf) { return pickW(t.squad.map(id => P[id]).filter(p => p.inj <= 0 && (!filt || filt(p))), wf || (p => Math.pow(1.12, p.ovr - 75))); }
 function nm(p) { return dispName(p); }
 const SCENARIOS = [
-  { k: 'trainInj', w: 3, make(t) { const p = squadPick(t); if (!p) return null; return { pl: p.id, title: '🚑 Training ground injury', text: `${nm(p)} has picked up a knock in training. The physio wants 3 weeks, but says he could be patched up in 1.`, choices: [['rest', 'Rest him properly (3 weeks)'], ['rush', 'Rush him back (1 week, high re-injury risk)']] }; } },
+  { k: 'trainInj', w: 1.4, make(t) { const p = squadPick(t); if (!p) return null; return { pl: p.id, title: '🚑 Training ground injury', text: `${nm(p)} has picked up a knock in training. The physio wants 3 weeks, but says he could be patched up in 1.`, choices: [['rest', 'Rest him properly (3 weeks)'], ['rush', 'Rush him back (1 week, high re-injury risk)']] }; } },
   { k: 'wantsOut', w: 2, make(t) { const p = squadPick(t, p => !p.req && p.ovr >= 80); if (!p) return null; const rival = pickOne(S.teams.filter(x => !x.user && x.rep >= t.rep - 4)); if (!rival) return null; return { pl: p.id, team: rival.id, title: '📞 Big club interest', text: `${rival.name} have made it clear they want ${nm(p)}, and his agent says he wants to hear them out.`, choices: [['talk', 'Let him talk to them'], ['block', 'Block it: he stays'], ['role', 'Promise him a bigger role']] }; } },
   { k: 'bustup', w: 2, make(t) { const a = squadPick(t); const b = squadPick(t, p => a && p.id !== a.id); if (!a || !b) return null; return { pl: a.id, pl2: b.id, title: '🥊 Training ground bust-up', text: `${nm(a)} and ${nm(b)} had to be pulled apart after a fight in training. The whole squad saw it.`, choices: [['fine', 'Fine them both'], ['drop', 'Drop both for the next match'], ['ignore', "Ignore it, boys will be boys"]] }; } },
   { k: 'party', w: 2, make(t) { const p = squadPick(t, p => p.age <= 30); if (!p) return null; return { pl: p.id, title: '🍾 Caught partying', text: `${nm(p)} was photographed leaving a nightclub at 3am, two days before a match. The papers are loving it.`, choices: [['fine', 'Fine him a week\'s wages'], ['drop', 'Drop him for the next match'], ['ignore', 'Say nothing']] }; } },
@@ -1310,7 +1310,7 @@ function maybeScenario() {
   if (rnd() < 0.5) {
     const t = pickOne(S.teams.filter(x => !x.user)); const p = squadPick(t, p => p.ovr >= 84);
     if (p) {
-      if (rnd() < 0.55) { p.inj = Math.max(p.inj, ri(1, 3)); pushNews(`🚑 ${t.name} blow: ${nm(p)} is injured in training (${p.inj} wk).`); post(t.id, 'loss', { coach: 'the physio', flop: shortName(p), score: '', opp: '', club: t.name, star: shortName(p) }); }
+      if (rnd() < 0.35) { p.inj = Math.max(p.inj, ri(1, 3)); pushNews(`🚑 ${t.name} blow: ${nm(p)} is injured in training (${p.inj} wk).`); post(t.id, 'loss', { coach: 'the physio', flop: shortName(p), score: '', opp: '', club: t.name, star: shortName(p) }); }
       else { p.mor = Math.min(p.mor, 20); pushNews(`📞 Reports: ${nm(p)} is unsettled at ${t.name}.`); }
     }
   }
