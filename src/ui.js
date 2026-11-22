@@ -71,7 +71,7 @@ function resumeGame() { if (load()) { migrate(); U.tab = isDrafting() ? 'draft' 
 function newGameUI() { openModal(`<h2>Start a new reality?</h2><p class="muted">Your current save will be deleted.</p><div class="row"><button class="btn red" onclick="try{localStorage.removeItem(SAVE_KEY)}catch(e){};S=null;closeModal();render()">Yes, start over</button><button class="btn" onclick="closeModal()">Cancel</button></div>`); }
 
 // ---------- shell ----------
-const TABS = [['home', 'Club House'], ['squad', 'Team Management'], ['tactics', 'Formation & Tactics'], ['fixtures', 'Schedule'], ['table', 'Standings'], ['stats', 'Records'], ['awards', 'Awards'], ['transfers', 'Transfers'], ['fans', 'Fan Zone'], ['coaches', 'Coaching Staff'], ['clubs', 'Club Search']];
+const TABS = [['home', 'Club House'], ['tactics', 'Squad & Tactics'], ['fixtures', 'Schedule'], ['table', 'Standings'], ['stats', 'Records'], ['awards', 'Awards'], ['transfers', 'Transfers'], ['fans', 'Fan Zone'], ['coaches', 'Coaching Staff'], ['clubs', 'Club Search']];
 function phaseLabel() {
   if (isDrafting()) return `${S.phase === 'sdraft' ? 'Season draft' : 'Draft'} · round ${Math.floor(S.draft.pick / 30) + 1} of ${S.draft.rounds}`;
   if (S.phase === 'preseason') return 'Pre-season · window open';
@@ -93,7 +93,7 @@ function render() {
   if (S.phase === 'predraft') return renderPreDraft();
   theme();
   const u = me();
-  let tabs = S.phase === 'draft' ? [['draft', 'Draft Room'], ['clubs', 'Club Search']] : S.phase === 'sdraft' ? [['draft', 'Season Draft'], ['squad', 'Team Management'], ['clubs', 'Club Search'], ['fans', 'Fan Zone'], ['awards', 'Awards']] : TABS.slice();
+  let tabs = S.phase === 'draft' ? [['draft', 'Draft Room'], ['clubs', 'Club Search']] : S.phase === 'sdraft' ? [['draft', 'Season Draft'], ['tactics', 'Squad & Tactics'], ['clubs', 'Club Search'], ['fans', 'Fan Zone'], ['awards', 'Awards']] : TABS.slice();
   if (S.phase === 'over') tabs = [['legacy', 'Legacy']].concat(tabs);
   if (!tabs.some(t => t[0] === U.tab)) U.tab = tabs[0][0];
   const unread = S.offers.length + S.inbox.filter(x => x.kind === 'req').length;
@@ -115,7 +115,7 @@ function render() {
   </div>
   <footer class="prompts">${promptBar()}</footer>
 `;
-  const f = { draft: vDraft, home: vHome, squad: vSquad, tactics: vTactics, fixtures: vFixtures, table: vTable, stats: vStats, awards: vAwards, transfers: vTransfers, coaches: vCoaches, clubs: vClubs, fans: vFans, legacy: vLegacy }[U.tab];
+  const f = { draft: vDraft, home: vHome, squad: vTactics, tactics: vTactics, fixtures: vFixtures, table: vTable, stats: vStats, awards: vAwards, transfers: vTransfers, coaches: vCoaches, clubs: vClubs, fans: vFans, legacy: vLegacy }[U.tab];
   $('#main').innerHTML = f();
   draftTimer();
 }
@@ -362,6 +362,19 @@ function vSquad() {
 const fitB = f => `<span class="fit" style="color:${f > 85 ? 'var(--ok)' : f > 70 ? 'var(--gold)' : 'var(--bad)'}">${Math.round(f)}%</span>`;
 
 // ---------- tactics ----------
+function pitchCard(p, pos, e, i, cls, click, extra) {
+  if (!p) return `<div class="slot pc empty ${cls}" style="${i}" ${click}><div class="pc-top"><span class="pc-o">+</span></div><div class="pc-name">${pos}</div></div>`;
+  return `<div class="slot pc k-${k2(e)[1]} ${cls}" style="${i}" ${click}><div class="pc-top"><span class="pc-o">${e}</span><span class="pc-p">${pos}</span></div><div class="pc-name">${condA(p)}<span>${esc(DB[p.id].short)}</span></div><div class="pc-sub">'${String(p.y).slice(2)}${extra || ''}</div></div>`;
+}
+function squadTable(u, sel, slots) {
+  const xi = new Set(u.lineup);
+  const sq = u.squad.map(id => P[id]).sort((a, b) => sel !== null ? effRating(b, slots[sel][0]) - effRating(a, slots[sel][0]) : POS_ORDER.indexOf(a.pos) - POS_ORDER.indexOf(b.pos) || b.ovr - a.ovr);
+  return `<div class="card sqcard"><div class="hrow"><h3>${sel === null ? `Squad · ${sq.length} players` : `Pick a player for ${slots[sel][0]}`}</h3>${sel !== null ? `<button class="btn sm ghost" onclick="U.sel=null;render()">Cancel</button>` : ''}</div>
+  <p class="fine sqhint">${sel === null ? 'Tap a player for his profile: captain, penalties, find buyers, transfer-list, release. Tap a shirt on the pitch to change who plays there.' : `Sorted by how well each player fits <b>${slots[sel][0]}</b>. Tap one to put him there.`}</p>
+  <div class="tscroll"><table class="tbl sqtbl"><thead><tr><th>Pos</th><th>Player</th><th>${sel !== null ? 'Fit' : 'OVR'}</th><th>Cond</th><th>Fitness</th><th>Age</th><th>Apps</th><th>G</th><th>A</th><th>Avg</th></tr></thead><tbody>
+  ${sq.map(p => { const s2 = p.st; const e = sel !== null ? Math.round(effRating(p, slots[sel][0])) : p.ovr; const can = sel !== null && available(p); return `<tr class="${xi.has(p.id) ? 'xi' : ''} ${sel !== null && !available(p) ? 'dim' : ''}" onclick="${can ? `assign(${p.id})` : `openPlayer(${p.id})`}" style="cursor:pointer"><td>${posChip(p.pos)}</td><td class="sqn">${esc(DB[p.id].short)} ${yrTag(p.y)}${u.captain === p.id ? ' <span class="cap">C</span>' : ''}${u.pk === p.id ? '<span class="cap pk">P</span>' : ''}${p.req ? ' <span class="pill badb">wants out</span>' : ''}${p.listed ? ' <span class="pill">listed</span>' : ''}${p.inj ? ` <i class="inj"></i>${p.inj}w` : ''}${p.sus ? ' <i class="rcard"></i>' : ''}${DB[p.id].clubs.some(c => c[0] === u.name) ? ' <span class="leg" title="Played here in real life">★</span>' : ''}</td><td>${ob(e)}</td><td>${condA(p)}</td><td>${fitB(p.fit)}</td><td>${p.age}</td><td>${s2.app}</td><td><b>${s2.g}</b></td><td><b>${s2.a}</b></td><td>${s2.app ? (s2.rt / s2.app).toFixed(2) : '–'}</td></tr>`; }).join('')}
+  </tbody></table></div><p class="fine">Blue edge = starting XI. Arrows = condition (fitness + morale). ★ = played for this club in real life.</p></div>`;
+}
 function teamChem(t) { const slots = FORMS[t.tactics.form]; const ids = t.lineup.filter(x => x !== null); const sb = {}; t.lineup.forEach((id, i) => { if (id !== null) sb[id] = slots[i][0]; }); return chemistry(ids, sb); }
 function vTactics() {
   const u = me(); validateLineup(u); const slots = FORMS[u.tactics.form]; const cf = coachFit(u); const co = S.coaches[u.coach];
@@ -369,12 +382,13 @@ function vTactics() {
   const list = u.squad.map(id => P[id]).sort((a, b) => sel !== null ? effRating(b, slots[sel][0]) - effRating(a, slots[sel][0]) : POS_ORDER.indexOf(a.pos) - POS_ORDER.indexOf(b.pos) || b.ovr - a.ovr);
   const opt = k => `<label>${labelOf(k)}<select onchange="setTac('${k}',this.value)">${TACTIC_OPTS[k].map(o => `<option ${u.tactics[k] === o ? 'selected' : ''}>${o}</option>`).join('')}</select></label>`;
   const lazyF = u.lineup.filter((id, i) => id !== null && P[id].wr === 'Low' && (SLOT_GROUP(slots[i][0]) === 'ATT' || slots[i][0] === 'AM')).map(id => DB[id].short);
-  return `<div class="cols tac">
+  return `<div class="cols tac"><div class="grow lcol">
    <div class="card pitchcard">
      <div class="hrow"><h3>Starting XI</h3><div class="row"><select onchange="setTac('form',this.value)">${Object.keys(FORMS).map(f => `<option ${u.tactics.form === f ? 'selected' : ''}>${f}</option>`).join('')}</select><button class="btn sm" onclick="autoLineup(me());U.sel=null;save();render()">Auto-pick XI</button></div></div>
-     <div class="pitch">${slots.map((s, i) => { const id = u.lineup[i]; const p = id !== null ? P[id] : null; const e = p ? Math.round(effRating(p, s[0])) : 0; return `<div class="slot g-${SLOT_GROUP(s[0])} ${sel === i ? 'sel' : ''} ${p && posPen(p.pos, s[0]) > 3 ? 'oop' : ''}" style="left:${s[1]}%;bottom:${pby(s[2])}%" onclick="selSlot(${i})"><span class="ovr t-${tier(e)}">${p ? e : '?'}</span><b>${p ? condA(p) + esc(DB[p.id].short) : 'empty'}</b><small>${s[0]}${p ? ' · ' + yrTag(p.y) : ''}${u.captain === id ? ' · ©' : ''}</small></div>`; }).join('')}</div>
-     <p class="fine">${sel === null ? 'Tap a position, then tap a player in the list to put him there. A red outline means he is out of position.' : `Choosing a player for <b>${slots[sel][0]}</b>. The list is sorted by how well each player fits the role.`}</p>
+     <div class="pitch">${slots.map((s, i) => { const id = u.lineup[i]; const p = id !== null ? P[id] : null; const e = p ? Math.round(effRating(p, s[0])) : 0; return pitchCard(p, s[0], e, `left:${s[1]}%;bottom:${pby(s[2])}%`, `${sel === i ? 'sel' : ''} ${p && posPen(p.pos, s[0]) > 3 ? 'oop' : ''}`, `onclick="selSlot(${i})"`, u.captain === id ? ' · ©' : ''); }).join('')}</div>
+     <p class="fine">${sel === null ? 'Tap a shirt, then pick a player in the squad list. A red outline means he is out of position.' : `Choosing a player for <b>${slots[sel][0]}</b>. The list is sorted by how well each player fits the role.`}</p>
    </div>
+   ${squadTable(u, sel, slots)}</div>
    <div class="side wide">
      <div class="card chem"><div class="hrow"><h3>Chemistry</h3><span class="chemscore ${ch.score >= 70 ? 'good' : ch.score >= 50 ? 'mid' : 'bad'}">${ch.score}</span></div>
        <div class="kv"><span>Avg football IQ</span><b>${ch.iq.toFixed(0)}</b></div>
@@ -382,9 +396,6 @@ function vTactics() {
        ${lazyF.length >= 2 ? `<p class="warn">${lazyF.join(', ')} don't press. You'll score more, but you'll concede a lot more too.</p>` : lazyF.length === 1 ? `<p class="fine">${lazyF[0]} doesn't track back. One is fine; two or more makes games wide open.</p>` : ''}
        ${ch.vol ? `<p class="warn">${ch.vol} hothead${ch.vol > 1 ? 's' : ''} in the XI: low IQ and volatile, which hurts chemistry and earns more cards.</p>` : ''}
      </div>
-     <div class="card"><h3>${sel === null ? 'Squad' : 'Pick for ' + slots[sel][0]}</h3><div class="tscroll short"><table class="tbl"><tbody>
-       ${list.map(p => { const e = sel !== null ? Math.round(effRating(p, slots[sel][0])) : p.ovr; return `<tr class="${xi.has(p.id) ? 'xi' : ''} ${available(p) ? '' : 'dim'}" ${sel !== null && available(p) ? `onclick="assign(${p.id})" style="cursor:pointer"` : ''}><td>${posChip(p.pos)}</td><td>${esc(DB[p.id].short)} ${yrTag(p.y)} ${p.inj ? '<i class="inj"></i>' : ''}${p.sus ? '<i class="rcard"></i>' : ''}</td><td>${condA(p)}</td><td>${fitB(p.fit)}</td><td>${ob(e)}</td></tr>`; }).join('')}
-     </tbody></table></div></div>
      <div class="card"><h3>Player instructions</h3>${slots.map((s, i) => { const id = u.lineup[i]; if (id === null) return ''; const g = SLOT_GROUP(s[0]); const opts = Object.entries(INSTR).filter(([k, d]) => d.g.includes(g) && (!d.wideOnly || ['LB', 'RB', 'LWB', 'RWB'].includes(s[0]))); const cur = (u.instr || {})[id]; const d = cur && INSTR[cur]; return `<div class="instr">${posChip(s[0])}<span class="iname">${esc(DB[id].short)}</span><select onchange="setInstr(${id},this.value)"><option value="">Default</option>${opts.map(([k, o]) => `<option value="${k}" ${cur === k ? 'selected' : ''}>${o.lbl}</option>`).join('')}</select>${d && d.g.includes(g) ? `<div class="idesc"><span class="okc">▲ ${d.up}</span><span class="warn">▼ ${d.down}</span></div>` : ''}</div>`; }).join('')}</div>
      <div class="card"><h3>Instructions</h3><div class="tacgrid">${['ment', 'press', 'tempo', 'width', 'line', 'pass', 'train', 'talk'].map(opt).join('')}
        <label>Captain<select onchange="me().captain=+this.value;save();render()">${u.squad.map(id => `<option value="${id}" ${u.captain === id ? 'selected' : ''}>${esc(DB[id].name)}</option>`).join('')}</select></label>
@@ -397,7 +408,7 @@ function vTactics() {
      </div>
    </div></div>`;
 }
-function selSlot(i) { U.sel = U.sel === i ? null : i; render(); }
+function selSlot(i) { U.sel = U.sel === i ? null : i; render(); if (U.sel !== null && innerWidth < 820) { const el = document.querySelector('.sqcard'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }
 function assign(id) { const u = me(); const i = U.sel; if (i === null) return; const cur = u.lineup.indexOf(id); if (cur >= 0) u.lineup[cur] = u.lineup[i]; u.lineup[i] = id; U.sel = null; validateLineup(u); save(); render(); }
 function setInstr(id, k) { const u = me(); u.instr = u.instr || {}; if (k) u.instr[id] = k; else delete u.instr[id]; save(); render(); }
 function setTac(k, v) { const u = me(); u.tactics[k] = v; if (k === 'form') { autoLineup(u); U.sel = null; } save(); render(); }
@@ -636,7 +647,7 @@ function vClubs() {
   const xi = new Set(t.lineup || []);
   const bench = sq.filter(p => !xi.has(p.id));
   const tac = ['ment', 'press', 'tempo', 'width', 'line', 'pass'].map(k => `<span class="pill">${labelOf(k)}: <b>${t.tactics[k]}</b></span>`).join('');
-  const pitch = t.squad.length ? `<div class="pitch">${slots.map((s, i) => { const pid = t.lineup[i]; const p = pid !== null && pid !== undefined ? P[pid] : null; return `<div class="slot g-${SLOT_GROUP(s[0])} ${p && posPen(p.pos, s[0]) > 3 ? 'oop' : ''}" style="left:${s[1]}%;bottom:${pby(s[2])}%" ${p ? `onclick="openPlayer(${p.id})"` : ''}><span class="ovr t-${tier(p ? p.ovr : 60)}">${p ? p.ovr : '?'}</span><b>${p ? esc(DB[p.id].short) : 'empty'}</b><small>${s[0]}${p ? ' · ' + yrTag(p.y) : ''}${p && t.captain === p.id ? ' · ©' : ''}${p && untouchable(p) ? ' <i class="key">KEY</i>' : ''}</small></div>`; }).join('')}</div>` : '<p class="muted">No players yet.</p>';
+  const pitch = t.squad.length ? `<div class="pitch">${slots.map((s, i) => { const pid = t.lineup[i]; const p = pid !== null && pid !== undefined ? P[pid] : null; return pitchCard(p, s[0], p ? p.ovr : 0, `left:${s[1]}%;bottom:${pby(s[2])}%`, p && posPen(p.pos, s[0]) > 3 ? 'oop' : '', p ? `onclick="openPlayer(${p.id})"` : '', `${p && t.captain === p.id ? ' · ©' : ''}${p && untouchable(p) ? ' <i class="key">KEY</i>' : ''}`); }).join('')}</div>` : '<p class="muted">No players yet.</p>';
   return `<div class="card"><div class="clubsel">${S.teams.map(x => `<button class="${x.id === id ? 'on' : ''}" onclick="U.clubView=${x.id};render()" title="${x.name}">${crest(x, 'sm')}</button>`).join('')}</div></div>
   <div class="card clubhead" style="--k1:${t.c1}"><div class="hrow"><div class="row">${crest(t, 'xl')}<div><h2>${t.name}</h2><small class="muted">${CONF_NAME[t.conf]}${S.table ? ' · ' + ord(confPos(id)) : ''} · budget ${fm(t.budget)}</small></div></div>${S.legacy.club[id] ? `<span class="pill gold">${S.legacy.club[id].titles} title${S.legacy.club[id].titles !== 1 ? 's' : ''}</span>` : ''}</div></div>
   <div class="cols tac">
