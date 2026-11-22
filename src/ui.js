@@ -732,8 +732,13 @@ function openTrade(targetId) {
 function toggleGive(id) { const tr = U.trade; tr.give = tr.give.includes(id) ? tr.give.filter(x => x !== id) : tr.give.concat([id]); openTrade(tr.t); }
 
 // ---------- modal ----------
-function openModal(html, cls) { $('#modal').innerHTML = `<div class="mbg" onclick="closeModal()"></div><div class="mbox ${cls || ''}"><button class="mx" onclick="closeModal()">✕</button>${html}</div>`; $('#modal').style.display = 'block'; }
-function closeModal() { if (U.live) return; $('#modal').style.display = 'none'; $('#modal').innerHTML = ''; if (S && U.scenAfter) { setTimeout(() => { if (S.breaking && S.breaking.length) showBreaking(); else { U.scenAfter = false; showScenario(); } }, 60); } }
+function openModal(html, cls) { $('#modal').innerHTML = `<div class="mbg" onclick="closeModal()"></div><div class="mbox ${cls || ''}"><button class="mx" onclick="closeModal()" aria-label="Close">✕</button>${html}</div>`; $('#modal').style.display = 'block'; if (!U.mHist && !U.backPending) { try { history.pushState({ m: 1 }, ''); U.mHist = true; } catch (e) { } } }
+const modalOpen = () => $('#modal').style.display === 'block';
+window.addEventListener('popstate', () => {
+  if (U.backPending) { U.backPending = false; if (modalOpen() && !U.mHist) { try { history.pushState({ m: 1 }, ''); U.mHist = true; } catch (e) { } } return; }
+  if (U.mHist) { U.mHist = false; if (U.live) { try { history.pushState({ m: 1 }, ''); U.mHist = true; } catch (e) { } return; } closeModal(); }
+});
+function closeModal() { if (U.live) return; $('#modal').style.display = 'none'; $('#modal').innerHTML = ''; if (U.mHist) { U.mHist = false; U.backPending = true; history.back(); } if (S && U.scenAfter) { setTimeout(() => { if (S.breaking && S.breaking.length) showBreaking(); else { U.scenAfter = false; showScenario(); } }, 60); } }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
 function migrate() { if (!S.draft) return; if (!S.draft.owner) { const d = S.draft; d.kind = d.kind || 'initial'; d.rounds = d.rounds || DRAFT_ROUNDS; d.owner = []; for (let r = 0; r < d.rounds; r++) for (let i = 0; i < 30; i++) d.owner.push(r % 2 === 0 ? d.order[i] : d.order[29 - i]); d.total = d.owner.length; } S.edits = S.edits || {}; }

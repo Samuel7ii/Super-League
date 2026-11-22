@@ -322,6 +322,14 @@ hr.sep{border:none;border-top:1px solid var(--line);margin:16px 0}
 .kb{display:inline-block;min-width:34px;text-align:center;padding:3px 5px;border-radius:4px;font:700 16px 'Barlow Condensed',Arial,sans-serif;color:#111;box-shadow:inset 0 1px #ffffff80}
 .kb.k-bron,.kb.k-dm,.kb.k-ruby,.kb.k-ame,.kb.k-sapph,.kb.k-emer{color:#fff;text-shadow:0 1px 2px #0008}
 @media(max-width:820px){.optgrid,.optgrid.two{grid-template-columns:1fr}.pdhead h2{font-size:26px}}
+/* modal close button always on top */
+.mx{z-index:6}
+.phead[class*="k-"] h2,.phead[class*="k-"] h2 *{color:inherit!important}
+@media(max-width:820px){
+ .mx{position:fixed;top:10px;right:10px;width:42px;height:42px;font-size:18px;border-radius:50%;background:#0d1116ee;border-color:#8a99aa;box-shadow:0 2px 10px #000a;z-index:70}
+ .phead{flex-wrap:wrap;padding-right:60px!important}.phead .k-tier{position:static;width:100%;margin:0}
+ .phead h2{font-size:24px}
+}
 </style></head>
 <body><div id="app"></div><div id="modal"></div><div id="toasts"></div>
 <script>
@@ -2397,8 +2405,13 @@ function openTrade(targetId) {
 function toggleGive(id) { const tr = U.trade; tr.give = tr.give.includes(id) ? tr.give.filter(x => x !== id) : tr.give.concat([id]); openTrade(tr.t); }
 
 // ---------- modal ----------
-function openModal(html, cls) { $('#modal').innerHTML = `<div class="mbg" onclick="closeModal()"></div><div class="mbox ${cls || ''}"><button class="mx" onclick="closeModal()">✕</button>${html}</div>`; $('#modal').style.display = 'block'; }
-function closeModal() { if (U.live) return; $('#modal').style.display = 'none'; $('#modal').innerHTML = ''; if (S && U.scenAfter) { setTimeout(() => { if (S.breaking && S.breaking.length) showBreaking(); else { U.scenAfter = false; showScenario(); } }, 60); } }
+function openModal(html, cls) { $('#modal').innerHTML = `<div class="mbg" onclick="closeModal()"></div><div class="mbox ${cls || ''}"><button class="mx" onclick="closeModal()" aria-label="Close">✕</button>${html}</div>`; $('#modal').style.display = 'block'; if (!U.mHist && !U.backPending) { try { history.pushState({ m: 1 }, ''); U.mHist = true; } catch (e) { } } }
+const modalOpen = () => $('#modal').style.display === 'block';
+window.addEventListener('popstate', () => {
+  if (U.backPending) { U.backPending = false; if (modalOpen() && !U.mHist) { try { history.pushState({ m: 1 }, ''); U.mHist = true; } catch (e) { } } return; }
+  if (U.mHist) { U.mHist = false; if (U.live) { try { history.pushState({ m: 1 }, ''); U.mHist = true; } catch (e) { } return; } closeModal(); }
+});
+function closeModal() { if (U.live) return; $('#modal').style.display = 'none'; $('#modal').innerHTML = ''; if (U.mHist) { U.mHist = false; U.backPending = true; history.back(); } if (S && U.scenAfter) { setTimeout(() => { if (S.breaking && S.breaking.length) showBreaking(); else { U.scenAfter = false; showScenario(); } }, 60); } }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
 function migrate() { if (!S.draft) return; if (!S.draft.owner) { const d = S.draft; d.kind = d.kind || 'initial'; d.rounds = d.rounds || DRAFT_ROUNDS; d.owner = []; for (let r = 0; r < d.rounds; r++) for (let i = 0; i < 30; i++) d.owner.push(r % 2 === 0 ? d.order[i] : d.order[29 - i]); d.total = d.owner.length; } S.edits = S.edits || {}; }
