@@ -1,6 +1,6 @@
 // ===================== UI v2 =====================
 const SAVE_KEY = 'superleague_save_v2';
-const U = { tab: 'home', df: { pos: 'ALL', q: '', sort: 'ovr', n: 48 }, sel: null, gwView: null, totwGW: null, stat: 'g', statPos: 'ALL', statMine: false, tf: { pos: 'ALL', q: '', min: 0, free: false, max: 999 }, clubView: null, feedMine: false, live: null, speed: 1 };
+const U = { tab: 'home', df: { pos: 'ALL', q: '', sort: 'ovr', n: 7 }, sel: null, gwView: null, totwGW: null, stat: 'g', statPos: 'ALL', statMine: false, tf: { pos: 'ALL', q: '', min: 0, free: false, max: 999 }, clubView: null, feedMine: false, live: null, speed: 1 };
 const $ = s => document.querySelector(s);
 const me = () => S.teams[S.userTeam];
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -182,7 +182,7 @@ function vDraft() {
     let list = draftPool().filter(p => (f.pos === 'ALL' || p.pos === f.pos || (f.pos === 'DEF' && ['CB', 'LB', 'RB'].includes(p.pos)) || (f.pos === 'MID' && ['DM', 'CM', 'AM'].includes(p.pos)) || (f.pos === 'ATT' && ['LW', 'RW', 'ST'].includes(p.pos))) && (!f.q || DB[p.id].name.toLowerCase().includes(f.q.toLowerCase())));
     const sorts = { ovr: (a, b) => b.ovr - a.ovr || a.age - b.age, age: (a, b) => a.age - b.age || b.ovr - a.ovr, iq: (a, b) => b.iq - a.iq, year: (a, b) => a.y - b.y };
     list.sort(sorts[f.sort]);
-    grid = list.slice(0, f.n).map(p => futCard(p, btn(`userDraft({pl:${p.id}})`, 'Draft'))).join('') + (list.length > f.n ? `<button class="btn more" onclick="U.df.n+=48;render()">Show more (${list.length - f.n} left)</button>` : '');
+    grid = list.slice(0, f.n).map(p => futCard(p, btn(`userDraft({pl:${p.id}})`, 'Draft'))).join('') + (list.length > f.n ? `<button class="btn more" onclick="U.df.n+=7;render()">Show 7 more (${list.length - f.n} left)</button>` : '');
   }
   const c = groupCounts(u);
   const lbl = { GK: 'Goalkeepers', CB: 'Centre-backs', FB: 'Full-backs', MID: 'DM / CM', AMW: 'AM / Wingers', ST: 'Strikers' };
@@ -194,7 +194,7 @@ function vDraft() {
     ${justPicked()}
     <div class="cols">
       <div class="grow">
-        <div class="filters">${['ALL', 'GK', 'DEF', 'CB', 'LB', 'RB', 'MID', 'DM', 'CM', 'AM', 'ATT', 'LW', 'RW', 'ST'].map(p => `<button class="chip ${f.pos === p ? 'on' : ''}" onclick="U.df.pos='${p}';U.df.n=48;render()">${p}</button>`).join('')}${seasonD ? '' : `<button class="chip coach ${f.pos === 'COACH' ? 'on' : ''}" onclick="U.df.pos='COACH';render()">COACHES</button>`}
+        <div class="filters">${['ALL', 'GK', 'DEF', 'CB', 'LB', 'RB', 'MID', 'DM', 'CM', 'AM', 'ATT', 'LW', 'RW', 'ST'].map(p => `<button class="chip ${f.pos === p ? 'on' : ''}" onclick="U.df.pos='${p}';U.df.n=7;render()">${p}</button>`).join('')}${seasonD ? '' : `<button class="chip coach ${f.pos === 'COACH' ? 'on' : ''}" onclick="U.df.pos='COACH';render()">COACHES</button>`}
           <input placeholder="Search a player…" value="${esc(f.q)}" oninput="U.df.q=this.value;clearTimeout(window._t);window._t=setTimeout(()=>{render();const i=document.querySelector('.filters input');i.focus();i.setSelectionRange(i.value.length,i.value.length)},300)">
           <select onchange="U.df.sort=this.value;render()">${[['ovr', 'Best rated'], ['age', 'Youngest'], ['iq', 'Highest IQ'], ['year', 'Oldest season']].map(([k, l]) => `<option value="${k}" ${f.sort === k ? 'selected' : ''}>${l}</option>`).join('')}</select></div>
         <div class="futgrid">${grid}</div>
@@ -233,7 +233,7 @@ function justPicked() {
     <p>${isCo ? `${c.style} coach · ${c.form}` : `${p.pos} · ${p.age} years old · ${esc(p.rclub)} ${p.y}/${String(p.y + 1).slice(2)}`}${big ? ' · <b class="gold">Blockbuster pick</b>' : ''}</p></div></div>
     <div class="jp-ovr t-${tier(isCo ? c.rating : p.ovr)}">${isCo ? c.rating : p.ovr}<small>${isCo ? 'COACH' : p.pos}</small></div></div>`;
 }
-function userDraft(choice) { if (!isDrafting() || !S.teams[draftTeamOnClock()].user) return; if (choice.co !== undefined && me().coach >= 0) return toast('You already have a coach.', false); draftPick(choice); draftAdvanceAI(true); if (!isDrafting()) { U.tab = 'home'; toast('Draft complete! Sign free agents, set tactics, then kick off.'); } save(); render(); }
+function userDraft(choice) { U.df.n = 7; if (!isDrafting() || !S.teams[draftTeamOnClock()].user) return; if (choice.co !== undefined && me().coach >= 0) return toast('You already have a coach.', false); draftPick(choice); draftAdvanceAI(true); if (!isDrafting()) { U.tab = 'home'; toast('Draft complete! Sign free agents, set tactics, then kick off.'); } save(); render(); }
 function autoDraftAll() { while (isDrafting()) draftPick(aiDraftChoice(S.teams[draftTeamOnClock()])); U.tab = 'home'; save(); render(); toast('Draft complete!'); }
 
 function openPickTrade() {
