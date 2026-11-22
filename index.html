@@ -305,6 +305,23 @@ hr.sep{border:none;border-top:1px solid var(--line);margin:16px 0}
 .phead[class*="k-"]{color:inherit}.phead[class*="k-"] .ovrbig{background:#0003;border-color:#fff4;color:inherit!important}.phead[class*="k-"] small{color:inherit;opacity:.85}.phead[class*="k-"] .pill{background:#0003;border-color:#fff3;color:inherit}
 .phead .k-tier{position:absolute;top:8px;right:60px}.phead{position:relative}
 .hero p{font-size:18px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+/* difficulty / draft-style options */
+.optgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.optgrid.two{grid-template-columns:1fr 1fr}
+.optpick{display:flex;flex-direction:column;gap:5px;text-align:left;padding:14px 16px;background:linear-gradient(#262e38,#1d242c);border:1px solid var(--line2);color:var(--txt);cursor:pointer;font:inherit;border-left:4px solid #4a5563}
+.optpick b{font:700 22px 'Barlow Condensed',Arial,sans-serif;text-transform:uppercase;letter-spacing:.06em}
+.optpick small{color:var(--mut);font-size:13px;line-height:1.35}.optpick em{font-style:normal;font-size:12px;color:var(--hi1);letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
+.optpick:hover{border-color:var(--hi1)}.optpick.on{background:linear-gradient(90deg,#45b4ff33,#1d242c);border-color:var(--hi1);border-left-color:var(--hi1)}
+.optpick.d-beginner{border-left-color:#3fbf6a}.optpick.d-pro{border-left-color:#45b4ff}.optpick.d-ultimate{border-left-color:#e0484f}
+.optpick.d-beginner.on{background:linear-gradient(90deg,#3fbf6a33,#1d242c);border-color:#3fbf6a}.optpick.d-ultimate.on{background:linear-gradient(90deg,#e0484f33,#1d242c);border-color:#e0484f}
+/* pre-draft */
+.predraft{max-width:1100px}
+.pdhead{display:flex;align-items:center;gap:16px;padding:18px 4px 14px}.pdhead h2{margin:2px 0;font:700 34px 'Barlow Condensed',Arial,sans-serif;text-transform:uppercase;letter-spacing:.03em}.pdhead small{color:var(--hi1);text-transform:uppercase;letter-spacing:.12em;font-size:12px}.pdhead p{margin:0}
+.pdgo{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:6px 0 16px}
+.tblwrap{max-height:560px;overflow:auto;border:1px solid var(--line2)}
+.pdlist tr{cursor:pointer}.pdlist td{font-size:14px}.ktn{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--mut)}
+.kb{display:inline-block;min-width:34px;text-align:center;padding:3px 5px;border-radius:4px;font:700 16px 'Barlow Condensed',Arial,sans-serif;color:#111;box-shadow:inset 0 1px #ffffff80}
+.kb.k-bron,.kb.k-dm,.kb.k-ruby,.kb.k-ame,.kb.k-sapph,.kb.k-emer{color:#fff;text-shadow:0 1px 2px #0008}
+@media(max-width:820px){.optgrid,.optgrid.two{grid-template-columns:1fr}.pdhead h2{font-size:26px}}
 </style></head>
 <body><div id="app"></div><div id="modal"></div><div id="toasts"></div>
 <script>
@@ -552,9 +569,17 @@ function derbyName(a, b) { const sa = S.teams[a].short, sb = S.teams[b].short; c
 // ---------- state ----------
 let S = null, P = null;
 const MAX_SQUAD = 22, MIN_SQUAD = 14, DRAFT_ROUNDS = 15;
+const DIFF = {
+  beginner: { name: 'Beginner', budget: 40, noise: 9, bonus: 1.6, desc: 'Bigger budget, weaker AI drafting, your team gets a small edge.' },
+  pro: { name: 'Pro', budget: 30, noise: 3.5, bonus: 0, desc: 'The standard experience. Level playing field.' },
+  ultimate: { name: 'Ultimate', budget: 22, noise: 1, bonus: -1.2, desc: 'Tight budget, sharp AI drafting, every match is a fight.' },
+};
+const diffOf = () => DIFF[(S && S.opts && S.opts.diff) || 'pro'] || DIFF.pro;
+function buildDraftOrder(order, rounds, style) { const owner = []; for (let r = 0; r < rounds; r++) for (let i = 0; i < order.length; i++) owner.push(style === 'classic' || r % 2 === 0 ? order[i] : order[order.length - 1 - i]); return owner; }
+function setDraftStyle(style) { const d = S.draft; S.opts.style = style; d.owner = buildDraftOrder(d.order, d.rounds, style); d.total = d.owner.length; }
 function newState(userClubIdx, opts) {
   const st = {
-    v: 2, season: 1, maxSeasons: 10, phase: 'draft', userTeam: userClubIdx, opts: Object.assign({ finalTwoLegs: true, autoSubs: true }, opts || {}),
+    v: 2, season: 1, maxSeasons: 10, phase: 'predraft', userTeam: userClubIdx, opts: Object.assign({ finalTwoLegs: true, autoSubs: true, diff: 'pro', style: 'snake' }, opts || {}),
     players: [], teams: [], coaches: [], draft: null, gw: 0, fixtures: [], results: [], inbox: [], news: [], feed: [], totw: [], potm: [],
     playoffs: null, awards: null, history: [], offers: [], nego: {}, promises: [], legacy: { p: {}, club: {}, coach: {}, seasons: [] },
   };
@@ -567,7 +592,8 @@ function newState(userClubIdx, opts) {
   st.players.forEach(pl => pl.val = valueOf(pl));
   st.coaches = COACHES_RAW.map((c, i) => ({ id: i, name: c[0], nat: c[1], rating: c[2], style: c[3], form: c[4], team: -1 }));
   CLUBS.forEach((c, i) => st.teams.push({ id: i, name: c[0], short: c[1], rep: c[2], c1: c[3], c2: c[4], conf: c[5], budget: 30, squad: [], lineup: [], bench: [], coach: -1, tactics: defaultTactics(null), morale: 60, board: 60, captain: -1, pk: -1, user: i === userClubIdx, coachRound: ri(3, 12), earned: 0 }));
-  const order = shuffle(st.teams.map(t => t.id)); const owner = []; for (let r = 0; r < DRAFT_ROUNDS; r++) for (let i = 0; i < 30; i++) owner.push(r % 2 === 0 ? order[i] : order[29 - i]);
+  st.teams[userClubIdx].budget = (DIFF[st.opts.diff] || DIFF.pro).budget;
+  const order = shuffle(st.teams.map(t => t.id)); const owner = buildDraftOrder(order, DRAFT_ROUNDS, st.opts.style);
   st.draft = { kind: 'initial', order, owner, rounds: DRAFT_ROUNDS, pick: 0, total: owner.length, log: [] };
   st.edits = {};
   return st;
@@ -625,7 +651,7 @@ function aiDraftChoice(team) {
   let best = null, bs = -1e9;
   for (const pl of pool) {
     const g = dgroup(pl.pos); const [tg, mx] = DRAFT_T[g];
-    let s = pl.ovr + rnd() * 3.5 + (pl.age <= 23 ? 0.6 : 0) - (pl.age >= 34 ? 1 : 0);
+    let s = pl.ovr + rnd() * (team.user ? 3.5 : diffOf().noise) + (pl.age <= 23 ? 0.6 : 0) - (pl.age >= 34 ? 1 : 0);
     if (c[g] >= mx) s -= 40; else if (c[g] < tg) s += 2.5; else s -= 2.5;
     if (g === 'GK' && c.GK === 0 && round >= 3) s += 5; if (g === 'GK' && c.GK >= 1 && round < 9) s -= 6;
     if (S.draft.kind !== 'season' && left <= missing && c[g] >= tg) s -= 60;
@@ -783,7 +809,7 @@ function sideProfile(L, s) {
   const ch = chemistry(on.map(x => x.id), slotsById);
   const lazy = on.filter(x => P[x.id].wr === 'Low' && ['ATT'].includes(SLOT_GROUP(x.slot)) || (P[x.id].wr === 'Low' && x.slot === 'AM')).length;
   const cf = coachFit(t);
-  const b = cf.bonus + (t.morale - 60) * 0.03 + ch.bonus;
+  const b = cf.bonus + (t.morale - 60) * 0.03 + ch.bonus + (t.user ? diffOf().bonus : 0);
   att += b; mid += b; def += b;
   att -= missing * 3; mid -= missing * 4; def -= missing * 4;
   let wideX = 0, pressX = 0, err = 0, cover = 0, gkX = 0;
@@ -1674,10 +1700,34 @@ function renderSetup() {
     <div class="hero"><h1>SUPER <span>LEAGUE</span></h1><p>Draft. Manage. Build a dynasty.</p></div>
     ${hasSave() ? `<div class="card resume"><div><b>Saved career found</b><br><small class="muted">Pick up where you left off</small></div><button class="btn lime" onclick="resumeGame()">Continue ▶</button></div>` : ''}
     <div class="card"><h3>Pick your club</h3><div class="clubgrid">${CLUBS.map((c, i) => `<button class="clubpick ${U.pick === i ? 'on' : ''}" style="--k1:${c[3]};--k2:${c[4]}" onclick="U.pick=${i};renderSetup()">${crest({ c1: c[3], c2: c[4], short: c[1] }, 'lg')}<span>${c[0]}</span></button>`).join('')}</div></div>
-    <div class="go"><label class="tog"><input type="checkbox" ${U.final1 ? '' : 'checked'} onchange="U.final1=!this.checked"> Two-legged final</label><br><br><button class="btn lime big" ${U.pick === undefined ? 'disabled' : ''} onclick="startGame()">${U.pick === undefined ? 'Pick a club to start' : `Start as ${CLUBS[U.pick][0]}`}</button></div>
+    <div class="card"><h3>Difficulty</h3><div class="optgrid">${Object.keys(DIFF).map(k => `<button class="optpick d-${k} ${(U.diff || 'pro') === k ? 'on' : ''}" onclick="U.diff='${k}';renderSetup()"><b>${DIFF[k].name}</b><small>${DIFF[k].desc}</small><em>Start budget €${DIFF[k].budget}m</em></button>`).join('')}</div></div>
+    <div class="go"><label class="tog"><input type="checkbox" ${U.final1 ? '' : 'checked'} onchange="U.final1=!this.checked"> Two-legged final</label><br><br><button class="btn lime big" ${U.pick === undefined ? 'disabled' : ''} onclick="startGame()">${U.pick === undefined ? 'Pick a club to continue' : `Continue as ${CLUBS[U.pick][0]} ▶`}</button></div>
   </div>`;
 }
-function startGame() { S = newState(U.pick, { finalTwoLegs: !U.final1 }); P = S.players; U.tab = 'draft'; save(); render(); window.scrollTo(0, 0); }
+function startGame() { S = newState(U.pick, { finalTwoLegs: !U.final1, diff: U.diff || 'pro' }); P = S.players; U.pd = { pos: 'ALL', q: '', n: 60 }; save(); render(); window.scrollTo(0, 0); }
+function renderPreDraft() {
+  const u = me(); const d = S.draft; const f = U.pd || (U.pd = { pos: 'ALL', q: '', n: 60 });
+  const style = S.opts.style || 'snake'; const myFirst = d.order.indexOf(S.userTeam) + 1;
+  const myPicks = d.owner.map((t, i) => t === S.userTeam ? i + 1 : 0).filter(Boolean);
+  const grp = { DEF: ['CB', 'LB', 'RB'], MID: ['DM', 'CM', 'AM'], ATT: ['LW', 'RW', 'ST'] };
+  const list = draftPool().filter(p => (f.pos === 'ALL' || p.pos === f.pos || (grp[f.pos] || []).includes(p.pos)) && (!f.q || DB[p.id].name.toLowerCase().includes(f.q.toLowerCase()))).sort((a, b) => b.ovr - a.ovr || a.age - b.age);
+  const rows = list.slice(0, f.n).map((p, i) => { const k = k2(p.ovr); return `<tr onclick="openPlayer(${p.id})"><td class="muted">${i + 1}</td><td><span class="kb k-${k[1]}">${p.ovr}</span></td><td>${posChip(p.pos)}</td><td><b>${esc(DB[p.id].name)}</b></td><td class="muted">'${String(p.y).slice(2)} · ${esc(p.rclub)}</td><td class="muted">${DB[p.id].nat}</td><td>${p.age}</td><td class="ktn">${k[2]}</td></tr>`; }).join('');
+  const sopt = (k, t, dsc) => `<button class="optpick ${style === k ? 'on' : ''}" onclick="setDraftStyle('${k}');save();render()"><b>${t}</b><small>${dsc}</small></button>`;
+  document.documentElement.style.setProperty('--c1', u.c1); document.documentElement.style.setProperty('--c2', u.c2);
+  $('#app').innerHTML = `<div class="setup predraft">
+    <div class="pdhead">${crest(u, 'xl')}<div><small>${diffOf().name} · €${u.budget}m budget</small><h2>${u.name}: Draft Day</h2><p class="muted">You pick <b>#${myFirst}</b> in round 1. Your picks: ${myPicks.slice(0, 5).map(n => '#' + n).join(', ')}…</p></div></div>
+    <div class="card"><h3>Draft style</h3><div class="optgrid two">${sopt('snake', 'Snake', 'Order reverses every round. Last pick in round 1 gets first pick in round 2.')}${sopt('classic', 'Classic', 'Same order every round. The team picking first always picks first.')}</div></div>
+    <div class="go pdgo"><button class="btn lime big" onclick="beginDraft()">Start Draft ▶</button><button class="btn big" onclick="randomTeam()">Random Team</button><button class="btn ghost" onclick="S=null;render()">Back</button></div>
+    <div class="card"><h3>Player pool · ${draftPool().length} players · ${freeCoaches().length} coaches</h3>
+      <div class="filters">${['ALL', 'GK', 'DEF', 'CB', 'LB', 'RB', 'MID', 'DM', 'CM', 'AM', 'ATT', 'LW', 'RW', 'ST'].map(p => `<button class="chip ${f.pos === p ? 'on' : ''}" onclick="U.pd.pos='${p}';U.pd.n=60;render()">${p}</button>`).join('')}
+        <input placeholder="Search a player…" value="${esc(f.q)}" oninput="U.pd.q=this.value;clearTimeout(window._t);window._t=setTimeout(()=>{render();const i=document.querySelector('.filters input');i.focus();i.setSelectionRange(i.value.length,i.value.length)},300)"></div>
+      <div class="tblwrap"><table class="tbl pdlist"><thead><tr><th>#</th><th>OVR</th><th>Pos</th><th>Player</th><th>Season</th><th>Nat</th><th>Age</th><th>Card</th></tr></thead><tbody>${rows || '<tr><td colspan="8" class="muted">No players match.</td></tr>'}</tbody></table></div>
+      ${list.length > f.n ? `<button class="btn more" onclick="U.pd.n+=100;render()">Show more (${list.length - f.n} left)</button>` : ''}
+    </div></div>`;
+}
+function beginDraft() { S.phase = 'draft'; U.tab = 'draft'; save(); render(); window.scrollTo(0, 0); }
+function randomTeam() { S.phase = 'draft'; while (isDrafting()) { const t = S.teams[draftTeamOnClock()]; draftPick(t.user ? randomChoice(t) : aiDraftChoice(t)); } U.tab = 'home'; save(); render(); window.scrollTo(0, 0); toast(`Your random squad is in. ${me().squad.length} players drafted.`); }
+function randomChoice(t) { const c = aiDraftChoice(t); if (c.pass || c.co !== undefined) return c; const g = dgroup(P[c.pl].pos); const pool = draftPool().filter(p => dgroup(p.pos) === g).sort((a, b) => b.ovr - a.ovr).slice(0, 12); return { pl: pool[ri(0, pool.length - 1)].id }; }
 function resumeGame() { if (load()) { migrate(); U.tab = isDrafting() ? 'draft' : S.phase === 'over' ? 'legacy' : 'home'; render(); } }
 function newGameUI() { openModal(`<h2>Start a new reality?</h2><p class="muted">Your current save will be deleted.</p><div class="row"><button class="btn red" onclick="try{localStorage.removeItem(SAVE_KEY)}catch(e){};S=null;closeModal();render()">Yes, start over</button><button class="btn" onclick="closeModal()">Cancel</button></div>`); }
 
@@ -1701,6 +1751,7 @@ function actionBtns() {
 }
 function render() {
   if (!S) return renderSetup();
+  if (S.phase === 'predraft') return renderPreDraft();
   theme();
   const u = me();
   let tabs = S.phase === 'draft' ? [['draft', 'Draft Room'], ['clubs', 'Club Search']] : S.phase === 'sdraft' ? [['draft', 'Season Draft'], ['squad', 'Team Management'], ['clubs', 'Club Search'], ['fans', 'Fan Zone'], ['awards', 'Awards']] : TABS.slice();

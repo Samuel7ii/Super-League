@@ -35,10 +35,34 @@ function renderSetup() {
     <div class="hero"><h1>SUPER <span>LEAGUE</span></h1><p>Draft. Manage. Build a dynasty.</p></div>
     ${hasSave() ? `<div class="card resume"><div><b>Saved career found</b><br><small class="muted">Pick up where you left off</small></div><button class="btn lime" onclick="resumeGame()">Continue ▶</button></div>` : ''}
     <div class="card"><h3>Pick your club</h3><div class="clubgrid">${CLUBS.map((c, i) => `<button class="clubpick ${U.pick === i ? 'on' : ''}" style="--k1:${c[3]};--k2:${c[4]}" onclick="U.pick=${i};renderSetup()">${crest({ c1: c[3], c2: c[4], short: c[1] }, 'lg')}<span>${c[0]}</span></button>`).join('')}</div></div>
-    <div class="go"><label class="tog"><input type="checkbox" ${U.final1 ? '' : 'checked'} onchange="U.final1=!this.checked"> Two-legged final</label><br><br><button class="btn lime big" ${U.pick === undefined ? 'disabled' : ''} onclick="startGame()">${U.pick === undefined ? 'Pick a club to start' : `Start as ${CLUBS[U.pick][0]}`}</button></div>
+    <div class="card"><h3>Difficulty</h3><div class="optgrid">${Object.keys(DIFF).map(k => `<button class="optpick d-${k} ${(U.diff || 'pro') === k ? 'on' : ''}" onclick="U.diff='${k}';renderSetup()"><b>${DIFF[k].name}</b><small>${DIFF[k].desc}</small><em>Start budget €${DIFF[k].budget}m</em></button>`).join('')}</div></div>
+    <div class="go"><label class="tog"><input type="checkbox" ${U.final1 ? '' : 'checked'} onchange="U.final1=!this.checked"> Two-legged final</label><br><br><button class="btn lime big" ${U.pick === undefined ? 'disabled' : ''} onclick="startGame()">${U.pick === undefined ? 'Pick a club to continue' : `Continue as ${CLUBS[U.pick][0]} ▶`}</button></div>
   </div>`;
 }
-function startGame() { S = newState(U.pick, { finalTwoLegs: !U.final1 }); P = S.players; U.tab = 'draft'; save(); render(); window.scrollTo(0, 0); }
+function startGame() { S = newState(U.pick, { finalTwoLegs: !U.final1, diff: U.diff || 'pro' }); P = S.players; U.pd = { pos: 'ALL', q: '', n: 60 }; save(); render(); window.scrollTo(0, 0); }
+function renderPreDraft() {
+  const u = me(); const d = S.draft; const f = U.pd || (U.pd = { pos: 'ALL', q: '', n: 60 });
+  const style = S.opts.style || 'snake'; const myFirst = d.order.indexOf(S.userTeam) + 1;
+  const myPicks = d.owner.map((t, i) => t === S.userTeam ? i + 1 : 0).filter(Boolean);
+  const grp = { DEF: ['CB', 'LB', 'RB'], MID: ['DM', 'CM', 'AM'], ATT: ['LW', 'RW', 'ST'] };
+  const list = draftPool().filter(p => (f.pos === 'ALL' || p.pos === f.pos || (grp[f.pos] || []).includes(p.pos)) && (!f.q || DB[p.id].name.toLowerCase().includes(f.q.toLowerCase()))).sort((a, b) => b.ovr - a.ovr || a.age - b.age);
+  const rows = list.slice(0, f.n).map((p, i) => { const k = k2(p.ovr); return `<tr onclick="openPlayer(${p.id})"><td class="muted">${i + 1}</td><td><span class="kb k-${k[1]}">${p.ovr}</span></td><td>${posChip(p.pos)}</td><td><b>${esc(DB[p.id].name)}</b></td><td class="muted">'${String(p.y).slice(2)} · ${esc(p.rclub)}</td><td class="muted">${DB[p.id].nat}</td><td>${p.age}</td><td class="ktn">${k[2]}</td></tr>`; }).join('');
+  const sopt = (k, t, dsc) => `<button class="optpick ${style === k ? 'on' : ''}" onclick="setDraftStyle('${k}');save();render()"><b>${t}</b><small>${dsc}</small></button>`;
+  document.documentElement.style.setProperty('--c1', u.c1); document.documentElement.style.setProperty('--c2', u.c2);
+  $('#app').innerHTML = `<div class="setup predraft">
+    <div class="pdhead">${crest(u, 'xl')}<div><small>${diffOf().name} · €${u.budget}m budget</small><h2>${u.name}: Draft Day</h2><p class="muted">You pick <b>#${myFirst}</b> in round 1. Your picks: ${myPicks.slice(0, 5).map(n => '#' + n).join(', ')}…</p></div></div>
+    <div class="card"><h3>Draft style</h3><div class="optgrid two">${sopt('snake', 'Snake', 'Order reverses every round. Last pick in round 1 gets first pick in round 2.')}${sopt('classic', 'Classic', 'Same order every round. The team picking first always picks first.')}</div></div>
+    <div class="go pdgo"><button class="btn lime big" onclick="beginDraft()">Start Draft ▶</button><button class="btn big" onclick="randomTeam()">Random Team</button><button class="btn ghost" onclick="S=null;render()">Back</button></div>
+    <div class="card"><h3>Player pool · ${draftPool().length} players · ${freeCoaches().length} coaches</h3>
+      <div class="filters">${['ALL', 'GK', 'DEF', 'CB', 'LB', 'RB', 'MID', 'DM', 'CM', 'AM', 'ATT', 'LW', 'RW', 'ST'].map(p => `<button class="chip ${f.pos === p ? 'on' : ''}" onclick="U.pd.pos='${p}';U.pd.n=60;render()">${p}</button>`).join('')}
+        <input placeholder="Search a player…" value="${esc(f.q)}" oninput="U.pd.q=this.value;clearTimeout(window._t);window._t=setTimeout(()=>{render();const i=document.querySelector('.filters input');i.focus();i.setSelectionRange(i.value.length,i.value.length)},300)"></div>
+      <div class="tblwrap"><table class="tbl pdlist"><thead><tr><th>#</th><th>OVR</th><th>Pos</th><th>Player</th><th>Season</th><th>Nat</th><th>Age</th><th>Card</th></tr></thead><tbody>${rows || '<tr><td colspan="8" class="muted">No players match.</td></tr>'}</tbody></table></div>
+      ${list.length > f.n ? `<button class="btn more" onclick="U.pd.n+=100;render()">Show more (${list.length - f.n} left)</button>` : ''}
+    </div></div>`;
+}
+function beginDraft() { S.phase = 'draft'; U.tab = 'draft'; save(); render(); window.scrollTo(0, 0); }
+function randomTeam() { S.phase = 'draft'; while (isDrafting()) { const t = S.teams[draftTeamOnClock()]; draftPick(t.user ? randomChoice(t) : aiDraftChoice(t)); } U.tab = 'home'; save(); render(); window.scrollTo(0, 0); toast(`Your random squad is in. ${me().squad.length} players drafted.`); }
+function randomChoice(t) { const c = aiDraftChoice(t); if (c.pass || c.co !== undefined) return c; const g = dgroup(P[c.pl].pos); const pool = draftPool().filter(p => dgroup(p.pos) === g).sort((a, b) => b.ovr - a.ovr).slice(0, 12); return { pl: pool[ri(0, pool.length - 1)].id }; }
 function resumeGame() { if (load()) { migrate(); U.tab = isDrafting() ? 'draft' : S.phase === 'over' ? 'legacy' : 'home'; render(); } }
 function newGameUI() { openModal(`<h2>Start a new reality?</h2><p class="muted">Your current save will be deleted.</p><div class="row"><button class="btn red" onclick="try{localStorage.removeItem(SAVE_KEY)}catch(e){};S=null;closeModal();render()">Yes, start over</button><button class="btn" onclick="closeModal()">Cancel</button></div>`); }
 
@@ -62,6 +86,7 @@ function actionBtns() {
 }
 function render() {
   if (!S) return renderSetup();
+  if (S.phase === 'predraft') return renderPreDraft();
   theme();
   const u = me();
   let tabs = S.phase === 'draft' ? [['draft', 'Draft Room'], ['clubs', 'Club Search']] : S.phase === 'sdraft' ? [['draft', 'Season Draft'], ['squad', 'Team Management'], ['clubs', 'Club Search'], ['fans', 'Fan Zone'], ['awards', 'Awards']] : TABS.slice();

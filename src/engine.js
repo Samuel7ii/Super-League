@@ -163,9 +163,17 @@ function derbyName(a, b) { const sa = S.teams[a].short, sb = S.teams[b].short; c
 // ---------- state ----------
 let S = null, P = null;
 const MAX_SQUAD = 22, MIN_SQUAD = 14, DRAFT_ROUNDS = 15;
+const DIFF = {
+  beginner: { name: 'Beginner', budget: 40, noise: 9, bonus: 1.6, desc: 'Bigger budget, weaker AI drafting, your team gets a small edge.' },
+  pro: { name: 'Pro', budget: 30, noise: 3.5, bonus: 0, desc: 'The standard experience. Level playing field.' },
+  ultimate: { name: 'Ultimate', budget: 22, noise: 1, bonus: -1.2, desc: 'Tight budget, sharp AI drafting, every match is a fight.' },
+};
+const diffOf = () => DIFF[(S && S.opts && S.opts.diff) || 'pro'] || DIFF.pro;
+function buildDraftOrder(order, rounds, style) { const owner = []; for (let r = 0; r < rounds; r++) for (let i = 0; i < order.length; i++) owner.push(style === 'classic' || r % 2 === 0 ? order[i] : order[order.length - 1 - i]); return owner; }
+function setDraftStyle(style) { const d = S.draft; S.opts.style = style; d.owner = buildDraftOrder(d.order, d.rounds, style); d.total = d.owner.length; }
 function newState(userClubIdx, opts) {
   const st = {
-    v: 2, season: 1, maxSeasons: 10, phase: 'draft', userTeam: userClubIdx, opts: Object.assign({ finalTwoLegs: true, autoSubs: true }, opts || {}),
+    v: 2, season: 1, maxSeasons: 10, phase: 'predraft', userTeam: userClubIdx, opts: Object.assign({ finalTwoLegs: true, autoSubs: true, diff: 'pro', style: 'snake' }, opts || {}),
     players: [], teams: [], coaches: [], draft: null, gw: 0, fixtures: [], results: [], inbox: [], news: [], feed: [], totw: [], potm: [],
     playoffs: null, awards: null, history: [], offers: [], nego: {}, promises: [], legacy: { p: {}, club: {}, coach: {}, seasons: [] },
   };
@@ -178,7 +186,8 @@ function newState(userClubIdx, opts) {
   st.players.forEach(pl => pl.val = valueOf(pl));
   st.coaches = COACHES_RAW.map((c, i) => ({ id: i, name: c[0], nat: c[1], rating: c[2], style: c[3], form: c[4], team: -1 }));
   CLUBS.forEach((c, i) => st.teams.push({ id: i, name: c[0], short: c[1], rep: c[2], c1: c[3], c2: c[4], conf: c[5], budget: 30, squad: [], lineup: [], bench: [], coach: -1, tactics: defaultTactics(null), morale: 60, board: 60, captain: -1, pk: -1, user: i === userClubIdx, coachRound: ri(3, 12), earned: 0 }));
-  const order = shuffle(st.teams.map(t => t.id)); const owner = []; for (let r = 0; r < DRAFT_ROUNDS; r++) for (let i = 0; i < 30; i++) owner.push(r % 2 === 0 ? order[i] : order[29 - i]);
+  st.teams[userClubIdx].budget = (DIFF[st.opts.diff] || DIFF.pro).budget;
+  const order = shuffle(st.teams.map(t => t.id)); const owner = buildDraftOrder(order, DRAFT_ROUNDS, st.opts.style);
   st.draft = { kind: 'initial', order, owner, rounds: DRAFT_ROUNDS, pick: 0, total: owner.length, log: [] };
   st.edits = {};
   return st;
@@ -236,7 +245,7 @@ function aiDraftChoice(team) {
   let best = null, bs = -1e9;
   for (const pl of pool) {
     const g = dgroup(pl.pos); const [tg, mx] = DRAFT_T[g];
-    let s = pl.ovr + rnd() * 3.5 + (pl.age <= 23 ? 0.6 : 0) - (pl.age >= 34 ? 1 : 0);
+    let s = pl.ovr + rnd() * (team.user ? 3.5 : diffOf().noise) + (pl.age <= 23 ? 0.6 : 0) - (pl.age >= 34 ? 1 : 0);
     if (c[g] >= mx) s -= 40; else if (c[g] < tg) s += 2.5; else s -= 2.5;
     if (g === 'GK' && c.GK === 0 && round >= 3) s += 5; if (g === 'GK' && c.GK >= 1 && round < 9) s -= 6;
     if (S.draft.kind !== 'season' && left <= missing && c[g] >= tg) s -= 60;
@@ -394,7 +403,7 @@ function sideProfile(L, s) {
   const ch = chemistry(on.map(x => x.id), slotsById);
   const lazy = on.filter(x => P[x.id].wr === 'Low' && ['ATT'].includes(SLOT_GROUP(x.slot)) || (P[x.id].wr === 'Low' && x.slot === 'AM')).length;
   const cf = coachFit(t);
-  const b = cf.bonus + (t.morale - 60) * 0.03 + ch.bonus;
+  const b = cf.bonus + (t.morale - 60) * 0.03 + ch.bonus + (t.user ? diffOf().bonus : 0);
   att += b; mid += b; def += b;
   att -= missing * 3; mid -= missing * 4; def -= missing * 4;
   let wideX = 0, pressX = 0, err = 0, cover = 0, gkX = 0;
